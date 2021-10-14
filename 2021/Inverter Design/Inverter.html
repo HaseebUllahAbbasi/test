@@ -1,0 +1,476 @@
+<html>
+	<head>
+		<link href="styles/style.css" type="text/css" rel="stylesheet">
+		<link href="https://www.w3schools.com/w3css/3/w3.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+			<style>footer {background: #aaa;color:white; height:30px; z-index:10000; position:relative;}
+	table, th, td {      border: 1px solid black;     border-collapse: collapse; }
+	th, td {  padding: 15px;}
+       th { text-align: left;}
+    </style>
+		<title>
+		Introduction to Embedded Systems Project Report - (Muhammad Punhal & Naqcho Ali )
+		</title>
+
+	</head>
+	<body>
+	<div id="main-wrapper">
+	<div id="left-ajrak"></div>
+			
+	<div id="main">
+	<div id="header">
+	<div id="header-title">
+	<br>
+
+	<font color="yellow"><div id="page-title">Muhammad Punhal & Naqcho Ali </div> </font>			
+	</div></div>
+			
+	<hr>
+	<div id="nav-bar">
+	<div id="nav-bar-area">
+
+<div class="link"><a href="#C1">Introduction:</a></div><div class="separator"></div>
+<div class="link"><a href="#C2">High Level Design:</a></div><div class="separator"></div>
+<div class="link"><a href="#C3">Electrical diagram:</a></div><div class="separator"></div>
+<div class="link"><a href="#C4">PCB Design:</a></div><div class="separator"></div><br><br><br>
+<div class="link"><a href="#C5">Bill of materials:</a></div><div class="separator"></div>
+<div class="link"><a href="#C6">Final Results:</a></div><div class="separator"></div>
+<div class="link"><a href="#C7">Delegation of tasks:</a></div><div class="separator"></div>
+<div class="link"><a href="#C8">Conclusion:</a></div><div class="separator"></div></div>	
+
+<div class="clear"></div>
+</div>
+<hr>
+<br><br>
+
+
+<body>
+	<div id="main-container">
+	<font color="sky blue"><div id="page-title"> Project overview </div></font>
+				
+
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<div class="w3-content w3-section" style="max-width:750px "  >
+  <img class="mySlides" src="instructor.PNG" height="480" style="width:100% " >
+  <img class="mySlides" src="leader.PNG" height= "480" style="width:100%">
+  <img class="mySlides" src="member.PNG" height="480" style="width:100%">
+<img class="mySlides" src="mech.PNG" height="480" style="width:100% " >
+<img class="mySlides" src="electrical1.PNG" height="420" style="width:100% " >
+<img class="mySlides" src="pcb.PNG" height="420" style="width:100% " >
+<img class="mySlides" src="Capture.PNG" height="400" style="width:100% " >
+<img class="mySlides" src="printing2.JPEG" height="420" style="width:100% " >
+<img class="mySlides" src="components.PNG" height="420" style="width:100% " >
+<img class="mySlides" src="ic.PNG" height="400" style="width:100% " >
+<img class="mySlides" src="spi.PNG" height="400" style="width:100% " >
+<img class="mySlides" src="sensor.PNG" height="420" style="width:100% " >
+<img class="mySlides" src="p.JPEG" height="400" style="width:100% " >
+<img class="mySlides" src="radio.JPG" height="330" style="width:100% " >
+<img class="mySlides" src="v1.PNG" height="370" style="width:100% " >
+<img class="mySlides" src="uno.PNG" height="400" style="width:100% " >
+<img class="mySlides" src="2.JPEG" height="420" style="width:100% " >
+<img class="mySlides" src="Capture2.PNG" height="420" style="width:100% " >
+<img class="mySlides" src="1.JPEG" height="400" style="width:100% " >
+<img class="mySlides" src="4.JPEG" height="400" style="width:100% " >
+<img class="mySlides" src="spi mix.PNG" height="370" style="width:100% " >
+<img class="mySlides" src="5.JPEG" height="400" style="width:100% " >
+<img class="mySlides" src="3.JPEG" height="380" style="width:100% " >
+<img class="mySlides" src="final results.PNG" height="420" style="width:100% " >
+<img class="mySlides" src="Radio1.JPG" height="400" style="width:100% " >
+
+  </div>
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 1500); // Change image every 1.5 seconds
+}
+</script> <br><br>
+
+
+<div id="main-container">
+<div id="page-title"> Inverter Design </div><br>
+<div id="assignments">
+<br>
+
+
+<h2 id="C1">Introduction:</h2>  
+
+DC-AC Inverters are common household devices. This device is commonly based on H-Bridge circuit. SG-3525 IC is used to drive the mosfets by applying 12V DC source (i.e. a battery) on input side and through  some process like using DC Booster converter and step up transformer on output side produces  220V AC on the output side. H-Bridge circuit is developed with the help of  IC SG3525 which is a regulating pulse width modulator IC. SG3525 is a single package multi function PWM generator IC. The IC we have used is doing this job of driving the mosfets, and each time it operates two mosfets for half of the time to pass the signals and second time for remaing tow respectively. Secnodly we have used current module to sense current and voltage at both ends of circuitry and finally displayed that  results on LED using Ardunio. we have discussed each of these toipcs below respectivey.
+ <br><br>
+<!--<p> In assignment 4 the PCB was available </p>-->
+ 
+<p>Nowadays majority of things in our daily life needs electricity, there are so many home appliances which run on AC power supply. Also there are some cases of load shading where we use solar panel and other electrolytic batteries to power the appliances thus we have to first change the dc voltage into ac this is where we do require an inverter. </p>
+ 
+<center><img src="Radio1.JPG" height="480" /><br></center>
+
+
+  <div class="table-container" id="tasks">
+      <h2 id="C7"> Delegation of Tasks: </h2>
+      <table style="width:80%">
+
+        <tr>
+          <th>Task<centre></th>
+          <th>Done by</th></tr>
+        
+        <tr>
+          <td>Research on the project</td>
+          <td>Individually</td></tr>
+        
+          <tr>
+          <td>Schematic and PCB design</td>
+          <td>Muhammad Punhal</td>
+        </tr><tr>
+
+        <tr>
+          <td>Ardunio coding </td>
+          <td>Naqcho Ali</td>
+        </tr>
+  
+        <tr>
+          <td>Interfacing with display using Ardunio</td>
+          <td>Muhammad Punhal</td> </tr>
+
+        <tr>
+          <td>Collecting the bill of materials & some other peripherals </td>
+          <td>Muhammad Punhal</td></tr>
+        
+                 
+          <td>PCB Soldering </td>
+          <td>Naqcho Ali</td></tr>
+        
+        <tr>
+          <td>Testing the inverter</td>
+          <td>Naqcho Ali</td></tr>
+       
+          <tr>
+          <td>Case design in Solid Works (in process)</td>
+          <td>Muhammad Punhal</td></tr>
+
+         </table>
+    </div>
+<br><br><br>
+
+<h2 id="C2">High Level Design:</h2>    
+The very first thing came in our mind was the working process of our designed PCB . We brainstromed an got the solution by using our thinking caoability that what to use first and next to work out the sketch. this design is mind map of our complete project. <br>
+
+The very first thing is the dc power source here we have used a 12volts battery, in order to enhance the dc voltage we have used the dc booster. Mosfets are used in the inverter circuit which is responsible for the output signal, two mosfets simultaneously works to make the upper half of the waveform while another two mosfets operate to make the second half of the waveform. The ic we have used is doing this job of driving these mosfets. Another major components that we have used is the microcontroller which is used to operate the current sensors and the lcd . The sensors read a raw value from the input as well as from the output and then send to the analog pins of the microcontroller which then are used in calculation to find out the current flowing from the output and input sides. the remaing main component is the transformer, which is served in stepping up the signal that is at the output terminal of the inverter circuit
+ <br><br><br>
+
+<center><img src="block.PNG" height="480" /><br></center>
+<br><br>
+
+<h4>Design requirements:</h4>   
+
+<p>We are going to design a small portable inverter which can produce 500W, provides user interface for power input / output user interface. So for that we will use step up  transformer which will boost the power from 12V Dc applied source to the expected result of 220V Ac. For achieving this process we need some tools like PCB design using Eagle and fabrication through SRM20 machine which is rightly avilable at Sukkur Fab Lab. And finally go for prototype of our final product with the help fo Laser cut.    </p><br> 
+
+<ul>
+<li>Most importantly SG3525 IC: </li> <br>
+<li>Current Module </li> <br>
+<li>The Micro-controller (Ardunio):</li><br>
+<li>Display</li><br><br>
+</ul>
+
+<h4>1. SG3525 IC:</h4> 
+<p> This is a regulating pulse width modulator IC, which  plays an important role in driving the circuitry and switching the power at Mosfets gates, from where we get output. Pin#11 and #14 (output A and output B): These are the two outputs of the IC which operate in a  totem pole configuration or simply in a flip flop or push pull manner. External devices which are intended for controlling the converter transformers are integrated with these pinouts for implementing the final operations.</p><br>
+
+<center><img src="mix.PNG" height="380" /><br></center>
+<br>
+
+<p>Main Technical Features:</p>
+<br>
+
+ <ul>
+<li>Operating voltage = 8 to 35V</li> 
+<li>Error amp reference voltage internally regulated to 5.1V</li>
+<li>Oscillator frequency is variable through an external resistor within the range of 100Hz to 500 kHz. </li> 
+<li>PWM pulses are controlled through latching for inhibiting multiple pulse outputs or generation.</li>
+<li>Output supports a dual totem pole driver configuration.</li>
+<li>Facilitates a separate oscillator sync pinout.</li>
+<li>Shut down facility features a pulse by pulse shutdown enhancement.</li>
+<li>Input under voltage shut down feature also is included.</li><br>
+</ul><br>
+
+<p>Below are given bookmarked links only click to see documentation and download datasheet of IC: </p><br>
+<div id="navbar">
+	     
+   <div class="link"><a href="https://www.homemade-circuits.com/understanding-sg3525-ic-pin-outs/">IC documentation:</a></div><div class="separator"></div>
+   <div class="link"><a href="https://www.alldatasheet.com/datasheet-pdf/pdf/5630/MOTOROLA/SG3525ADW.html">SG3525 IC datasheet : </a></div><div class="separator"></div><br><br><br>
+
+
+<h4>2. Current Sensor:</h4>   
+
+<p>The ACS712 is a fully integrated, hall effect-based linear current sensor with 2.1kVRMS voltage isolation and a integrated low-resistance current conductor. Technical terms aside, it is simply put forth as a current sensor that uses its conductor to calculate and measure the amount of current applied.</p><br> 
+<br>
+<center><img src="acs.PNG" height="300" /><br></center><br>
+
+<h4>How does the ACS712 Current Sensor work? </h4> 
+<p>For current sensors that work by direct sensing, ohms law is being applied to measure the drop in voltage when flowing current is detected.
+Current flows through the onboard hall sensor circuit in its IC.
+The hall effect sensor detects the incoming current through its magnetic field generation.
+Once detected, the hall effect sensor generates a voltage proportional to its magnetic field that is  then used to measure the amount of current. </p><br><br>
+
+<h4>ACS712 Feaatures:</h2>
+<ul>
+<li>80kHz bandwith </li> 
+<li>66 to 185 mV/A output sensitivity </li> 
+<li>Low-noise analog signal path</li>
+<li>Device bandwith is set via the new FILTER pin </li>
+<li>1.2 m Ohm internal conductor resistance </li> 
+<li>Total output error of 1.5% at TA = 25C </li> 
+<li>Stable output offset voltage.</li> 
+<li>Near zero magnetic hysteresis</li> <br><br>
+
+
+<h4>Applications:</h4>
+<li>Motor speed control in motor control circuits </li> 
+<li> Electrical load detection and management </li>
+<li> Switched-mode power supplies (SMPS)</li>
+<li>Protection for over-current. </li><br>
+
+Remember: never use the load that exceeds the current limitations, in our case we have have used module having sensing capability of 5A current.   
+<br><br>
+
+<p>Below are given bookmarked links only click to see documentation, datasheet of ACS712 Current sensor and download ACS712 Library: </p><br>
+<div id="navbar">
+	     
+ <div class="link"><a href="
+https://www.seeedstudio.com/blog/2020/02/15/acs712-current-sensor-features-how-it-works-arduino-guide/#sidr-nav">ACS712 Moudule:</a></div><div class="separator"></div>
+<div class="link"><a href="https://pdf1.alldatasheet.com/datasheet-pdf/view/168326/ALLEGRO/ACS712.html">ACS712 datasheet : </a></div><div class="separator"></div>
+<div class="link"><a href="https://github.com/muratdemirtas/ACS712-arduino-1">ACS712 Library: </a></div><br><br><br>
+
+ <h4>3. Microcontroller / Ardunio-UNO:</h4>
+
+<p>The Arduino Uno is a popular microcontroller platform based on the Microchip ATmega328P microcontroller and developed by Arduino.cc. The board is equipped with sets of digital and analog input/output (I/O) pins that may be interfaced to various expansion boards (shields) and other circuits. The board has 14 digital I/O pins (six capable of PWM output), 6 analog I/O pins, and is programmable with the Arduino IDE (Integrated Development Environment), via a type B USB cable.</p><br>
+
+<center><img src="uno mix.PNG" height="320" /><br></center><br>
+<p>Connect your Uno board with a USB B-type cable; this cable is also known as a USB printer cable. The USB connection with the PC is necessary to program the board and not just to power it up. The Uno automatically draw power from either the USB or an external power supply. Connect the board to your computer using the USB cable. The green power LED (labelled PWR) should turn on.</p> <br>
+<p>But in our case we designed our own circuit board using ATmega328P chip, that was seprately embedded and implemented on the same PCB. The micro-controller was use to take readings from current sensor and display them on the LCD. </p><br><br>
+
+<h4>4. Display:</h4>
+<p>This Color TFT LCD display has 128 x 128 resolution and 262 color, it uses SPI interface to communicate with display driver such Arduino, it is the best substitute of popular Nokia5110 LCD. The pupose of this LCD is to interface with and remain up to date for any danger like abrupt change in current and voltage, so to facilate the user we have decided implemented it.<br><br>
+<center><img src="spi.PNG" height="350" /><br></center>
+
+Process:<br>
+ We connected the board to PC using USB cable, download the library TFT_ILI9163C library, Unzip it into the libraries file of Arduino IDE by the path: ..\arduino-1.0.1\libraries, open the code directly by the path:File -> Example ->TFT_ILI9163C->test. </p><br> 
+<center><img src="spi mix.PNG" height="332" /><br></center>
+
+<p>Below are given bookmarked links only click to see the SPI documentation  and download  TFT library: </p><br>
+<div id="navbar">
+    
+ <div class="link"><a href="https://github.com/sumotoy/TFT_ILI9163C/">TFT Library:</a></div><div class="separator"></div>
+ <div class="link"><a href="https://www.elecrow.com/wiki/index.php?title=1.44%27%27_128x_128_TFT_LCD_with_SPI_Interface"> SPI interface: </a></div><div class="separator"></div><br><br><br>
+
+
+<h2 id="C3">Elecrtical diagram: </h2> 
+
+<p>The schematic or electrical diagram contains all possible things to work out and it is consists of number of components like mosfets that are used to switch the signal at output side, resistors which are passive devices that resist the voltage and current through a conductor, diodes which are semiconductor devises that allows the flow of current in one direction, capacitors play vialt role  filteration and smmothen the waveform any many others.  We have virtually connected all possible junctions by first labeling them, that is the easiest way to do so. </p><br><br>
+
+<left><img src="electrical1.PNG" height="330" /><br></left>
+<br<br>
+
+
+<h2 id="C4"> PCB design: </h2>
+We used an Eagle software to develop the PCB for our project and further was processed to Lab Engr. Nadir who is an expert  in such thigns. So we created the layouts in .PNG formats and that png file was feeded to  the Milling Machine available in Fablab that acceps the picture in png format for its processing. The printed circuit board is now in the manufacturing and fabrication process where  we have used SRM-20(Rolland's mills) machine. It needs a monochrome picture for its processing. 
+<br>
+
+The circuit schematic was exported as a image file in .png format from Eagle software. This file was then uploaded to <a href="http://fabmodules.org/">Fab Modules</a>  to generate suitable tool paths for the CNC machine namely the SRM-20 to fabricate the printed circuit boards. We have selected  the dimensions of 100X100mm for our PCB. And to complete this job the machine took 45 minutes for both routing and milling. For an output we have left some headers to connect with transformer and other peripherals. In our final PCB we have embeded  our own microcontroller that is not directly connected to the Inverter circuit but only printed on the same board. Due to short span of time we could not completed the design and got printed both pcbs on single board to reduce the clutter of wires. 
+<br><br>
+
+<center><img src="pcb printing.PNG" height="330" /><br></center>
+<br><br>
+
+
+<h4>PCB final draft: </h4> 
+<left><img src="printing2.JPEG" height="350" /><br></left>
+<br><br>
+  
+ 
+ <h2 id="C5">Bill of materials:</h2> 
+ <center>
+ <table style="width:80%">
+
+<tr>
+    <td>Name</td>
+    <td> Specifications </td> 
+ <td> Quantity </td></tr> 
+
+  <tr>
+    <td>Driver IC </td>
+    <td>SG3525N </td> 
+ <td>01 </td> </tr>
+ 
+
+<tr>
+    <td>Driver IC </td>
+    <td>SG3525N </td> 
+ <td>01 </td> </tr>
+ 
+<tr>
+    <td>Opt coupler </td>
+    <td>PC817 </td> 
+ <td>02 </td> </tr>
+  
+<tr>
+    <td>MOSFETs </td>
+    <td>IRF3205/IRF459  </td> 
+ <td>04 </td> </tr>
+  
+
+<tr>
+    <td>MOSFETs	 </td>
+    <td>IRF3205/IRF459  </td> 
+ <td>04 </td> </tr>
+  
+
+<tr>
+    <td>C3,C4 </td>
+    <td>47UF/50V</td> 
+ <td>02 </td> </tr>
+
+<tr>
+    <td>C1	  </td>
+    <td>10UF  </td> 
+ <td>01 </td> </tr>
+
+<tr>
+    <td>C2 </td>
+    <td>100nF  </td> 
+ <td>01</td> </tr>
+
+
+<tr>
+    <td>C5	 </td>
+    <td>3300UF/25V </td> 
+ <td>01</td> </tr>
+  
+<tr>
+    <td>R1,R2,R3,R4</td>
+    <td>10 ohm </td> 
+ <td>04</td> </tr>
+
+  <tr>
+    <td>R5,R6,----R10</td>
+    <td>2k  </td> 
+ <td>06</td> </tr>
+ 
+<tr>
+    <td>R11,R12,R16,R17</td>
+    <td>1k  </td> 
+ <td>04</td> </tr>
+
+ <tr>
+    <td>R11</td>
+    <td>10k  </td> 
+ <td>02</td> 
+  </tr>
+
+<tr>
+    <td>R13</td>
+    <td>140k  </td> 
+ <td>01</td> 
+  </tr>
+
+<tr>
+    <td>VR1 (Potentiometer)</td>
+    <td>10k  </td> 
+ <td>01</td> 
+  </tr>
+
+
+<tr>
+    <td>LED</td>
+    <td>any color  </td> 
+ <td>01</td> 
+  </tr>
+   </table>
+    </div>
+	</center>
+	<br><br><br>
+ <center><img src="components.PNG" height="240" /><br></center>
+<br><br><br>
+
+ 
+<h4>Design and testing of Finished Product:</h4>
+Now its time to assemble and embed all componenets on an  sigle board. The first precius work we did was to complete the soldering of PCB then checked its connectivity using digital multimeter. And move towards to connect heavy load across transformer, it worked in smooth way. Then further we tested current sensor by downloading and uploading code on Ardunio. And finally we used display to show results in the same manner as current sensor. By using " #include <Adafruit_GFX.h>" and  "#include <TFT_ILI9163C.h>" libraries. Complete descrioption about ACS712 and Ardunio is given above.   
+<br><br>
+<br>
+
+<center><img src="testing.PNG" height="360" /><br></center>
+<br><br>
+<br>
+
+
+<h2 id="C6">Final Results:</h2> 
+ The functional final product is shown in the video and pictures below.
+<br><br>
+<center>
+<iframe width="480" height="330" src="https://www.youtube.com/embed/8NMOuvD7RD0"> </iframe></center>
+<br><br>
+
+<center><img src="final results.PNG" height="400" /><br></center>
+<br><br><br>
+
+
+ <h2>Challenges Faced:</h2>
+The first challenge we was to produce sine waveform across the drain terminals of mosfets, we ordered and replaced them accordingly and used N-channel mosfets  that were meeting our requirements. And secondly, when we used transformer and calculated power that was 190V AC but it should be 220V then we solved this problem by adjusting the input DC voltage using  Voltage Boost converter at input thus with 18V DC into the H-bridge circuit we received 220VAC at the output of transformer. The third isssue was sensing current and voltage before and after process for that we were stucked in coding and then through some refreces we used functions of ACS712 libraries then it worked. Last of all we used desplay and in similar way like ACS712 we downloaded libraries but how to sense current and voltage through single moudule was quite difficult then we used two sensors at input and output side. Current sensors and display were working interchangably. <br><br><br>         
+
+ <h4>Intellectual Property and Ethical Considerations:</h4>
+During the design of the circuit of the inverter we referred to many websites like <a href="https://electronoobs.com/">electronoobs.com</a>, <a href="https://github.com/"> Gitub </a>,etc. For execution of this project we mostly concerned ourselves with <a href="https://electronoobs.com/">electronoobs.com</a> , this website provided clear and concise explanation of electrical circuit and principle of operation. There are various  opensource projects available at <a href="https://github.com/"> Gitub </a>  some of the solutions are well documented while others are not well documented; We received alot of counseling from our mentors in selection of reference design. The Ardunio coding and libraries were taken form this website.
+<br><br>
+
+ <h4>Commercialization Aspects:</h4>
+  Inverter is a widely used device for all AC and DC sources. As PV system  are gaining traction for off-grid solution, DC-AC inverters is used to converter 12V DC to 220V AC. The objective of this project was to develop a small functional prototype of invertor. The proposed inverter has a power rating of 500W but for commercial use we can design an inverter having high rating and with improved performance. From the comprehensive experience gained through this project we have a clear understanding of technical and financial considerations to design a commercial product.
+<br><br><br>
+
+
+ <h2 id="C8">Conclusions:</h2> 
+In this semester projecr we have designed an DC-AC inverter with a power rating of 50W. Although it was not a commercial inverter but we tried and were restricted to only education purpose. While doing so we came across many new innovative ideas and became familiar with electronic components like opt-couplers, MOSFETS, interfacing with LCD using Ardunio and many more. etc. we became familiar with eagle application, we got hands on practice of soldering small componenets, infact we did not study that much of Embeded Programming during the regular calsses than what
+we learnt and explored during the programming of the sensors and lcd.  In future we will further improve the power rating and features of this project.
+ <br><br>
+
+<h2>Appendix:</h2> 
+ The Eagle design, solidworks design and software related materials are included in given links below:
+
+            <div id="navbar"><br>
+	     
+   <div class="link"><a href="https://drive.google.com/drive/folders/1aVVz2YxenXxhESQg3hvae8BEuQS5wSC5"> Download Eagle files:</a></div><div class="separator"></div>
+   <div class="link"><a href="https://drive.google.com/drive/folders/1vHhica2-KlCMOQRzeMHzqK2uSmCrWbUq">  Download Ardunio code: </a></div><div class="separator"></div><br>
+
+<br>
+<br<br>
+
+<!--		
+Double Image Example Below
+<div id="doubleimg">
+<div class="imgbox"><img src="graphics/img_avatar.png" /><div class="doubleimgtitle">text here</div></div>
+<div class="imgbox"><img src="graphics/img_avatar.png" /><div class="doubleimgtitle">text here</div></div>
+</div>-->
+ 
+<br><br><br>
+		
+<!-- This is comment -->
+              
+	</div>
+	</div>
+	</div>
+	<div id="right-ajrak">
+	</div>
+	</div>
+
+	</body>
+</html>
