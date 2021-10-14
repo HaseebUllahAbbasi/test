@@ -1,0 +1,485 @@
+﻿<html>
+	<head >
+<body bgcolor="gray">
+		<link href="styles/style.css" type="text/css" rel="stylesheet">
+		<link href="https://www.w3schools.com/w3css/3/w3.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+			<style>footer {background: #aaa;color:white; height:30px; z-index:10000; position:relative;}
+	table, th, td {      border: 1px solid black;     border-collapse: collapse; }
+	th, td {  padding: 10px;}
+       th { text-align: left;}
+    </style>
+		<title>
+						Automatic Source selector - (Shah Faisal & Zeeshan Ali)
+		</title>
+	</head>
+	
+	<body>
+<body bgcolor="gray">
+	<div id="main-wrapper">
+		<div id="left-ajrak">
+			
+		</div>
+		<div id="main">
+			<div id="header">
+				<div id="header-title">
+				 
+					<b>Instructor:<br></b>
+					<b>Dr.Muhammad Asim Samejo</b>
+				</div>
+			</div>
+			<hr>
+
+<table border="1" bordercolor="red" width="900" height="15" align="center" cellspacing="5" cellpadding="5">
+<tr>
+<td align="center" width="190" bgcolor="gray"><a href="#C1">Introduction</a></td>
+<td align="center" width="190" bgcolor="gray"><a href="#C2">High Level Design</a></td>
+<td align="center" width="190" bgcolor="gray"><a href="#C3">Design</a></td>
+<td align="center" width="190" bgcolor="gray"><a href="#C4">Results</a></td>
+<td align="center" width="190" bgcolor="gray"><a href="#C5">Conclusion</a></td>
+<td align="center" width="190" bgcolor="gray"><a href="#C6">Appendix</a></td>
+</tr>
+</table>
+
+
+<td align="center"><marquee direction="left" scrollamount="7"></b><b>Introduction to embadded system project report"Automatic Transfer Switch"</b></b></td></marquee>
+				<div id="page-title"><u>Automatic Transfer Switch</u></div><br>
+				<div id="assignments">
+<h5 align="center"><strong><u>OUR TEAM MEMBERS</strong></u></h5>
+<table align="center" width="300" height="180">
+<tr>
+<td><img src="Shah_Faisal.png" width="140" height="155"></td>
+<td><img src="Zeeshan_Ali.png" width="140" height="155"></td>
+</tr>
+</table>
+<table align="center" border="1" bordercolor="red" width="324.5" height="3">
+<tr>
+<td width="161.5">Shah Faisal</td>
+<td width="161.5">Zeeshan Ali</td>
+</tr>
+</table>
+
+<br><br>
+<h2 id="C1"><u>Introduction</u></h2>  
+The objectives of this oproject are:<br>
+<!--<p> In assignment 4 the PCB was available </p>--><br>
+<center><img src="diesel-generator-ats.jpg" align="center" width="550" height="600"><br></td>
+<br>
+<p align="left">
+A transfer switch is an electrical Switch that switches a load between two sources.
+A transfer switch in general seeks to simplify and provide safety when making use of a generator.
+The transfer switch diverts power from your utility to your generator quickly and easily. In the case of a manual switch, this is done, of course, manually through a lever or similar device,
+But in the case of an automatic switch, the entire process occurs instantly, providing you generator power in the split of a second in the event of an outage.
+Automatic switches are constantly monitoring your business’ power, waiting for any interruptions or delays.
+If the switch deems the power to be out, be it from a storm or accident, it will instantly and safely change over to generator power, supplying electricity to critical functions that you have set beforehand.
+
+<br>
+<b><u>Main Objective:</u></b>
+<p align="left">
+The main objective is to keep maintain the soure supply to the load.it can be both manually and automatic,but here we have focused on automatic two controll either of two source AC or DC.
+Automatic transfer switch ATS panels with mains detection built in monitor the mains supply. When they detect a mains absence, normally using a two channel relay.
+Normally they will disconnect from the mains and send a signal to the microcontroller to start the other source/DC.
+it will send an "available" signal back. Thus the ATS will maintain continuity providing supply to the load will. Moreover our focus is on providing 
+high quality automation system very cheaply and this project is our first step reagarding this aim.
+<br>
+</p><br><br>
+<b><u><h2 id="C2">High Level Design</h2>  </u></b>
+<br><br>
+<img src="main-main-automatic-transfer-scheme.png" height="400" width="1000" /><br></center>
+<br>
+<p>The dicrete components in this project are:<br>
+1)Two Channel Relay Module<br>
+2)Arduino Uno<br>
+2)esp8266 wifi module<br>
+
+  <h3 id="C2">Major Components And Their Brief Description</h3>
+<p>The main components which are used in this project and their brief description are as follow;</p>
+<ul>
+<li>x1 Arduino Uno
+<li>x1 esp8266 wifi module</u></li>
+<li>x2 Two Channel Relay Module</li>
+<li>x1 9v battery</li>
+<li>(I2c communication)</li>
+<ul>
+<a href="arduino_uno_r3_top.jpg"><img src="arduino_uno_r3_top.jpg" height="200" width="200" align="Right"></a><br>
+<u><b>Arduino Uno</b></u>
+<ul>
+<li>Microcontroller: ATmega328</li>
+<li>The Atmega328 is a very popular microcontroller chip produced by Atmel.</li>
+<li>Input voltage: (7-12) Volts</li>
+<li>Operating Voltage: 5 Volts</li>
+<li>Flash Memory: 32 KB, 2 KB used by bootloader</li>
+<li>SRAM: 2KB</li>
+<li>Analog input Pins: 6 (A0-A5)</li>
+<li>Digital pins: 14</li>
+<li>DC Current per I/O Pin: 40 mA</li><br>
+<p><b><u>Pin Configuration of Atmega328:</u></b></p>
+<p>The pin configuration of Atmega328 IC is under;</p><br>
+<center><img src="pin configuration.PNG" width="500" height="600"></center><br><br>
+<br><br>
+<h4>Microcontroller</h4>
+Although we have many controllers ATMEGA328P is most popular of all because of its features and cost. ARDUINO boards are also developed on this controller because of its features.
+
+With program memory of 32 Kbytes ATMEGA328P applications are many.
+With various POWER SAVING modes it can work on MOBILE EMBEDDED SYSTEMS.
+With Watchdog timer to reset under error it can be used on systems with minimal human interference.
+With advanced RISC architecture, the controller executes programs quickly.  
+Also with in chip temperature sensor the controller can be used at extreme temperatures.
+These all features add together promoting ATMEGA328P further.
+<p><a href=https://www.theengineeringprojects.com/2017/08/introduction-to-atmega328.html"><font color="blue">For Further info</font></a></p>
+
+
+<center><img src="atm.JPG" width="650" height="500"><br></center><br><br>
+<ul> 
+<li>It has EEPROM memory of 1KB<br>
+</li>
+  <li>
+ It has SRAM memory of 2KB  </li>
+
+   <li>It has 8 pins for Analouge(ADC) operation(denoted by PA0 to PA7)
+  </li> 
+
+   <li>
+It has 14 (fourteen) Digital pins specified by (D0 to D13)  </li>
+  </ul>
+
+<br><br>
+<u><b>esp8266 wifi module</b></u>
+<td><a href="esp8266 wifi.jpg"><img src="esp8266 wifi.jpg" height="270" width="200" align="Right"></a><br>
+
+<ul>ESP8266 wifi module is low cost standalone wireless transceiver that can be used for end-point IoT developments.</li>
+<li>ESP8266 wifi module enables internet connectivity to embedded applications.</li>
+<li>Inter-Integrated Circuit (I²C) serial communication protocol.</li>
+<li> Microcontroller communicates with ESP8266-01 wifi module using UART having specified Baud rate (Default 115200)..</li>
+<li>2.4 GHz Wi-Fi (802.11 b/g/n, supporting WPA/WPA2),.</li>
+<li>general-purpose input/output (16 GPIO),.</li>
+<li>analog-to-digital conversion (10-bit ADC).</li>
+<li>pulse-width modulation (PWM)..</li>
+<li>I²S (Inter-IC Sound) interfaces with DMA(Direct Memory Access) (sharing pins with GPIO).</li><br>
+
+<ul>
+<p><b><u>esp8266 wifi module:</u></b></p>
+<p>The pin configuration of esp8266 wifi module is shown below;</p><br>
+<center><img src="ESP8266-NodeMCU-kit-12-E-pinout-gpio-pin.png"width="500" height="550" /><br></center>
+<br><br>
+<u><b>2 Channel Relay Module</b></u>
+<a href="Dual-Channel-Relay-Module.jpg"><img src="Dual-Channel-Relay-Module.jpg" height="250" width="300" align="Right"></a><br>
+<li>Supply voltage – 3.75V to 6V.</li>
+<li>Trigger current – 5mA.</li>
+<li>Current when relay is active - ~70mA (single), ~140mA (both).</li>
+<li>Relay maximum contact voltage – 250VAC, 30VDC</li>
+<li>Relay maximum current – 10A<li>
+<br>
+
+<p>The dual-channel relay module is more or less the same as a single-channel relay module, but with some extra features like optical isolation.
+The dual-channel relay module can be used to switch mains powered loads from the pins of a microcontroller.
+The dual-channel relay module contains switching relays and the associated drive circuitry to make it easy to integrate relays into a project powered by a microcontroller.
+On the left are two terminal blocks, which are used to connect mains wires to the module without soldering.</p><br>
+<p><b><u>Pin Configuration of 2 Channel Relay Module:</u></b></p>
+<p>The pin configuration of 2 Channel Relay Module is shown below;</p><br>
+<center><img src="Dual-Channel-Relay-Module-Pinout.jpg" width="800" height="300"></center><br>
+<br>
+<p><b><u>Communication Protocol</u></b></p>
+This module uses I2C protocol in order to communicate with arduino Uno, the esp8266 wifi module will be the source of controlling these two sources via a microcontroller and that data will be communicated with to perform specific task.<br><br>
+<center><img src="ESP8266 WiFi interfacing with Arduino.png" width="800" height="300"></center><br>
+<br><br>
+
+<p><b><u>Bill Of Materials</u></b></p>
+<p>This is a list of materials, which we used in our PCB of automatic transfer switch project.<p><br>
+<center><img src="bom1.jpg"width="500" height="600" /><br></center>
+
+<br><br>
+
+<h4><u>Deligation of Tasks</u></h4><style>
+
+	.demo {
+		border:1px solid #C0C0C0;
+		border-collapse:collapse;
+		padding:5px;
+	}
+	.demo th {
+		border:1px solid #C0C0C0;
+		padding:5px;
+		background:#F0F0F0;
+	}
+	.demo td {
+		border:1px solid #C0C0C0;
+		padding:5px;
+	}
+</style>
+
+<p>Work was distributed evenly. The group worked together in lab visits frequently, doing pairwise programming or hardware setup.</p>
+<center><table class="demo">
+	
+	<thead>
+	<tr>
+		<th>Level</th>
+		<th>Task</th>
+		<th>Assign To</th>
+		<th>Start Date</th>
+		<th>Finish Date</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><b>1.1</b></td>
+		<td>Project selection idea</td>
+		<td>Fifty Fifty</td>
+		<td>11-Feb-21</td>
+		<td>16-Feb-21</td>
+	</tr>
+	<tr>
+		<td><b>1.2</b></td>
+		<td>Literature review</td>
+		<td>Fifty Fifty</td>
+		<td>18-Feb-21</td>
+		<td>1-March-21</td>
+	</tr>
+	<tr>
+		<td>1.3</td>
+		<td>Datasheets</td>
+		<td>Fifty Fifty</td>
+		<td>1-March-21</td>
+		<td>19-March-21</td>
+	</tr>
+	<tr>
+		<td>1.4</td>
+		<td>Selection of components</td>
+		<td>Zeshan Ali</td>
+		<td>21-March-21</td>
+		<td>5-April-21</td>
+	</tr>
+	<tr>
+		<td><b>2.1</b></td>
+		<td>Design of electrical circuit</td>
+		<td>Shah Faisal</td>
+		<td>6-March-21</td>
+		<td>25-March-21</td>
+	</tr>
+	
+<tr>
+		<td>2.2</td>
+		<td>Design of PCB layout</td>
+		<td>Zeshan Ali</td>
+		<td>26-March-21</td>
+		<td>15-April-21</td>
+	</tr>
+<tr>
+		<td>2.3</td>
+		<td>Design of finished product</td>
+		<td>Shah Faisal</td>
+		<td>16-April-21</td>
+		<td>1-May-21</td>
+	</tr>
+
+<tr>
+		<td><b>3.1</b></td>
+		<td>Debugging of hardware</td>
+		<td>Shah Faisal</td>
+		<td>2-May-21</td>
+		<td>31-May-21</td>
+	</tr>
+<tr>
+		<td>3.2</td>
+		<td>Debugging of software</td>
+		<td>Fifty Fifty</td>
+		<td>1-June-21</td>
+		<td>20-June-21</td>
+	</tr>
+<tr>       
+		 <td><b>4.1</b></td>
+		<td>Final assembly</td>
+		<td>Zeshan Ali</td>
+		<td>26-June-21</td>
+		<td>18-July-21</td>
+</tr> 
+<tr>
+		<td>4.1</td>
+		<td>Design of Web page</td>
+		<td>Fifty Fifty</td>
+		<td>25-July-21</td>
+		<td>31-July-21</td>
+	</tr>
+ 
+
+	</tbody>
+</table></center>
+
+
+
+<h4><u>Sites Refrences</u></h4>
+<p>We have visited the following webpages for our refrence,guidence as well as for understanding and we are thankful to following webpages holders,really speaking these webpages were very helpful.</p><br>
+ <li><a href="https://www.eaton.com/us/en-us/products/low-voltage-power-distribution-control-systems/automatic-transfer-switches/automatic-transfer-switch-fundamentals.html"><font color="blue">EATON</font><a></li><br>
+<li><a href="https://www.theengineeringprojects.com/2017/08/introduction-to-atmega328.html
+"><font color="blue">ENGINEERING PROJECTS link</font><a></li><br>
+<li><a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fthepowersite.co.uk%2Fwp%2Fwp-content%2Fuploads%2F2015%2F11%2Fdiesel-generator-ats.jpg&imgrefurl=https%3A%2F%2Fthepowersite.co.uk%2Fblog%2Fdiesel-generator-faq-automatic-transfer-switch-ats%2F&tbnid=dMGTTebL1vbWsM&vet=12ahUKEwiM3ZWUqovyAhWY44UKHTNfBmwQMyhgegUIARCnAQ..i&docid=_GaVpkvTVu51_M&w=606&h=435&q=automatic%20transfer%20switch%20opern%20diagram&ved=2ahUKEwiM3ZWUqovyAhWY44UKHTNfBmwQMyhgegUIARCnAQ"><font color="blue">THE POWER SITE</font><a></li><br>
+<li><a href="https://www.electronicwings.com/arduino/esp8266-wifi-module-interfacing-with-arduino-uno"><font color="blue">ELECTRONICS WINGS</font><a></li><br>
+<li><a href="https://components101.com/switches/5v-dual-channel-relay-module-pinout-features-applications-working-datasheet"><font color="blue">COMPONENTS 101</font><a></li><br>
+ <h4>Intellectual Properties and Ethics Considerations</h4>
+The project is not difficult and we believe there should not by any intellectual property considerations.
+The idea of creating an automatic transfer switch is not new. There have been plenty of commercial products and hobbyist projects that include anything from professional-ATS.<br>
+This project does not endanger the public or the environment, and we believe our project does not have interests conflict with any party. Although it's a automatic, it is simple and cannot compete with existing commercial products. However, the concepts we used in this project are helpful in understanding how to achieve a reliable system. The concepts are widely used in current intelligent systems.
+If anyone has any doubt on our measured data, feel free to contact us. We are happy to share our experience on how the data can be collected. When building our projects, we discussed with each other, and with professor and fellows. We listened to other's advices carefully because they are very helpful, but we would also think thoroughly before we take any advice. To protect intellectual property, we strictly follow reference rules and list our sources in the Site Refrence from which we take alot help regarding our project.
+
+ <h4>Commercialization Aspects</h4>
+Now we have not made our product up to that level to present as a commercial product due to not suppling of an AC source instead of this we had been considered two different level Dc sources in order to work in a very soft manner. Now by not using AC source we conclude that it might be dangerous. We can further proceed our project by using AC source and that we would be present our product as a commercial product.
+<br>
+<h2 id="C3">Design</h2> 
+The Design process has several layers to it. Electrical Design, Software Design, Final Hardware Assembly<br><br>
+
+<h4><u>Electrical Circuit</u></h4>
+<center><img src="Automatic-Changeover-Switch-Circuit-Diagram.jpg" width="900" height="400"></center>
+<p>
+<br>
+<h4><u>Schematic designe</u></h4>
+Here is Schematic of Microcontroller board
+<center><img src="schm.jpg"  width="650" height="500"/><br></center><br><br>
+<h4>Milled PCB </h4>
+<center><img src="pcb1.jpg" width="650" height="500"/><br></center><br><br>
+1)
+First PCB For Microcontroller we just insert 14 pin Connector there for our required component setting like sensor, LED , Relay<br><br>
+After schemetic we moved to PCB Board design.In the board design we faced difficulty in to make comapct size of board.
+We routed and derouted again and again in order to make it very compact so that the handle should be in small size and it can be hold in hand very easily.
+<br>
+<h2 id="C2">PCB Milled by This Machine</h2> 
+
+<center><img src="ronald.JPG" width="500" height="500"><br></center><br><br>
+<br><br>
+<h4><u>Bootloader Process</u></h4>
+<p>Succcefully we done with burning the bootloader.<p>
+<center><img src="Bootloader.png" height="480" /><br></center>
+<br>
+<h4><u>Big challenge After Designing PCB1</u></b></h4>
+<p>After completion of our PCB-1 we have checked our project either it is working properly or not, we faced a big challeng in running our project, when we uploaded the project code to Atmega328 IC, at start esp8266 module was unable to have a connectivity with microcontroller.An error was generating again and again but with the help of sir nadir in the installation of its libraries we handled it. were trying to balance the system.Before uninstalling of libraries no data appears on Serial Monitor. Then we reset the System and again we met with the same problem like previous one which we have discussed. This was the time where we stuck to a point upto one week. For our project working we have to reset our system which was not the proper or professional way, then finally we decided to use Arduino nano microcontroller and we carry on our work towards our completion project. The schematic and PCB layouts of second PCB are as under; </p>
+
+<h4>Challenging Faced In Routing</h4>
+<p>This was our first time to have work on Eagle PCB designing software, At start we faced several problems in routing process like, we have left very small distances between traces and components which actually creates a problems for PCB Milling Machine, then our Instructor guides us about issues. So before printing our PCB we lift little spaces between traces and components so that it becomes easier for PCB Milling Machine. also, during routing we faced hindrances to have work as professional student but with passage of time we learn alot, how to tackle and deal with issues in routing phase.</p>
+<h4>Challenging Faced In Bootloader</h4>
+<p>After designing our first PCB in which we used Atmega328 IC and respective components which are mandatory in our project, we move towards bootup loader pocess and we met with a proplem in bootloading a simple program.
+After that we start thinking about..(How to debug the error?) and we took a multimeter in order to check connectivity between different components and current paths in PCB. Finally, we got an error in connectivity. After troubleshooting the PCB we have successfully done with bootloader stage.</p>
+<h2 id="C4">Results</h2> 
+Ideally this section we got our desired output.it was the requirment that to controll two different sources automatically and maintain the system reliability<br><br>
+<center><img src="result.jpg" height="480" /><br></center>
+<h2 id="C5">Conclusions</h2> 
+
+        This is our semester project of embadded System. We learn some life long things from it includings some technical Skills Software as well as Hardware skills.And learn how to read datasheets of different components.<br>
+        We learn how to search websites and also learn how to choose compnents we face problem.We choose ATMEGA 328 IC because it is full_filling our purpose.
+        We learn how to embadde different components with micro_Controllar.<br>
+    SOFTWARE CASE:<br>
+                    we learn EAGLE software by making of different PCBs including simple circuit,micro_controllar and PCB for embadding different components .we have full command on it now.
+                   And we also use Solid Works for making enclosure for our product using 3d printer(ULTIMAKER).We have also command on it . We aslo make sheet for leaser cutting for LCD. 
+                   And We also learn programing Skills from this project and learn Arduino language for writting programes.  C language is used in arduino programming.We faced alot of problems while doing programming
+                 and while routing of PCBs and making caseing is another big challenge for us.These issues are very helpful for us to learn different things in deep. <br>
+   HARDWARE CASE:<br>
+                   In case of Hardware we learn soldering of SMT as well as DIP components on Printed Circuit Board. And we Also learned the assembly of components. Although we faced alot of issues 
+                   in assembly of components because we take very compact measurements of our product which cause a big problem for us.We also learned interfacing of components(ESP8266, SENSOR,RELAY )
+                   with arduino.<br>
+                  In conclution we learn many things as we were facing problem and one thing is that we learn how to tackle with the problem and how to search about problems and how to solve them. Problems can be any kind.
+                  It can be interfacing of components,routing of PCBs,Soldering of components,programming , working on Solid Works, assembly problems and many more. 
+               
+               
+
+<br><br>
+<h2 id="C6">Appendix</h2> 
+<p>Here we have different files which we have created in order to accomplish our task like, Solid work files,Eagle circuits/PCB Layouts files,Arduino Code and rml files. one can easily access these files by just clicking on the pictures. This will help you in better understanding.
+<br><br>
+
+<br>
+ <font color="grey">
+<b>
+  <a href="Atmega328IC/Atmega328IC.rar">  Eagle PCB Layout files </a></b>
+   
+</b>
+<br>
+
+<br>
+<a href="arduinocode.rar">Arduino Code </a>
+</b>
+<br>
+</font>
+<b><br>
+<br>
+<br><br>
+ 
+<tr>
+
+
+
+
+Here we have a list of componente and having cost.<br><br>
+<center><table class="demo">
+	
+	<thead>
+	<tr>
+		<th>Components</th>
+		<th>Quantity</th>
+		<th>Cost</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Arduino UNO</td>
+		<td>1</td>
+		<td>PKR 500.00</td>
+	</tr>
+	<tr>
+		<td>ESP8266 wifi module</td>
+		<td>1</td>
+		<td>PKR 520.00</td>
+
+	</tr>
+	<tr>
+		<td>Relays</td>
+		<td>2</td>
+	<td>PKR 350.00</td>
+	</tr>
+	<tr>
+		<td>9V Battery</td>
+		<td>1</td>
+		<td>PKR 40.00</td>
+		</tr>
+		
+	</tbody>
+</table></center>
+<br><br>
+<center>
+<table style="width:50%">
+ 
+<tr>
+    <td>Report Submitted on Time</td>
+    <td> .......................  </td> 
+  </tr>
+  <tr>
+    <td>Matlab Profeciency</td>
+    <td> .......................</td> 
+  </tr>
+</table>
+</center>
+
+<h4>Special Thanks</h4>
+
+<p>Dr. Muhammad Asim Ali (Assistant Professor Department of Electrical Engineering Sukkur IBA)</p>
+<br>
+<p>Engineer Nadir Ali (Fab lab Department of Electrical Engineering Sukkur IBA)</p>
+<br>
+<!--		
+					Double Image Example Below
+					<div id="doubleimg">
+						<div class="imgbox"><img src="graphics/img_avatar.png" /><div class="doubleimgtitle">text here</div></div>
+						<div class="imgbox"><img src="graphics/img_avatar.png" /><div class="doubleimgtitle">text here</div></div>
+					</div>
+-->				
+					<!-- This is comment -->
+
+
+				</div>
+			
+			</div>
+		
+		<div id="right-ajrak">	
+		</div>
+	</div>
+	
+
+</body>
+</html>

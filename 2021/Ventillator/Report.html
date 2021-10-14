@@ -1,0 +1,1127 @@
+<!--Doctype HTML-->
+
+<html>
+
+<head>
+	<link href="styles/style.css" type="text/css" rel="stylesheet">
+	<link href="https://www.w3schools.com/w3css/3/w3.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+	
+	<style>footer {background pic: #aaa;color:white; height:30px; z-index:10000; position:relative;}
+	table, th, td {      border: 1px solid black;     border-collapse: collapse; }
+	th, td {  padding: 10px;}
+        th { text-align: left;}
+    	</style>
+	<title>
+		Introduction to Embedded Systems Project Report - (Mohammad Adeel & Hasnain Ali!)
+	</title>
+	</head>
+<body>
+	<div id="main-wrapper">
+	<div id="left-background">
+	</div>
+	<div id="right-background">
+	</div>	
+	<div id="main">
+	<div id="header">
+	<div id="header-title">	
+	<font color="indigo" face="Arial Black">
+	Mohammad Adeel (033-19-0020) & Hasnain Ali (033-19-0028)
+	</font>
+	</div>
+	</div>
+<hr>
+<div id="nav-bar">
+<div id="nav-bar-area">
+			<div class="link"><a href="#C1">Introduction</a></div><div class="separator"></div>
+			<div class="link"><a href="#C2">High Level Design</a></div><div class="separator"></div>
+			<div class="link"><a href="#C3">Design</a></div><div class="separator"></div>
+			<div class="link"><a href="#C4">Results</a></div><div class="separator"></div>
+			<div class="link"><a href="#C5">Conclusion</a></div><div class="separator"></div>
+
+			</div>
+			<div class="clear"></div>
+			</div>
+			<hr>
+			<br><br>
+			<div id="main-container">
+			<div id="page-title0">
+			<b>
+			Introduction to Embedded System
+			</b>
+			</div>
+			<div id="page-title-1">
+			<b>
+			(Supervisor: Dr.Muhammad Asim Samejo)
+			</b>
+			</div>
+			<br><br>
+			<div id="page-title1">
+			<b>
+			DIY FAB VENTILATOR
+			</b>
+			</div>
+			<div id="page-title2">
+			<b>
+			(Emergency Use Ventilator)
+			</b>
+			</div>
+			</div>
+
+<br><br>
+<h1 id="C1">Introduction</h1>  
+<p align="justify">
+The main objective of this project is to design a <i>low-cost ventilator device with mechanical system</i> that is able to provide consistent and accurate ventilation with positive
+pressure <i>(for adults, toddlers & infants)</i>.
+<br>
+This device will be having the facility of user-interface system in which one of three modes will be selected for ventilation at a time.
+<br><br>
+</p>
+<h3>Design Requirements:</h3>
+<p align="justify">
+For proceeding with this objective, we will be provided the essential components and other parts will be printed in <b><u>Computer Numerical Control(CNC)</u></b> machine 
+and <b><u>Ultimaker</u></b> 3D printing machine in Fabrication Lab and Workshop Lab.
+<br><br>
+Following components are considered for design requirements:
+<br><br>
+<ul> 
+<li><b>Two Dynamixel Motors</b> <i>(to push the ambu bag from left and right sides)</i></li>
+<br>
+<li><b>LCD Display with I2C Module</b> <i>(for displaying menu)</i></li>
+<br>
+<li><b>Rotary Encoder</b> <i>(to choose the options and click the button)</i></li>
+<br>
+<li><b>Jumper Wires</b> <i>(for connections of components)</i></li>
+<br>
+<li><b>12V DC Power Supply</b></li>
+<br>
+<li><b>Self Created Dedicated Printed Circuit Board</b></li>
+<br>
+<li><b>Buck Converter</b> <i>(to step the 12V DC voltage down to 5V for LCD Display with I2C Module and Rotary Encoder)</i></li>
+<li><b>Resuscitator (Ambu Bag)</b></li>
+<br>
+<li><b>Some Parts to be Printed from Ultimaker</b></li>
+<br><br>
+<li><b>Some Parts to be Printed from CNC Machine</b></li>
+</ul>
+</p>
+
+<br><br>
+<h1 id="C2">High Level Design</h1>  
+<br>
+<h3>Sample Images of Final Design:</h3>
+<p align="justify">
+The following picture of product has been focused upon as a reference design:
+<br>
+<center><img src="ApolloBVM Design.jpg" width=400 height=400></center>
+<br>
+From this design, an idea will be taken and a similar product will be designed.
+</p>
+<br><br>
+<p align="justify">
+The following picture of inside's circuit diagram has been focused upon as a reference which is to be updated:
+<br><br>
+<center><img src="Circuit Design by Rice University.jpg" width=400 height=400></center>
+<br>
+This reference circuit is based on two Arduinos which are connected by I2C protocols in which two of them are
+connected with each other with <i>I square C</i>(I2C) protocol by connecting two analog pins A4 & A5 of both Arduinos.
+One Arduino is <i>Master</i> which is sending signal to other Arduino which is <i>Slave</i>.
+Master Arduino is for LCD Display and Rotary Encoder and Slave Arduino is for motors. 
+</p>
+<br>
+From this circuit diagram, we have been instructed to convert the whole scenario from two Arduinos to one Arduino which has proved to be a grave challenge.
+<br><br>
+<font size=6>
+<i>In other words, we have been guided to created our own dedicated PCB Circuit which should run all the components with only one micro-controller.</i>
+</font>
+<br><br>
+
+<h3>Mechanical Drawing:</h3>
+<p align="justify">
+The following picture is the roughly drawn mechanical design of the product:
+<br>
+Different dimensions (in inches) have been assigned to the parts keeping in mind the size of Ambu Bag and other parts.
+<br>
+<center><img src="Roughly Drawn Mechanical Sketch.jpg" width=400 height=400></center>
+<br><br>
+The following picture is the roughly taken down circuitry inside the product:
+<br>
+<center><img src="Roughly Drawn Schematic of the PCB.jpg" width=400 height=800></center>
+</p>
+
+<h3>Project Execution Plan:</h3>
+<p align="justify">
+All the electrical and mechanical components will be tested and learnt to control one by one, and then collectively be 
+controlled to get the genuine idea and understanding. In this manner, the provided referenced circuit will be implemented. 
+</p>
+<br><br>
+
+<h3>Distribution of Tasks:</h3>
+<table border=2>
+
+<tr>
+<th>S.No</th>
+<th>Tasks</th>
+<th>Pictures</th>
+<th>Distributed to</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>To operate the simple Servo Motors before reaching the <i><u>Dynamixel Motors</u></i> through PWM Pin of Arduino UNO to get the idea of controlling them.</td>
+<td><img src="Simple Servo Motors.jpg" width=200 height=200></td>
+<td>Both</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>To operate the LCD Display with I2C Module to get the idea of controlling it.</td>
+<td><img src="LCD Display with I2C Module.jpg" width=200 height=200></td>
+<td>Both</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>To operate the Rotary Encoder with LCD Display with I2C module to get the idea of controlling it.</td>
+<td><img src="Rotary Encoder.jpg" width=200 height=200></td>
+<td>Hasnain Ali (033-19-0028)</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>To implement the given circuit with two Arduinos as reference.</td>
+<td><img src="Schematic Design of the Given Reference Circuit.jpg" width=200 height=200></td>
+<td>Both</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>To implement the basic code of <b>Dynamixel Motors</b> to get the idea of operating them.</td>
+<td><img src="Dynamixel Motors.jpg" width=200 height=200></td>
+<td>Both</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>To start connecting <i>Rotary Encoder</i> and <i>LCD Display with I2C Module</i> with <i>Dynamixel Motors</i> from scratch.</td>
+<td>
+<img src="Dynamixel Motors.jpg" width=180 height=200>
+&nbsp
+<img src="LCD Display with I2C Module 02 (2).jpg" width=200 height=200>
+<br>
+<center><img src="Rotary Encoder.jpg" width=180 height=200></center>
+</td>
+<td>Hasnain Ali (033-19-0028)</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>To program and finalize the complete code step by step.</td>
+<td><img src="Arduino IDE Logo.jpg" width=200 height=200></td>
+<td>Mohammad Adeel (033-19-0020)</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>To design in CAD.</td>
+<td><img src="SolidWorks Logo.jpg" width=200 height=200></td>
+<td>Hasnain Ali (033-19-0028)</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>To work on PCB Designing.</td>
+<td><img src="Eagle Software Logo.jpg" width=200 height=200></td>
+<td>Team of FAB Lab</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>To solder components on PCB.</td>
+<td><img src="Soldering.jpg" width=200 height=200></td>
+<td>Mohammad Adeel (033-19-0020)</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>Printing the PCB.</td>
+<td><img src="SRM Machine.jpg" width=200 height=200></td>
+<td>Team of FAB Lab</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>Printing all 3D parts.</td>
+<td>
+<img src="Ultimaker.jpg" width=200 height=200>
+<center><img src="CNC Machine.jpg" width=200 height=200></center>
+</td>
+<td>Team of FAB Lab</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>To assemble everything together.</td>
+<td><img src="Assembly Logo.jpg" width=200 height=200></td>
+<td>Both</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>To make report.</td>
+<td><center><img src="HTML Tag.jpg" width=200 height=200></center></td>
+<td>Both</td>
+</tr>
+</table>
+
+<br><br><br><br>	
+<h3>Execution of General Tasks and Main Tasks by Using Arduino UNO:</h3>
+<ul type="square">
+<li>
+<b>Task No.1</b>
+<br>
+<b>Simple Servo Motors</b>
+<br>
+<u>With general code.</u>
+<br>
+<img src="Operating Simple Servo Motors 01.jpg" width=400 height=300>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Operating Simple Servo Motors 02.jpg" width=400 height=300>
+<br><br>
+<center>
+<img src="Operating Simple Servo Motors 03.jpg" width=400 height=300>
+<br><br>
+<iframe width=400 height=500 src="https://www.youtube.com/embed/wcSirTveQNw">
+</iframe>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<iframe width=400 height=500 src="https://www.youtube.com/embed/75O53iN3hRg">
+</iframe>
+<br>
+<center>
+<iframe width=400 height=500 src="https://www.youtube.com/embed/qUnKoaJ5gdA">
+</iframe>
+</center>
+
+
+</li>
+<br><br>
+
+<li>
+<b>Task No.2</b>
+<br>
+<b>LCD Display</b>
+<br>
+<u>With general code.</u>
+<br>
+<p align="justify">
+Before operating the LCD display with I2C module, LCD display with twnenty pins without I2C module was also tried to operate
+with 10k ohm and 1k ohm potentiometers individually, but it was difficult
+to operate and output was not being shown.
+<br>
+<img src="LCD Display without I2C Module 01.jpg" width=400 height=200>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="LCD Display without I2C Module 02.jpg" width=400 height=200>
+<br><br>
+<center><iframe width=400 height=500 src="https://www.youtube.com/embed/VDBwldAxvXQ"></iframe></center>
+<br><br>
+Then, the LCD Display with I2C module was operating easily and successfully with two analog pins of Arduino
+to be connected with the I2C Module <i>without potentiometer</i>.
+<br><br>
+<img src="LCD Display with I2C Module 02 (2).jpg" width=400 height=200>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="LCD Display with I2C Module 04 (2).jpg" width=400 height=200>
+<br><br>
+<img src="LCD Display with I2C Module 01.jpg" width=400 height=200>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="LCD Display with I2C Module 05.jpg" width=400 height=200>
+<br><br>
+<img src="LCD Display with I2C Module 03.jpg" width=400 height=230>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="LCD Display with I2C Module 04.jpg" width=400 height=230>
+<br><br>
+<center><img src="Pin Connections of LCD Display with I2C Module.jpg" width=400 height=230></center>
+</li>
+
+
+<br><br>
+<li>
+<b>Task No.3</b>
+<br>
+Rotary Encoder has been connected with the LCD Display with I2C Module to have the general idea of using it for navigating for the options.
+<br>
+<u>With general code.</u>
+<br><br><br>
+<iframe width=500 height=500 src="https://www.youtube.com/embed/B_RR-0aUrUs">
+</iframe>
+</li>
+<br><br>
+
+<li>
+<b>Task No.4</b>
+<br>
+<u>In the following scenario, complete reference circuit and the its code has been implemented.</u>
+<br><br><br>
+<center>
+<hr>
+<i><u>From Website</u></i>
+<br>
+<img src="Reference Circuit from Website.jpg" width=400 height=230>
+<hr>
+</center>
+<br><br><br>
+<img src="Operation of Reference Circuit 04.jpg" width=400 height=230>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Operation of Reference Circuit 02.jpg" width=400 height=230>
+<br><br>
+<center><img src="Operation of Reference Circuit 03.jpg" width=400 height=230></center>
+<br>
+In this video, nothing is visible in the LCD except the brightness, because while implementing this whole reference circuit along with code,
+previous LCD Display without I2C Module was connected, which did not work.
+<br><br>
+<center>
+<iframe width=600 height=500 src="https://www.youtube.com/embed/SJLAZJTpAMg">
+</iframe>
+</center>
+</li>
+<br><br>
+<p align="justify">
+After opting for availabe and suitable components, we are going to connect them and progam a suitable code step-by-step.
+</p>
+
+<br><br>
+<li>
+<b>Task No.5</b>
+<br>
+<u>Operating <b>Dynamixel Motors</b> with simple code to get the idea.</u>
+<br><br>
+<center><img src="Dynamixel Pin Configuration.jpg" width=400 height=290>
+<br><br>
+<iframe width=400 height=500 src="https://www.youtube.com/embed/Giro4ZZYpZo">
+</iframe>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<iframe width=420 height=500 src="https://www.youtube.com/embed/PiJFddtckfM">
+</iframe>
+</li>
+
+<br><br>
+<li>
+<b>Task No.6</b>
+<br>
+<u>Here, Rotary Encoder and LCD Display with I2C Module have been connected to operate the Dynamixel Motors from scratch.</u>
+<br><br>
+<img src="Operating Dynamixel Motors with RE & LCD with Modl1.jpg" width=400 height=300>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Operating Dynamixel Motors with RE & LCD with Modl2.jpg" width=400 height=300>
+<br><br>
+<center>
+<iframe width=500 height=500 src="https://www.youtube.com/embed/4jukoCRq01k">
+</iframe>
+</center>
+</li>
+
+<br><br><br>
+
+<li>
+<b>Task No.7</b>
+<br>
+<b><u>Step by step, code is being finalized and implemented.</u></b>
+<br><br>
+<iframe width=400 height=500 src="https://www.youtube.com/embed/xSbaQM4o0cw">
+</iframe>
+</li>
+
+
+
+</ul>
+<br><br><br>
+	
+<h1 id="C3">Design</h1>
+
+<h3>High Level System Diagram:</h3>
+<p align="justify">
+The following circuit diagram has been created in <i>Fritzing</i> application software.
+<br>
+This became our finalized circuit design after receiving suitable components and working hard on coding for having one micro-controller.
+</p>
+<center><img src="High Level System Diagram.jpg" width=800 height=550></center>
+
+<h3>Description of Principle of Operation:</h3>
+<p align="justify">
+In this circuit, 12V DC power supply has been connected to the <u>one</u> <b>Dynamixel Motor</b> and other <b>Dynamixel Motor</b> is connected to the first
+Dynamixel Motor <b><i>serially</i></b> which is fixed and decided way of connecting as many Dyanmixel Motors. Only one pin of one Dynamixel Motor is sufficient to
+be connected to the <i>D1(Tx)</i> of the Arduino which is one of the two pins of Arduino for <i>serial communication</i>. With <b>LCD Display</b>, I2C Module has
+been connected to convert the serial data travelling process into parallel data travelling process which reduces the pin connections. Here, with module,
+only two analog pins <i>A4 & A5</i> of Arduino have been connected to the <i>SDA(Serial Data) & SCL(Serial Clock)</i> of the I2C Module. <b>Rotary Encoder</b>
+'s three pins have been connected to the digital pins <i>D2, D4 and D3</i> of the Arduino.
+<b>LCD Display with I2C Module and Rotary Encoder</b> both need only <i>5V</i> DC Power Supply which can be provided via Arduino's <i>5V & GND</i> pins.
+<br><br>
+When the Arduino code is uploaded in the Arduino UNO, there will be a menu with options 
+<i>(Adult Mode, Toddler Mode & Infant Mode)</i> being displayed in the LCD Display, and one of the options can be chosen with the help of Rotary Encoder.
+In this manner, Dynamixel Motors will start and push the Ambu Bag from left side and right side as per the requirement.
+</p>
+
+<br><br>
+
+<table border=10>
+
+<tr>
+<th colspan=3><center>Choice of Major Components and their Brief Descriptions</center></th>
+</tr>
+
+<tr>
+<td><i>Component Name</i></td>
+<td><i>Picture</i></td>
+<td><i>Description</i></td>
+</tr>
+
+<tr>
+<td><b>Dynamixel Motor</b></td>
+<td><center><img src="Dynamixel Motor.jpg" width=110 height=110></center></td>
+<td>
+According to the Servo Motor in the reference circuit, at least <i><b>17.2 kg.cm</b></i> torque is needed to push the Ambu Bag effectively.
+<br>
+For approaching this scenario, we have <i><b>Dynamixel Motors</b></i> which can be operated at <b><i>12V DC Power Supply</i></b> which is easier to 
+be connected with just one pin to produce the similar torque to push the Ambu Bag.
+</td>
+</tr>
+
+<tr>
+<td><b>I2C Module</b></td>
+<td><center><img src="I2C Module.jpg" width=110 height=110></center></td>
+<td>This module has been used with <b>LCD Display to convert serial data travelling process into parallel data travelling process </b> and for <b>reducing 
+pin connections from sixteen to four.</b>
+</td>
+</tr>
+
+<tr>
+<td><b>Rotary Encoder</b></td>
+<td><center><img src="Rotary Encoder.jpg" width=110 height=110></center></td>
+<td>This device is more prefarable than an ordinary potentiometer because of its more sensitive internal construction and 
+continuous rotation and having a button in its knob.
+<br>
+In this manner, it is convenient for navigating the menu.
+</tr>
+
+<tr>
+<td>
+<b>Buck Converter</b>
+<br>
+<i>(will be used in the PCB ahead)</i>
+</td>
+<td><center><img src="Buck Converter.jpg" width=110 height=110></center></td>
+<td>As 12V will be used by Dynamixel Motors and 5V will be used by LCD Display with I2C Module and Rotary Encoder, this device, used as a <i><u>Voltage Regulator,</u></i>  
+will <i>step down the 12V DC voltage to 5V DC Voltage only for Display with I2C Module and Rotary Encoder.</i>
+<i>Its potentiometer is adjusted to produce 5V from 12V DC Power Supply only for <b>LCD Display with I2C Module</b> and <b>Rotary Encoder</b>.</i>
+</td>
+</tr>
+</table>
+
+<br><br>
+<h3>Connectivity of Components by Protocols:</h3>
+<p align="justify">
+Three main protocols have been used in the circuitry of this project.
+<br>
+<ol type="1">
+<li>UART Protocol</li>
+<li>SPI Protocol</li>
+<li>I2C Protocol</li>
+</ol>
+
+<br><br>
+<ol type="1">
+<li>
+<u><b>UART Protocol:</b></u>
+<br>
+<p align="justify">
+UART stands for <b>Universal Asynchronous Reception Transmission.</b> This protocol permits the arduino to communicate with serial devices through the pins <i>D0(Rx) & D1(Tx)</i>.
+<br>
+<b>Dynamixel Motors</b> have been connected by using this protocol from <i>D1(Tx)</i> digital pin.
+</p>
+</li>
+
+<br><br>
+<li>
+<b><u>SPI Protocol:</u></b>
+<br>
+<p align="justify">
+SPI stands for <b>Serial Protocol Interface.</b> This protocol is implemented for two way communication between two devices especially when there is 
+the involment of clock signals.
+<br>
+<b>Rotary Encoder</b> has been connected by using this protocol from <i>D2,D4 & D3</i> digital pins.
+</p>
+</li>
+
+<br><br>
+<li>
+<b><u>I2C Protocol:</u></b>
+<p align="justify">
+I2C stands for <b>Interintegrated Circuit or I square C.</b> It is especially used when master and slave devices are connected for sending and receiving the signals 
+as well as for displaying text in LCD conveniently.
+<br>
+<b>LCD Display with I2C Module</b> has been connected by using this protocol from <i>A4 & A5</i> analog pins.
+</p>
+</li>
+</ol>
+
+<br><br><br>
+<center>
+<h3>Electrical Schematic</h3>
+<img src="Electrical Schematic.jpg" width=400 height=600>
+<br><br>
+<h3>Description</h3>
+<p align="justify">
+From the beginning of our this project, our circuitry is based on <i>Arduino.</i> Hence, the schematic has been created similar to that of Arduino 
+in which <b>ATMEGA328p</b> micro-controller of <i>SMD</i> package has been used along with LEDs, capacitors, resistors, buck converter (voltage regulator), 
+and a crystal oscillator.
+In addition to these, male connectors have been attached for our components and for uploading the code with <i>FTDI Cable</i> and for <i>Bootload.</i> 
+<b><u>Among these connectors, only one three pin connector has been attached for one Dynamixel Motor 
+,because the other Dynamixel Motor will be connected serially with the first one.</u></b>
+<br><br>
+</p>
+
+<br>
+
+<h3>PCB Layout</h3>
+<img src="Electrical Schematic Board.jpg" width=400 height=600>
+<br><br>
+<h3>Challenges</h3>
+<p align="justify">
+<i>
+<u>Firstly</u>, we both tried to make the PCB on <i>Eagle</i> software, but we could not do that because of the complexity of wires.
+<br>
+Then, the team of FAB Lab helped us create the design of <b>two layers and solder the IC of ATMEGA328p micro-controller of SMD package.</b>
+</i>
+<br>
+<u>Secondly</u>, there was the error of reversed polarities of <i>+ve & -ve</i> terminals. It was resolved by <b>connecting the 12V power in other direction.</b>
+<br>
+<u>Thirdly</u>, there was the error from the PCB of having <i><u>5V</u></i> for the <u>Dynamixel Motors (needing 12V)</u> 
+which must have been for only <i>Rotary Encoder</i> and <i>LCD Display with I2C Module</i>. It was resolved by the team of FAB Lab by <b>some extra connections behind the board.</b> 
+</p>
+
+<h3>Bill of Material</h3>
+<img src="Bill of Material.jpg" width=400 height=600>
+<br><br>
+<h3>SRM Machine Working</h3>
+<img src="SRM Machine Working.jpg" width=400 height=600>
+<br><br>
+<h3>Clean Printed Circuit Board</h3>
+<img src="Clean PCB 01.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Clean PCB 02.jpg" width=400 height=600>
+<br>
+<b>First Layer</b>
+
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+<b>Second Layer</b>
+<br><br>
+<img src="Clean PCB with Buck Converter.jpg" width=400 height=600>
+<br><br>
+<b>With Buck Converter</b>
+
+<h3>Populated Printed Circuit Board</h3>
+<iframe width=420 height=500 src="https://www.youtube.com/embed/v7ktECmTaUA">
+</iframe>
+<br><br><br>
+<img src="Populated PCB 01.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Populated PCB 02.jpg" width=400 height=600>
+<br><br>
+<img src="Populated PCB 04.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Populated PCB with BOM.jpg" width=400 height=600>
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+<b>With Bill of Material</b>
+
+
+<br><br>
+<h3>Burning the Bootloader</h3>
+<img src="Bootloading 01.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Bootloading 02.jpg" width=400 height=600>
+<br><br>
+<img src="Bootloading 03.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Bootloading 04.jpg" width=400 height=600>
+<br><br>
+<iframe width=400 height=500 src="https://www.youtube.com/embed/TwwH4BT0RKo">
+</iframe>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<iframe width=400 height=500 src="https://www.youtube.com/embed/cKh4hsp8nEU">
+</iframe>
+
+<br><br>
+<h3>Procedure of Burning Bootloader</h3>
+<p align="justify">
+To burn the Bootloader in the <i>new Micro-controller</i>, a <b>Bootloader Circuit</b> is required whose few pins are connected 
+with few pins of the nine-pin header of the PCB. The FTDI cable is connected with its header. 
+From the <i>Arduino IDE</i> software, <b>Burn Bootloader</b> option is chosen from <b>Tools</b> and Bootloader is burnt.
+In this process, two USB data cables are required which are connected to the PC, one for <i>Bootloading Circuit</i> and other for <i>FTDI Cable.</i>
+</p>
+
+<br>
+
+<h3>Challenges in Booting Up</h3>
+<p align="justify">
+Successfully after burning the Bootloader, <u>firstly</u>, we had been instructed to disconnect the <i><b>Buck Converter</b></i> whenever we had to upload the 
+code in the Micro-controller only with <i>FTDI Cable</i>, because it could cause the voltage to become double which might destroy the whole PCB with over voltage supply.
+<u>Secondly</u>, there must not have been any connection with the PC <i>while connecting the Buck Converter</i> for running the circuit with components.
+</p>
+
+<br>
+<h3>Successfully Operating Circuit</h3>
+<img src="Populated PCB 03.jpg" width=400 height=600>
+<br><br>
+<h3>Video</h3>
+<iframe width=400 height=500 src="https://www.youtube.com/embed/jGc47DxtTpk">
+</iframe>
+
+<br>
+<h3>Demonstration of Operational the Circuit</h3>
+<p align="justify">
+In this PCB, basically, four components are to be attached which are <b>Dynamixel Motor</b>, <b>LCD Display with I2C Module</b>, <b>Rotary Encoder</b>, 
+and a <b>Buck Converter</b>. While operating the circuit, 12V voltage is supplied to the PCB from which all the 12V voltages are consumed by 
+<b>Dynamixel Motors</b>. But, <b>LCD Display with I2C Module</b> and <b>Rotary Encoder</b> consume only <u><i>5V</i></u> which are provided by 
+the <b>Buck Converter</b> which <u>steps down</u> the 12V DC voltages to 5V DC voltages. 
+<br>
+In this manner, <b>only one 12V DC Power Supply</b> is used effectively for the operation of whole circuitry.
+</p>
+
+<br>
+<h3>Flow Code of the Software Design</h3>
+<img src="Flow Code.jpg" width=700 height=500>
+
+<br><br>
+<h3>Main Construct of Program</h3>
+<img src="Diagram Outlining Main Construct.jpg" width=700 height=500>
+
+<br><br>
+<h3>Challenges</h3>
+<p align="justify">
+<u>Firstly</u>, we had to study the whole scenario and write our own code of <b>one Micro-controller.</b> For this, we analyzed all the libraries and their 
+built-in functions to be used. 
+<u>Secondly</u>, we had to create the conditions for <u>Rotary Encoder</u> under which <i>LCD Display with I2C Module</i> could be controlled. 
+<u>Thirdly</u>, we had to understand the serial connection of <u>Dynamixel Motors</u> along with their fixed <u>ID numbers</u> which were mandatory in the 
+built-in functions of the library of <i>Dynamixel Motors.</i> 
+<u>Lastly</u>, with many user-defined functions, we merged everything and programmed a suitable code for this.
+</p>
+
+<br>
+<h2>CAD Design of Enclosure</h2>
+<br>
+
+<iframe width=500 height=500 src="https://www.youtube.com/embed/ZxIWtFGMDXo">
+</iframe>
+
+<br><br>
+<table border=2>
+
+<tr>
+<th colspan=5><center>Parts to be Cut</center></th>
+</tr>
+
+<tr>
+<td>Back</td>
+<td><img src="Back Dimensions.jpg" height=150 width=400></td>
+<td><img src="Back.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+<tr>
+<td>Front</td>
+<td><img src="Front Dimensions.jpg" height=200 width=400></td>
+<td><img src="Front.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+<tr>
+<td>Bottom</td>
+<td><img src="Bottom Dimensions.jpg" height=200 width=400></td>
+<td><img src="Bottom.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+<tr>
+<td>First Top</td>
+<td><img src="First Top Dimensions.jpg" height=200 width=400></td>
+<td><img src="First Top.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+
+<tr>
+<td>Second Top</td>
+<td><img src="Second Top Dimensions.jpg" height=200 width=400></td>
+<td><img src="Second Top.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+<tr>
+<td>Third Top</td>
+<td><img src="Third Top Dimensions.jpg" height=200 width=400></td>
+<td><img src="Third Top.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+<tr>
+<td>Fourth Top</td>
+<td><img src="Fourth Top Dimensions.jpg" height=200 width=400></td>
+<td><img src="Fourth Top.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+<tr>
+<td>Left</td>
+<td><img src="Left Dimensions.jpg" height=200 width=400></td>
+<td><img src="Left.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+<tr>
+<td>Right</td>
+<td><img src="Right Dimensions.jpg" height=200 width=400></td>
+<td><img src="Right.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+<tr>
+<td>Rod</td>
+<td><img src="Rod Dimensions.jpg" height=200 width=400></td>
+<td><img src="Rod.jpg" height=200 width=300></td>
+<td>Two pieces of about <b>6 inches</b> are to get cut and purchased from market</td>
+</tr>
+
+</table>
+
+<br><br><br>
+
+<table border=2>
+
+<tr>
+<th colspan=5><center>Parts to be 3D Printed</center></th>
+</tr>
+
+<tr>
+<td>Bumper</td>
+<td><img src="Bumper.jpg" height=400 width=300></td>
+<td colspan=2>Taken from website</td>
+</tr>
+
+<tr>
+<td>Support</td>
+<td><img src="Support.jpg" height=200 width=300></td>
+<td colspan=2>Taken from website</td>
+</tr>
+
+<tr>
+<td>Clamp Arm</td>
+<td><img src="Clamp Arm.jpg" height=200 width=300></td>
+<td colspan=2>Taken from website</td>
+</tr>
+
+<tr>
+<td>Gear</td>
+<td><img src="Gear.jpg" height=200 width=300></td>
+<td colspan=2>Taken from website and modified</td>
+</tr>
+
+
+<tr>
+<td>Housing Base</td>
+<td><img src="Housing Base.jpg" height=200 width=300></td>
+<td colspan=2>Taken from website</td>
+</tr>
+
+<tr>
+<td>Rail</td>
+<td><img src="Rail.jpg" height=200 width=300></td>
+<td colspan=2>Taken from website and modified</td>
+</tr>
+
+<tr>
+<td>Ball Bearing</td>
+<td><img src="Ball Bearing.jpg" height=200 width=300></td>
+<td colspan=2>Taken from <b>SolidWorks</b></td>
+</tr>
+
+<tr>
+<td>Sliding Part</td>
+<td><img src="Sliding Part Dimensions.jpg" height=200 width=400></td>
+<td><img src="Sliding Part.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+
+<tr>
+<td>Assembly of <i>Housing Base, Rail, Ball Bearing & Sliding Part</i></td>
+<td><img src="Bumper Assembly Part.jpg" height=200 width=300></td>
+<td colspan=2>Assembled by us in <b>SolidWorks</b></td>
+</tr>
+
+<tr>
+<td>Motor Mount</td>
+<td><img src="Motor Mount Dimensions.jpg" height=200 width=400></td>
+<td><img src="Motor Mount.jpg" height=200 width=300></td>
+<td>Designed by us</td>
+</tr>
+
+
+</table>
+
+<br><br>
+<h3>Assembly of all Parts</h3>
+
+<br>
+<img src="Assembly Pic 02.jpg" width=600 height=300>
+<br><br>
+<img src="Assembly Pic 03.jpg" width=600 height=300>
+<br><br>
+<img src="Assembly Pic 01.jpg" width=600 height=300>
+
+<br><br><br>
+<h3>Design Consideration</h3>
+<p align="justify">
+The idea of the design has been taken from the reference website, and the dimensions have been set in <b>inches.</b> 
+According to the height and diameter of <b><i>Ambu Bag</i></b>, the dimensions have been decided, and upper part has been 
+built according to the movement of <i>bumper</i>. Inside the enclosure, there will be the <i>dedicated PCB</i> and wires 
+to connect the components internally. <i>All the components are outside the enclosure execpt PCB</i> to whom 12V DC power supply 
+will be connected from the big hole as to be seen.
+</p>
+
+<br><br>
+<h2>Fabrication, Design and 3D Printing</h2>
+<br>
+
+<h3>3D Printing in the Ultimaker</h3>
+<br>
+<img src="Ultimaker in Lab.jpg" height 500 width=500>
+<br><br>
+
+<h4>Procedure</h4>
+<p align="justify">
+The <i>STL</i> file is opened in <b><u>Cura</u></b> slicing 3D printing application where the part is viewed and set according to 
+the slicing pattern, and time taken can also be taken in. 
+Then, <i><u>GCode</u></i> is formed which is copied in the <i>SD Card</i> and inserted in the <b><u>Ultimaker</u></b> 
+which understands the GCode, and prints the part by slicing the hot plastic material in the required pattern.
+</p>
+
+<br><br>
+<img src="3D Printing Process Pic.jpg" height=500 width=500>
+
+<br><br><br>
+
+<iframe width=500 height=500 src="https://www.youtube.com/embed/7aCR7BiGcXM">
+</iframe>
+
+<br><br>
+<img src="3D Printed Part 01.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="3D Printed Part 02.jpg" width=400 height=600>
+
+<br><br>
+
+<img src="3D Printed Assembly.jpg" width=400 height=600>
+
+<br><br>
+
+<h3>Cutting Parts in the CNC Machine</h3>
+<br>
+<img src="CNC Machine in Lab.jpg" width=400 height=600>
+<br><br>
+
+<h4>Procedure</h4>
+<p align="justify">
+In this process, <u>DXF</u> file is used and adjusted in the software of CNC Machine in which the inside cuts and outside cuts are decided. 
+For holes, inside cut process is chosen for which separate commands are set up.
+</p>
+
+<br><br>
+
+<img src="CNC Software Pic 01.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="CNC Software Pic 02.jpg" width=400 height=600>
+
+<br><br>
+
+<iframe width=400 height=400 src="https://www.youtube.com/embed/igjS2TJvs5c">
+</iframe>
+
+<br><br>
+<img src="CNC Machine Output.jpg" width=400 height=600>
+
+<br><br>
+<h4>Getting Two Rods Cut from the Market</h4>
+
+<iframe width=400 height=400 src="https://www.youtube.com/embed/YB5WjbVi2o0">
+</iframe>
+
+<br><br>
+<img src="Metal Rods.jpg" width=400 height=600>
+
+<br><br><br>
+
+<h3>Assembly of all Parts</h3>
+<br>
+
+<img src="Assembling 01.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Assembling 02.jpg" width=400 height=600>
+
+<br><br>
+
+<img src="Assembling 03.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Doing Assembly.jpg" width=400 height=600>
+
+<br><br>
+
+<img src="Assembling 04.jpg" width=400 height=600>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Final Product 01.jpg" width=400 height=600>
+
+
+
+
+
+<br><br><br>
+
+<h1 id="C4">Results</h1>
+<br>
+
+<center>
+
+<h3>Final Design</h3>
+
+<img src="Final Product 02.jpg" width=400 height=400>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="Final Product 03.jpg" width=400 height=400>
+
+
+<br><br><br>
+<h3>Cost of the Project</h3>
+<table border=1>
+
+<tr>
+<th>Component</th>
+<th>Cost</th>
+</tr>
+
+<tr>
+<td>Full PCB</td>
+<td>Rs.4552</td>
+</tr>
+
+<tr>
+<td>LCD Display</td>
+<td>Rs.488</td>
+</tr>
+
+<tr>
+<td>I2C Module</td>
+<td>Rs.163</td>
+</tr>
+
+<tr>
+<td>KY-040 Rotary Encoder</td>
+<td>Rs.163</td>
+</tr>
+
+<tr>
+<td>Dynamixel Motors</td>
+<td>Rs.23413</td>
+</tr>
+
+<tr>
+<td>Plywood</td>
+<td>Rs.4227</td>
+</tr>
+
+
+<tr>
+<td>Plasting of 3D Printing</td>
+<td>Rs.4065</td>
+</tr>
+
+<tr>
+<td>Metal Rods</td>
+<td>Rs.260</td>
+</tr>
+
+<tr>
+<td>Ball Bearings</td>
+<td>Rs.1500</td>
+</tr>
+
+<tr>
+<th>Total:</th>
+<th>Rs.38,831</th>
+</tr>
+
+</table>
+
+<br><br><br>
+
+<h3>Business Model of the Project</h3>
+<p align="justify">
+Nowadays, every product, especially highly proficient and technological, is demanded a lot in the market. Here, our mission is to create 
+somehow an affordable and portable ventilator which can be used in case of extreme emergencies just like in ambulances. 
+As the world has been caught by the highly contagious of COVID, such project is helpful in this critical condition in which the patients can be 
+provided the convenient means of breathing. The two main advantages of this project are that it is a little bit affordable and portable to carry everywhere 
+in case of serious and critical conditions.
+</p>
+
+<br><br><br>
+<h3>Reference</h3>
+Click <a href="http://oedk.rice.edu/apollobvm/" target="_blank">here</a> to visit the website of reference.
+
+<br><br>
+
+<h3>Source Code</h3>
+Click <a href="https://drive.google.com/file/d/1qZgcMKG-theClz89MnhIgxyZnSEWkyTb/view?usp=sharing" target="_blank">here</a> to download the source code.
+
+<br><br>
+
+<h3>Eagle Files</h3>
+Click <a href="https://drive.google.com/file/d/1f7EaN3Nlf8SVaq_cmlPh_LDJDdWO7DZ5/view?usp=sharing" target="_blank">here</a> to download the Eagle Files.
+
+<br><br>
+<h3>CAD Files</h3>
+Click <a href="https://drive.google.com/file/d/1bqac__mSOuHZ_02aIu--pIDI8uoM5r5X/view?usp=sharing" target="_blank">here</a> to download the CAD Files.
+
+<br><br>
+<h3>Fritzing</h3>
+Click <a href="https://drive.google.com/file/d/1TJKscnn9IIkaz6VWqwfpxemnyVbN9kmC/view?usp=sharing" target="_blank">here</a> to download the Fritzing File.
+
+<br><br><br><br>
+<h1 id="C5">Conclusion</h1>
+<p align="justify">
+In this course, we felt fortunate to learn plenty of new things by the strategy of self-learning. It must be said that this course proved to be 
+different from the rest of courses. We were free to apply new things and to do brain-drilling activities.
+<br>
+While making project, we learnt about group management, coordination and cooperation with one another. Our concepts were revised and polished, and 
+teaching and learning activities were always together. 
+<br>
+Although it was the big loss of having the off days during the session, yet we tried our best to overcome the situation and hardships. 
+In our project, at the end, some mechanical errors occurred, which are the lessons for us to be more careful for them ahead.
+<br>
+To sum up, this course is full of learning. All are encouraged to study this with the great pomp and show.
+</p>
+
+
+<br><br><br><br><br>
+<center><i>Copyrights:2021,Mohammad Adeel(033-19-0020) & Hasnain Ali (033-19-0028),All Rights Reserved | Terms and conditions | Privacy policy</i></center>
+</center>
+</body>
+</html>
+
