@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
+
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="This field contains information about our project. ">. <meta name="author" content="IRSA & BATOOL">
+ 
+<title>Project: Lithium ion battery Management System</title>
+</head>
+
+<body style="background-color:powderblue;font-size:100%;">
+
+<center><img src="1.jpg" /></center>
+<h1><b><Strong><u>OUR PROJECT:LITHIUM ION BATTERY MANAGEMENT SYSTEM</b></Strong></u></h1>
+
+<div class="title">
+    <div class="project-name"><h1 class="</h1></div>
+    <div class="project-members">
+      <h5>By</h5>
+      <h4 class="member">IRSA JAN (033-19-0046)</h4>
+      <h4 class="member">BATOOL FATIMA (033-19-0019)</h4>
+    </div>
+<center><img src="2.png" /></center>
+<h5 style="color:  purple; class="ACKNOWLEDGEMENT"><b><Strong>ACKNOWLEDGEMENT</b></Strong></h5>
+<p>We would also like to pay our gratitude to instructor Worthy Dr.Asim Samejo(Assistant Professor) of Electrical Engineering Department at Sukkur IBA University and Sir Nadir for guiding us in our project  Lithium-ion Battery Management System. </p>  
+<h6  style="color: purple; class="ABSTRACT"><b><Strong>ABSTRACT</b></Strong></h6>
+<p>The Electric Vehicle (EV) is seems to be the roadmap of every important car manufacturer and is seen as the modern solution to a more sustainable transport system, contributing to a reduction of the Greenhouse Gas Emissions.
+Our project is about a Lithium-ion Battery Management system</p>
+
+
+
+
+</div>
+<div class="CONTENTS">
+    <ol type="1">
+<h><b><Strong>CONTENTS</b></Strong><</h> 
+<li> Introduction to Embedded Systems and Our project</li> 
+
+
+
+ 
+<li><a href="#h2" ><strong>CLASSIFICATION OF CELLS</strong></a></li>
+ 
+
+
+<li><a href="#h3" ><strong>CELL ELECTRICAL PROPERTIES </strong></a></li>
+ 
+
+<li><a href="#h4" ><strong> BATTERY TERMINOLOGY </strong></a></li>
+ 
+
+
+<li><a href="#h6" ><strong>ADVANTAGES OF BMS SYSTEM</strong></a></li>
+
+
+
+<li><a href="#h8" ><strong>  CHARGING AND DISCHARGING STATE</strong></a></li>
+
+
+<li><a href="#h9" ><strong> CELL BALANCING  </strong></a></li>
+
+<li><a href="#h10" ><strong>TYPES OF LI ION CELLS  </strong></a></li>
+
+
+<li><a href="#h11" ><strong>How BMS works  </strong></a></li>
+
+<li><a href="#h12" ><strong> DATA COMMUNICATION </strong></a></li>
+
+
+<li><a href="#h13" ><strong> Comparison With other ICs </strong></a></li>
+
+
+<li><a href="#h14" ><PHASE I </u></b></strong></a></li>
+
+
+<li><a href="#h15" ><strong> AIMS AND OBECTIVES OF OUR PROJECT </strong></a></li>
+
+
+<li><a href="#h16" ><strong> Sample image of final design </strong></a></li>
+
+<li><a href="#h17" ><strong> Mechanical Drawing </strong></a></li>
+
+
+<li><a href="#h18" ><strong> Project Execution Plan  </strong></a></li>
+
+
+<li><a href="#h21" ><strong> FLOW CHART FOR PROJECT </strong></a></li>
+
+<li><a href="#h19" ><strong> Distribution of Task </strong></a></li>
+
+
+<li><a href="#h20" ><strong>Higher Level System Diagram  </strong></a></li>
+
+
+
+<li><a href="#h22" ><strong> Bill of Material  </strong></a></li>
+
+
+<li><a href="#h23" ><strong> PHASE II </strong></a></li>
+
+
+<li><a href="#h24" ><strong>  Connectivity of components(protocols)</strong></a></li>
+
+
+<li><a href="#h25" ><strong> Electrical Schematic  </strong></a></li>
+
+<li><a href="#h26" ><strong> Brief description of Schematic </strong></a></li>
+
+
+<li><a href="#h27" ><strong> PCB layout </strong></a></li>
+
+
+<li><a href="#h28" ><strong> Picture of PCB board </strong></a></li>
+
+<li><a href="#h29" ><strong> Soldering Components on pcb board</strong></a></li>
+
+
+
+
+
+<li><strong><a href="#h31" ><strong> FINAL PHASE: </strong></a></li>
+
+<li><a href="#h32" ><strong>  boot load </strong></a></li>
+
+<li><a href="#h33" ><strong>Arduino Code  </strong></a></li>
+
+<li><a href="#h34" ><strong> Challenges we faced </strong></a></li>
+
+
+<li><a href="#h35" ><strong> How we overcome them </strong></a></li>
+
+<li><a href="#h37" ><strong> Help from Texas Instruments </strong></a></li>
+
+
+<li><a href="#h38" ><strong>CAD Design of Enclosure  </strong></a></li>
+
+
+<li><a href="#h39" ><strong>Cell welding  </strong></a></li>
+
+
+<li><a href="#h40" ><strong> Cell Testing </strong></a></li>
+
+
+<li><a href="#h41" ><strong>  OUTPUT:<</strong></a></li>
+
+
+<li><a href="#h42" ><strong> CONCLUSIONS  </strong></a></li>
+
+
+<li><a href="#h43" ><strong>References  </strong></a></li>
+
+<li> The END</li>
+ </ol>
+ </div>
+ <center>
+<img src="3.jpg" alt="LITHIUM ION BATTERY MANAGEMENT SYSTEM" class="sch-draw" width="300" height="300"/>
+</center>
+
+<p><center><a href="https://i.ytimg.com/vi/PjIwRt5HtPk/maxresdefault.jpg">A complete BMS image</a></center></p><br><br>
+<p> Li-ion batteries are able to be recharged hundreds of times and are more stable. They tend to have a higher energy density, voltage capacity and lower self-discharge rate than other rechargeable batteries. This makes for better power efficiency as a single cell has longer charge retention than other battery types.Today, lithium-ion is one of the most successful and safe battery chemistries available. Two billion cells are produced every year.
+Some of the most common applications of lithium-ion batteries are: Power backups/UPS. Mobile, Laptops, Electric vehicles EVs and other commonly used consumer electronic goods, electric mobility. Whereas Battery Management System BMS, is an electronic device that acts as a brain of a battery pack, monitors the output, and protects the battery from critical damages.It is a circuit combined with an algorithm that monitors the voltage, current and temperature of the cells in a battery pack and ensures performance and safety of the individual cells in a battery pack. It is also responsible for balance charging, State of Charge (SoC) and State of Health (SoH) measurement of the cells and much other important functionalities.The Smart Battery Management System (BMS) is an important component that not only reliably tests battery conditions but also ensures safe operation and extends battery life. Thus we conclude that A battery management system (BMS) is any electronic system that manages a rechargeable battery (cell or battery pack), such as by protecting the battery from operating outside and helps in balancing. 
+</p>  
+<h2 id="h2">CLASSIFICATION OF CELLS </h2>
+<p>Cellular batteries are considered original (non-renewable) or seconds (renewable), depending on their ability to charge electronically. Within this category, other categories are used to identify specific buildings or designs. For this, we have two types   </p>  
+
+
+<h>PRIMARY CELLS </h>
+<p> Since these batteries lack the ability to recharge electrically or efficiently, they are discharged once and then discarded. The main battery is a low-cost option, heavy source of healthy integrated energy on the shelf, high power output at low to moderate output levels </p>  
+<center><img src="a.png" alt="Figure<Primary Cells"  width="300" height="300"     /></center><br><br>
+<p>Primary cells</p>
+
+
+<h> SECONDARY CELLS </h>
+<p> These batteries can be electrically recharged in their original state after being discharged by passing them on the other side of the current discharge. Depending on the type of battery and its quality, the replacement process can be repeated hundreds or thousands of times. They are also known as "storage batteries" or "accumulators" and are the final component of the power supply. The second set of batteries has been charged by high power capacity, high rate of discharge and flat charging, while their power capacity is usually lower than that of main batteries  </p>  
+<center><img src="sec.png "alt="Figure< &#160; Secondary Cells" width="300" height="300" /></center><br><br>
+<p>Secondary cells</p>
+
+
+<h3 id="h3"><strong><b> CELL ELECTRICAL PROPERTIES </strong></b> </h3>
+<p>Some key words to highlight the electrical characteristics of batteries, are shown in the next section.  </p>  
+<center><img src="ab.jpg" width="400" height="400"/></center><br><br>
+
+
+<h><strong><b>  VOLTAGE </strong></b> </h>
+<p>The type of active substances present in a cell defines the cell's normal capacity. The following formula can be used to measure general power from normal electrode strength:
+anode (oxidation potential) + cathode (reduction potential) = standard cell potential 
+ </p>  
+
+
+
+<h><b>   CAPACITY: </b> </h>
+<p>The number of active substances in the cell determines the cell's volume. It is calculated in coulombs or ampere-hours and reflects the sum of electricity used in electrochemical reactions. </p> 
+
+<h><b>  ENERGY: </b> </h>
+<p>By taking both energy and quantity of electricity, the volume of a cell can also be determined on the basis of energy (watt-hour). The highest value that a specific electrochemical system can produce is the amount of thought capacity. </p> 
+
+<h4 id="h4"><b> BATTERY TERMINOLOGY  </b> </h4>
+<p> In the following pages, we will go through some main terms that will help you understand how batteries work and what they're good for.</p> 
+ 
+
+<h><b>  	OPERATING VOLTAGE: </b> </h>
+<p>The voltage between direct and indirect electrodes when a load is attached to the battery is referred to as the closed voltage or circuit closed. The operating power varies depending on the state of charge (SOC) and the current discharged / charged. </p> 
+
+
+<h><b> 	DEPTH OF DISCHARGE (DOD):  </b> </h>
+<p>The percentage of battery discharge expressed as a percentage of full capacity is referred to as this. A deep discharge is described as a withdrawal of at least 80% DOD.   </p> 
+
+<h><b> 	STATE OF CHARGE (SoC):  </b> </h>
+<p>Present battery capacity expressed as a percentage of full capacity. To detect changes in battery capacity over time, SOCs are usually measured using current integration. </p>
+
+<h><b>	STATE OF HEALTH (SoH):   </b> </h>
+<p>SOH is a term that describes the current state of a battery's health in comparison to its initial health calculation. In other words, the SOH is supposed to tell you how long the battery will last before it dies. In a nutshell, it's a measurement of internal resistance, capacity, electrical strength, self-discharge, battery charging capacity and the total number of battery discharge cycles completed by that time.  </p> 
+
+
+<center><img src="xy.jpg" width="300" height="300"/></center>
+<br><br>
+
+
+<p><a href="  https://www.yuasa.it/en/information/motorcycle-and-powersport/battery-discharging-charging-characteristics/"> More about Charging and discharging of batteries </a></p>
+
+<h6 id="h6"><b><Strong><u>  ADVANTAGES OF BMS SYSTEM</b></Strong></u></h6> 
+ <ol type="1">
+<li>BMS is an electronic device that acts as a brain of a battery pack, monitors the output, and protects the battery from critical damages. </li>
+<li> 	BMS  will improve safety by reducing the need of physical contact.</li>
+<li> BMS  will optimize the battery life.</li>
+<li> 	BMS will also reduce maintenance and replacing cost by monitoring and performing preventive maintenance.</li>
+<li>It is a circuit combined with an algorithm that monitors the voltage, current and temperature of the cells in a battery pack and ensures performance and safety of the individual cells in a battery pack. It is also responsible for balance charging, State of Charge (SoC) and State of Health (SoH) measurement of the cells and much other important functionalities </li>
+<li> 	It should ensure that the energy of the battery is optimized to power the product.</li>
+<li> 	BMS ensures that the risk of damaging the battery is minimal</li>
+<li> 	BMS monitors and controls the charging and discharging process of the battery</li>
+<li>BMS protects every individual cells in battery pack from over-charge and over-discharge. </li>
+<li> 	BMS never allows cells get too hot during charge or discharge.</li>
+<li> 	BMS protects the battery cells from abuse and damage.</li>
+<li> 	BMS extends the battery life as long as possible.</li>
+<p><a href=" https://www.nasa.gov/centers/johnson/techtransfer/technology/MSC-24466-1_Batt-Mgmt-Sys.html"> MORE Advantages of BMS BY NASA </a></p>
+<h><b>10s lipo batteries for ebikes and li ion batteries for electric vehicles</u></h>
+<p>Lithium-ion (li-ion) batteries are the best option for e-bikes.As for its self-charging feature, the bike integrated lithium-ion battery can be completely recharged just by pedaling or braking.An electric-vehicle battery (EVB, also known as a traction battery) is a battery used to power the electric motors of a battery electric vehicle (BEV) or hybrid electric vehicle (HEV). These batteries are usually rechargeable (secondary) batteries, and are typically lithium-ion batteries. These batteries are specifically designed for a high ampere-hour (or kilowatt-hour) capacity</p>
+<h7 id="h7"><b>CHARGING AND DISCHARGING STATE  </b> </h7>
+
+<p> The battery management system's aim is to preserve the battery in good working order. During discharge, the BMS should protect the cell from any occurrences. Otherwise, the cell is unrestricted in its activity.</p>  <br><br>
+<p><center><a href=" https://www.google.com/url?sa=i&url=https%3A%2F%2Fcircuitdigest.com%2Farticle%2Fan-overview-of-li-ion-batteries&psig=AOvVaw3eiHalrQWN7unEZvVVf-xx&ust=1627658430360000&source=images&cd=vfe&ved=0CAkQjhxqFwoTCKinxKzKiPICFQAAAAAdAAAAABAD"> Battery termonology</a></center></p><br><br>
+<h>  CHARGING CONTROL </h>
+<p>Improper charging may be more dangerous to batteries than any other factor. As a result, charging power is an important feature of the BMS. A fixed-voltage charging system for lithium-ion batteries is also regarded as a two-stage charging system (CC-CV).
+The charger generates a steady current that increases the battery capacity during the first charging process (current continuous phase).
+The battery enters the voltage (CV) process on a regular basis when the voltage reaches a constant value and the battery is almost completely charged. As the current battery decomposes further, the charger retains a steady voltage until the battery is fully charged. 
+ </p>  
+ 
+
+<h><b>  CELL BALANCING</b> </h>
+<p>BMS may use one of three cell measurement systems to quantify cells and protect individual cells from over-stress, offering a powerful solution to this problem when taking into account the age and working conditions of the cells: an efficient measurement system, a charging scheme, and an idle measurement system.
+Charges from solid cells are extracted and transferred to weak cells during active cell alignment.The distribution strategies used to find the cells with the highest charge in the bag, as shown by the large number of cells, were used in random measurements. After that, a bypass resistor removes the majority of the power before the voltage or charge at the weak cells matches the voltage at the strong cells. 
+ </p>  
+ <center><img src="23.jpg" width="300" height="300"/> </center>
+
+
+<h44 id="h44"> <b>BATTERY MANAGEMENT SYSTEM (BMS) FOR EV </b></h44>
+<p>Following significant progress in ESS, a reliable and efficient BMS is needed. BMS is a battery-powered device, according to the most commonly accepted description [22]. BMS in EVs contains a variety of sensors, actuators, and controls. An effective BMS performs the following key functions: i) battery protection; ii) operates the battery with a safe current, power supply and temperature range; and iii) measure and estimate whether the battery is accurate. Figure 5 introduces an effective BMS scheme diagram. </p>  
+ <center><img src="34.png" width="300" height="300"/> </center>
+<p>BMS for EV</p>
+
+
+<h18 id="h18"><b>FLOW CHART FOR PROJECT</b></h18>
+<p> Our project is based on 3 parts:</p>  
+<ol type="1">
+<li ><b>PHASE I</b> </li> 
+<li ><b>PHASE II</b></li>   
+<li ><b>FINAL PHASE</b> </li> 
+
+
+<h8 id="h8"> <b>TYPES OF LITHIUM ION BATTERIES </b></h8>
+<p>There are several different types of lithium ion batteries available today, although there are a few that stand out due to their long life, specific power, and overall level of safety, specifically when it comes to EVs [35]. The three most relevant to EVs are: 
+Lithium Manganese Oxide (LiMn2O4), Lithium Iron Phosphate (LiFePO4), and Lithium Nickel Manganese Cobalt Oxide (LiNiMnCoO2); the abbreviations for these types of lithium ion batteries are LMO, LFP, and NMC respectively. </p>  
+ <center><img src="56.jpg" width="300" height="300"/> </center>
+
+<p><a href=" https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2F0ZX8yOlTI3A%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D0ZX8yOlTI3A&tbnid=3PPRu3Ec5-GatM&vet=12ahUKEwiK9KTSx4jyAhUB0oUKHYyuBwEQMygEegUIARC2AQ..i&docid=rt8BF4ZjdyhfgM&w=1280&h=720&q=DIFFERENT%20TYPES%20OF%20LIPO%20CELLS&ved=2ahUKEwiK9KTSx4jyAhUB0oUKHYyuBwEQMygEegUIARC2AQ">Types of Li-ion cells</a></p>
+
+<h12 id="h12"><strong><b> DATA COMMUNICATION </strong></b> </h12>
+<p> i.	Data should be communicated through an arduino lead and I2I PROTOCOL.</p>
+
+
+
+
+<h13 id="h13"><strong><b>COMPARISON WITH OTHER ICS </strong></b></h13>
+
+<table style="width:50%">
+  <tr>
+    <th>  Integrated Circuit</th>
+    <th>Number of Cells Connected 
+(Max)
+ </th> 
+    <th> Operating Temperature Range ( o C ) </th>
+    <th> Approx. Price (USD) </th>
+  </tr>
+  <tr>
+    <td>BQ769130  </td>
+    <td> 10</td>
+    <td> -40 to 85</td>
+    <td> 	1.9</td>
+  </tr>
+  <tr>
+  <td> 		Bq76940 </td>
+    <td> 15 </td>
+    <td>	-40 to 85 </td>
+    <td> 	1.9</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>BQ79616-Q1 </td>
+    <td>16 </td>
+    <td>-40 to 125 </td>
+    <td> 	6.9</td>
+  </tr>
+  <tr>
+    <td>EMB1428Q </td>
+    <td> 14</td>
+    <td> -40 to 125</td>
+    <td> 9.59</td>
+  </tr>
+  <tr>
+    <td>EMB1499Q </td>
+    <td>14 </td>
+    <td>-40 to 125 </td>
+    <td>5.28 </td>
+  </tr>
+    </tr>
+  <tr>
+    <td> 		LTC6804</td>
+    <td>	12 </td>
+    <td>-40 to 125 </td>
+    <td>10.5 </td>
+
+</table>
+
+<p><center><a href=" https://www.ti.com/product/BQ76930"> Refer to datasheet of IC bq76930:</a></center></p><br><br>
+<p><center><a href=" https://www.ti.com/product/BQ79616-Q1"> Refer to datasheet of IC   :</a></center></p><br><br>
+<p><center><a href=" https://www.alldatasheet.com/view.jsp?Searchword=Emb1499q&gclid=Cj0KCQjw6ZOIBhDdARIsAMf8YyFqHldxP2mHgiiPrKc_VhQC0QlF1J2zBG-LHClV-nOAaayUcarTQ5MaAtglEALw_wcB"> Refer to datasheet of IC EMB1499Q  :</a></center></p><br><br>
+<p><center><a href=" https://www.analog.com/en/products/ltc6804-1.html"> Refer to datasheet of IC LTC6804-1  :</a></center></p><br><br>
+
+ <center><img src="5.png" width="300" height="300"/> </center>
+<p>You can see from the above table that we have different ICs for example BQ76942, BQ79616-Q1, EMB1428Q, EMB1499Q and LTC6804 etc. These all ICs have their specification but they all are having complexity in there circuits. Also some of them are not available in the market  </p>
+
+<h> GPIO PINS</h>
+<p> GPIO stands for General Purpose Input/Output. It's a standard interface used to connect microcontrollers to other electronic devices. For example, it can be used with sensors, diodes, displays, and System-on-Chip modules.</p>
+<h>CELL VOLTAGES </h>
+<p>The Nominal Cell Voltage of a single Lithium-ion Cell is Minimum 2V and Maximum 3.7V. </p>
+
+
+<h><strong><b><u> BQ76930 </strong></b></u> </h>
+<center>
+ <center><img src=" 7.png " width="300" height="300"/> </center>
+
+ <center><img src=" 8.png " width="300" height="300"/> </center>
+
+ <center><img src=" 10.jpg " width="300" height="300"/> </center>
+</center>
+<p> </p>
+
+
+
+<h11 id="h11"><strong><b> HOW BMS WORKS: </strong></b> </h11>
+<p>The Battery Management System (BMS) performs three primary functions: </p>
+<ol type="1">
+<li>	It protects the battery pack from being over-charged (cell voltages going too high) or over-discharged (cell voltages going too low) thereby extending the life of the battery pack. It does this by constantly monitoring every cell in the battery pack and calculating exactly how much current can safely go in (source, charge) and come out (load, discharge) of the battery pack without damaging it. These calculated current limits are then sent to the source (typically a battery charger) and load (motor controller, power inverter, etc), which are responsible for respecting these limits. </li>
+<li> 	It calculates the State of Charge (the amount of energy remaining in the battery) by tracking how much energy goes in and out of the battery pack and by monitoring cell voltages. This value can be thought of as a fuel gauge indicating how much battery power is left in the pack.</li>
+<li>	It monitors the health and safety of the battery pack by constantly checking for shorts, loose connections,  break downs in wire insulation, and weak or defective battery cells that need to be replaced </li>
+<p>The Battery Management System (BMS) performs some secondary functions: </p>
+
+<li>	Balances all the cells in the battery pack by intelligently bleeding off excess energy from cells that are charged more than others. This provides the maximum amount of usable energy (capacity) from the battery pack since the pack is only as strong as the weakest cell. </li>
+<li>	Monitors the temperature of the battery pack and controls a battery fan to regulate the temperature of the pack. Additionally, it constantly monitors the output of the fan to make sure it is working properly. </li>
+<li> 	Provides real-time information and values to other devices such as motor controllers, chargers, displays and data loggers using several different methods (CANBUS, analog outputs, and digital outputs).</li>
+<li> Stores error codes and comprehensive diagnostic information to aide in fixing problems with the battery pack should any issues arise.</li>
+<br><br>
+<h14 id="h14" ><b><strong> PHASE I </b></strong></h14> <br><br>
+
+<h15 id="h15"><b> AIMS AND OBECTIVES OF OUR PROJECT</b></h15><br><br><br>
+<ol type="1">
+<li>	Our circuit module includes use of 1  bq76930 integrated circuit (IC), sense resistors, power FETs, capacitors, NTC  and all other on board components necessary to protect the cells from overcharge, over discharge, short circuit, and overcurrent discharge in a 7- or 10-series cell Li  battery</li>
+<li>	After complete milling of our pcb board conataing IC BQ76930, we will start our soldering as we had received the IC bq76930 and PNP MOSFETS: NTR1P02T1G ,2 NPN MOSFETS: IPD034N06N3 G  and a diode MBRA104TRBF.</li>
+<li>Then we will make a outer case for the enclosure of battery cells with pcb and an interface between them with the help of small LCD display which will show the amount of charge and discharge values in each cell. </li>
+<
+<h16 id="h16"><b> Sample image of final design</b></h>
+<center><img src="123.jpg"width="300" height="300"/ ></center><br><br>
+<p>Final design</p>
+<h><b> expected image of final pcb</b></h>
+<center><img src="14.png" width="300" height="300"/></center><br><br>
+<p>Final PCB</p>
+<h><b> expected image of final project</b></h>
+ <center><img src=" aa (2).jpg" width="300" height="300"/> </center>
+<p>Final PROJECT</p><br><br>
+
+<h><b> expected image of cell enclosure</b></h><br><br>
+<center><img src="15.png" width="400" height="400"/></center><br><br>
+<h17 id="h17"><b> Mechanical Drawing</b></h17>
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 200px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="9.jpg " style="width:70%">
+  <div class="text"> MECHANICAL DRAWING</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="6.png" style="width:70%">
+  <div class="text">FROM DATASHEET</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="13.png" style="width:70%">
+  <div class="text">FROM BOM TABLE</div>
+</div>
+
+
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+<p>Refer to datasheet:Below Link</p><br><br>
+<p><center><a href=" https://www.ti.com/product/BQ76930"> Refer to datasheet of IC:</a></center></p><br><br>
+
+<h18 id="h18"><b> Distribution of task  </b></h18>
+<p> We know that Individual commitment to a group effort, that is what makes a team work.  "Talent wins games, but teamwork and intelligence win championships." --Michael Jordan. <br><br>
+We were 2 group members working on Battery Managemnet System of Li ion cells. Since the first day of our project, we both are being working togther.
+In start, I was working on Electrical Schematic Design while my group member was working on understanding Datasheet of IC. Later on, we decided to perform each task together and work as a TEAM. " </p>
+<h20 id="h20"><b> Higher level system diagram  </b></h20>
+<p>The interaction of bq76930 IC with microcontroller is shown in this figure.</p><br><br>
+
+ <center><img src="BMS hi.png " width="500" height="500"/> </center>
+ <center><img src="  BMS hi 22.png " width="500" height="500"/> </center>
+ <center><img src="  BMS 3.png" width="500" height="500"/> </center>
+
+<h22 id="h22"><b> Bill of material</b></h22><br><br>
+<center><img src="4.jpg " width="300" height="300"/> </center>
+ <center><img src="BILL OF MAT.png " width="300" height="300"/></center>
+
+
+<h style="color:  purple;><b><strong> PHASE II </b></strong></h><br><br><br><br>
+<h23 id="h23" style="color:  purple;font-size:180%; class= "PHASE II" ><b><u>PHASE II </b></u></h23>
+
+<h24 id="h24"><b>Electrical Schematic and board layout: </b></h24><br><br>
+<p> Following the datasheet and mechanical drawing for connectivity of components, we prepare this Schematic Layout of BMS using bq76930 IC with the help of Sir Nadir.</p>
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 200px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="1st pcb board.png " style="width:70%">
+  <div class="text">1st pcb board </div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="final pcb board.png" style="width:70%">
+  <div class="text">final pcb board</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src=" 1st pcb board.png" style="width:70%">
+  <div class="text"> 1st pcb board</div>
+</div>
+
+
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<h26 id="h26"><b><u> Brief description of schematic:: </b></u> </h26>
+<p> In Eagle file, sometimes its hard to find the required ICS there. For this purpose,  we have to add that particular IC library on Eagle. We did so in this schematic design also. Here the blue line shown is for microcontroller while red line is showing cells.</p>
+ 
+<center><img src="11.png " width="300" height="300"/> </center>
+<h27 id="h27"><b><u>  PCB layout:</b></u> </h27>
+<p> Making schematic design is much more easier as compare to board layout and Routing. Its such a difficult task but not impossible and a precise work also. It can be seen in this picture that the IC terminals are like spiders web and hard to separate and join them correctly.</p>
+
+
+<p> With the help of Sir Nadir, our pcb designed (both schematic and board) got prepared and thus we go towards our </p>
+
+ 
+<h24 id="h24"><u><b>Finalising traces of pcb before milling </u></b></h>
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 200px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 7</div>
+  <img src="12.png " style="width:70%">
+  <div class="text">Board layout initial step </div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 7</div>
+  <img src="1st pcb.png" style="width:70%">
+  <div class="text">1st pcb</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src=" FINAL PCB sch.png" style="width:70%">
+  <div class="text"> FINAL PCB sch </div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 7</div>
+  <img src="traces of final pcb.png " style="width:70%">
+  <div class="text">traces of final pcb</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5/ 7</div>
+  <img src="traces of final 2.png" style="width:70%">
+  <div class="text">traces of final 2</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">6/ 7</div>
+  <img src=" cc.jpg" style="width:70%">
+  <div class="text">Me while finalising traces </div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">7 / 7</div>
+  <img src="cd.jpg" style="width:70%">
+  <div class="text">My grp mate while finalising traces</div>
+</div>
+
+
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+ <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+<span class="dot" onclick="currentSlide(7)"></span> 
+</div>
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+
+
+
+
+
+
+
+<h28 id="h28"><strong> Picture of PCB board: </strong> </h28>
+<p> Front side of our pcb board:</p>
+ 
+<p> Backside of our pcb board.For this pcb , we use FR 1(FIRE RESISTIVE)  sheet for our pcb. It a light weighted board.</p>
+ 
+<p>Our Final Pcb board made of FR 4 sheet(it a a little bit heavier than FR 1, its more qualitative and expansive than FR1) </p>
+ 
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 200px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 6</div>
+  <img src="1st pcb mil.jpg" style="width:70%">
+  <div class="text">1st pcb mil </div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 6</div>
+  <img src="1st pcb mil 2nd lay.jpg" style="width:70%">
+  <div class="text">1st pcb</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 6</div>
+  <img src=" final pcb milled.jpg" style="width:70%">
+  <div class="text"> final pcb milled </div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 6</div>
+  <img src="final pcb milled 2nd lay.jpg " style="width:70%">
+  <div class="text">final pcb milled 2nd lay</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5/ 6</div>
+  <img src="aa (4).jpg" style="width:70%">
+  <div class="text">Our 1st pcb board with some components</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">6/ 6</div>
+  <img src=" aa (3).jpg" style="width:70%">
+  <div class="text">our soldering area </div>
+</div>
+
+
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+ <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+
+</div>
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+
+
+
+
+<h29 id="h29"><strong><b> Soldering components on board(Connectivity of components) </strong></b> </h29>
+<p> Our first pcb board, it has two parts.
+Left part is for bms which includes all the required components along with IC BQ76930. 
+Right part is for microcontroller which is Atmega 328P.
+</p>
+ 
+<p> Me and my group mate while soldering components on PCB board.</p>
+ <center><img src="sol.jpg" width="300" height="300"/> </center>
+ 
+<p> Finally we solder it. This is the picture of our PCB board along with soldered components.</p>
+ <center><img src=" last pcb fulll.png"/> </center>
+
+<h34 id="h34"><strong><b>Challenges we faced and how we overcome them: </strong></b> </h34>
+<p>It was a rough testing of our project, after soldering when we connect our pcb board to arduino board and cells to check the cell volages of each individual cell, the output on screen was showing zero voltages for each cell.
+We all got disappointed and depressed. We mustered up our courage and tried again, then we came to know that some MOSFETS models were not accurate. We took help from Texas Instruments and they suggested us the correct MOSFETS models, but there was no such big difference between their ratings, thue we decided to put these Mosfets also in Bill of material in additional use. Moreover, we detect that there were some components which were not soldered properply and as it was a two layer pcb , some vias were also not soldered properly. We correct our all mistakes and thus decided to make separate the microcontroller part from pcb and to design a new qualitative board.
+ </p>
+ <center><img src="1st pcb complete.png"/> </center>
+<p> We tried again and milled a new pcb. This time we milled pcb excluding microcontroller ATMEGA 328P part which was milled together on previous board. We did it soldering by ourselves. However, its IC was soldered by Sir Nadir. We ordered the required MOSFETS which were suggested by Texas Instruments, till they arrive, we solder the previous MOSFETS which are named in Bill of material table. Then we followed the same procedure ,connecting soldered pcb with arduino and cells through jumping wires. We run the arduino code on PC and this time it was showing results on screen.
+The voltages of each single cell was shown on screen. We both group members were so happy that we were rewarded for our hardwork. Then suddenly when we were checking the voltages across each cell using DMM(digital multimeter meter) , our IC bq76930 got burned. Now this moment was a heart wrenching moment. We decided to desolder the IC and will replaced it with another, but again while doing desoldering, its one trace got removed, and our pcb again became useless. We also detect our another mistake, in the box of capacitors for 1uF,  10uF capacitors were there. But we did not know that, as it was mentioned on their white paper 1uF, that is why we solder it. Later on, our Sir detects our this mistake and told us it was mistakenly placed there. It was also one of the reason, why our IC burnt.
+</p>
+ <center><img src=" 2nd pcb board burnt ic.png"/> </center>
+<p>We did not lose hope and tried again. Tough our IC got burned but we were happy our that at least it showed us some results.  Again we milled another pcb board and solder components on it. This time we placed all our components correctly. This is the picture of our final Pcb board </p>
+<img src="last pcb fulll.png "/>
+<p> Now this is the picture of all 3 pcb boards. The centre board is the final board.</p>
+<img src=" 3 pcb.png "/>
+<p> It was a rough testing of our project, after soldering when we connect our pcb board to arduino board and cells to check the cell voltages of each individual cell, the output on screen was;</p>
+<center><img src="lipo.png "/></center>
+<h><strong><b> Help from TEXAS INSTRUMENTS:</strong></b> </h>
+<p> It was a rough testing of our project, after soldering when we connect our pcb board to arduino board and cells to check the cell volages of each individual cell, the output on screen was showing zero voltages for each cell.
+It was a heart wrenching moment. We mustered up our courage and tried again, this time again it was showing the zero results.
+When our output on screen was showing zero voltages for each cell,
+We raised our problem on TEXAS INSTRUMENTS and they give us the following solution.
+</p>
+ <center><img src="TI.png"/> </center>
+ <center><img src="TI2.png  "/> </center>
+
+<p>Texas instruments</p>
+
+<h31 id="h31" style="color:  purple; font-size:180%; class="FINAL PHASE"><b> FINAL PHASE </b></h31>
+
+<h32 id="h2"><strong><b>boot load:  </strong></b> </h32>
+<p>In our first pcb, we used microcontroller and thus for this purpose we boot load it. Following are the images of boot load;
+
+ <center><img src="BOOT LO.jpg" width="400" height="400"/> </center>
+ <center><img src="loo.jpg" width="400" height="400"/> </center>
+ <center><img src="BT.jpg" width="400" height="400"/> </center>
+ 
+<h33 id="h33"><strong><b> Arduino Code: </strong></b> </h33>
+
+
+
+<p><a href=" https://drive.google.com/file/d/1QUiZAb8VH-Bch2eDbt50MFbfOzAWLQ9v/view?usp=sharing "> For Arduino code, Click on this </a></p>
+
+
+
+
+
+
+
+
+<h37 id="h37"><strong><b> &nbsp; &nbsp;CAD MODEL for enclosure:  </strong></b> </h37>
+<p>We were in search of an enclosure model for our cells. For this purpose, we select cell arrangement that is 5s2p arrangement of cells and we design this model in Solid Works. Its dimensions are</p>
+<center>
+<img src=" CAD model.png " width="400" height="400"/>
+</center><br><br>
+<h38 id="h38"><strong><b> Cell welding and cell testing: </strong></b> </h38>
+<p>After making pcb board and its soldering, our next task was to conjoin them to form a single prototype. We selected 5s2p arrangement of our cells and thus selected total 10 lipo cells for our project. Thus for joining cells with the board, first of all we did cell welding with cell welding machine. We both group members did this as shown in figure and then we solder some connecting wires with it to connect it with PCB board</p>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 200px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 5</div>
+  <img src="celll.jpg" style="width:70%">
+  <div class="text">Me while cell welding </div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 5</div>
+  <img src="cel.jpg" style="width:70%">
+  <div class="text">My grp mate </div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <img src=" welding.jpg" style="width:70%">
+  <div class="text"> Cell welding</div>
+</div>
+<div class="mySlides fade">
+  <div class="TESTING.jpg">4 / 5</div>
+  <img src="final pcb milled 2nd lay.jpg " style="width:70%">
+  <div class="text">CELL testing</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5/ 5</div>
+  <img src="cee.jpg" style="width:70%">
+  <div class="text">Cell testing</div>
+</div>
+
+
+
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+ <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+
+
+</div>
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+
+
+
+
+
+
+
+<h40 id="h40"><strong><b> OUTPUT: </strong></b> </h40>
+ <center><img src="lipo.png  " width="700" height="700"/> </center>
+<h41 id="h2" ><strong><b> Conclusion: </strong></b></h41>
+
+<p> Thus it is concluded that from this project we learnt new innovative ideas.We learned the basic fundamentals of Eagle while making schematic and board layouts for PCB. We profound studied BQ76930 IC datasheet ,soldering components on PCB, cell connectivity, boot loading, cell welding and CAD model in solid works.To do a remarkable and outstanding project, it is vital we take consistent action in spite of our fears and doubts. No doubt, It is true that our 2 Ics got burnt, but we we learned two new ideas not to soldet that IC in such a way.
+We learned from our mistakes. Though, our project took some time, but If we rushed the project in search of achieving our goals in the shortest amount of time, We might not learned from the experiences along the way. It was a journey of minor mistakes. We correct them and it saved us from big failures.When our IC got burnt, we felt ourselve in the thick of spilled milk journey. We learned that for the replacement of components, one should refer their datasheets first. Different Models of MOSFETS( N channel and P channel) are used, their currents aur voltage ratings matters alot. IC BQ76930 is so small, its all terminals are tiny and need more attention when soldering it on pcb. Arranegemnet of Cells matters, either they are connecting in parallel or in series,  we selected 5s2p arrangement. Thus in last ,we learned the main function of BMS and cell individual monitoring and voltages shown on output console.</p>
+<h42 id="h42"><strong><b> Refrences </strong></b> </h42>
+<p><a href=" https://www.open-electronics.org/lipo-battery-charger//"> BMS(Open electronics) </a></p>
+<p><a href=" https://www.ti.com/solution/battery-management-system-bms/"> BMS(TEXAS INSTRUMENTS) </a></p>
+
+<p><a href=" https://www.sciencedirect.com/science/article/abs/pii/S0196890417307288?via%3Dihub/"> About BMS </a></p>
+<p><a href="  https://books.google.com.pk/books?id=fGdklAEACAAJ&redir_esc=y/"> About BMS </a></p>
+<h43 id="h43" style="color:  purple; font-size:180%; class=" THE END"><b><strong> "THE END" </b></strong></h43>
+<h>    </h>
+<h1 id="h2" style="color:  purple; font-size:180%; class="THANK YOU"><b><strong> "THANK YOU" </b></strong></h>
+
+
+</body>
