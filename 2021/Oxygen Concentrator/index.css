@@ -1,0 +1,388 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background: #f9d29d linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%) no-repeat fixed center; */
+  background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg2.cgtrader.com%2Fitems%2F757637%2F13efd3a268%2Fmegalopolis-electronics-3d-model-max-obj-fbx-mtl-mat.jpg&f=1&nofb=1")
+    no-repeat fixed center;
+  object-fit: cover;
+  color: #fff;
+}
+
+.headerNTitle {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-bottom: 15px;
+  margin: 0 11vw;
+  border-radius: 10px;
+}
+
+.header {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-left {
+  padding: 0 3rem;
+  width: 175px;
+  height: auto;
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+.uni {
+  line-height: 0;
+  padding-left: 4px;
+}
+
+.header-right {
+  font-family: "Noto Sans KR", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  width: 175px;
+  font-size: 12px;
+  padding: 0 3rem;
+  line-height: 0;
+}
+
+.title {
+  padding-top: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.project-title {
+  font-size: 36px;
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+.project-members {
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 0;
+}
+
+@media screen and (max-width: 325px) {
+  .project-members {
+    line-height: 1;
+  }
+}
+
+.project-supervisor {
+  padding-top: 5px;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.supervisor {
+  font-weight: 1000;
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+.project-details {
+  padding: 10px 10px;
+}
+
+.navbar {
+  border: 3px solid rgba(1, 154, 255);
+  margin: 10px 10vw;
+  padding: 40px 30px;
+  outline: none;
+  height: 1vw;
+  background-color: rgba(1, 154, 255, 0.8);
+  display: flexbox;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+}
+
+.atag {
+  font-size: 16px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-right: 7px;
+}
+
+.p-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.p-bottom {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.table-container {
+  margin: 0px 10vw;
+  padding: 30px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 800px) {
+  .table-container {
+    margin: 0px 10vw;
+  }
+}
+
+.grid-container {
+  margin: 0px 10vw;
+  padding: 30px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  gap: 20px;
+  grid-auto-columns: minmax(auto, 1fr);
+  grid-template-areas: "col1 col2";
+}
+
+.tasksNgantt {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* grid-auto-columns: 1fr 1fr;
+  grid-template-areas: "tasks gantt"; */
+}
+
+/* .tasks {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: tasks;
+}
+
+.gantt {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: gantt;
+} */
+
+.pics-container {
+  margin: 0px 10vw;
+  padding: 30px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  gap: 20px;
+  grid-auto-columns: minmax(auto, 1fr);
+  grid-template-areas:
+    "A"
+    "B"
+    "C";
+}
+
+.first-container {
+  margin: 0px 10vw;
+  padding: 30px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  gap: 20px;
+  grid-auto-columns: minmax(auto, 1fr);
+  grid-template-areas:
+    "col3 col3"
+    "col1 col2";
+}
+
+.final-container {
+  margin: 0px 10vw;
+  padding: 30px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  gap: 20px;
+  grid-auto-columns: minmax(auto, 1fr);
+  grid-template-areas:
+    "X"
+    "Y"
+    "Z";
+}
+
+@media screen and (max-width: 800px) {
+  .grid-container {
+    grid-template-areas: "col1" "col2";
+  }
+
+  .pics-container {
+    grid-template-areas:
+      "A"
+      "B"
+      "C";
+  }
+}
+
+.textWrap {
+  max-width: 540px;
+  padding-top: 0;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+
+.concText {
+  max-width: 100%;
+}
+
+.x {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: X;
+}
+
+.y {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: Y;
+}
+
+.z {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: Z;
+}
+
+.a {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: A;
+}
+
+.b {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: B;
+}
+
+.c {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: C;
+}
+
+.col1 {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: col1;
+}
+
+.col2 {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: col2;
+}
+
+.col3 {
+  margin-bottom: 5px;
+  padding: 0 5px;
+  grid-area: col3;
+}
+
+video {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  video {
+    width: 420px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  video {
+    width: 270px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  video {
+    width: 220px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  video {
+    width: 180px;
+    height: 300px;
+  }
+}
+
+.p-video {
+  border-radius: 10px;
+  outline: none;
+}
+
+.project-overview {
+  font-family: "Encode Sans SC", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.p-desc {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sch-draw {
+  width: 100%;
+  height: 75vh;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 50%;
+  text-align: center;
+  /* padding: 5px 5px; */
+  margin-left: 25vw;
+  border: 2px solid #fff;
+}
+
+th {
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-size: 20px;
+}
+
+td {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bom {
+  margin-top: 10px;
+  text-align: center;
+}
+
+a {
+  color: #fff;
+}
+
+.drive {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: rgba(1, 154, 255, 0.4);
+  height: 5vh;
+  width: 100%;
+  justify-content: space-evenly;
+  text-align: center;
+  color: #fff;
+  line-height: 0;
+}
+
+.drive a {
+  margin-top: 13px;
+}
+
+.gototop {
+  font-size: 12px;
+}

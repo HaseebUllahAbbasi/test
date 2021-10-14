@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@300&family=Noto+Sans+KR:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Project: Oxygen Concentrator</title>
+  </head>
+  <body>
+    <div class="headerNTitle" id="header">
+      <div class="header">
+        <div class="logo">
+          <div class="header-left">
+            <h1>Sukkur IBA</h1>
+            <h1 class="uni">University</h1>
+          </div>
+          <div class="header-right">
+            <h3>Merit</h3>
+            <h3>Quality</h3>
+            <h3>Excellence</h3>
+          </div>
+        </div>
+      </div>
+      <div class="title">
+        <div class="project-name">
+          <h1 class="project-title">Oxygen Concentrator</h1>
+        </div>
+        <div class="project-members">
+          <h5>By</h5>
+          <h4 class="member">Abdul Mateen Khilji (033-19-0008)</h4>
+          <h4 class="member">Hamza Ali Arain (033-19-0025)</h4>
+        </div>
+        <h5 class="project-supervisor">
+          <span class="supervisor">Supervisor</span>: Dr. Muhammad Asim Samejo
+        </h5>
+      </div>
+    </div>
+    <div class="project-details">
+      <div class="navbar">
+        <a href="#project-over" class="atag"><strong>Overview</strong></a>
+        <a href="#tasks" class="atag"><strong>Tasks</strong></a>
+        <a href="#gantt" class="atag"><strong>Gantt chart</strong></a>
+        <a href="#requirements" class="atag"><strong>Requirements</strong></a>
+        <a href="#origin-over" class="atag"
+          ><strong>Original Schematic</strong></a
+        >
+        <a href="#prac-over" class="atag"
+          ><strong>Practical Schematic</strong></a
+        >
+        <a href="#bom" class="atag"><strong>BoM</strong></a>
+        <a href="#high-level" class="atag"
+          ><strong>High Level Diagram</strong></a
+        >
+        <a href="#flowchart" class="atag"><strong>Flowchart</strong></a>
+        <a href="#testing" class="atag"><strong>Testing</strong></a>
+        <a href="#solidworks" class="atag"
+          ><strong>SolidWorks Design</strong></a
+        >
+        <a href="#pics" class="atag"><strong>Pictures & Videos</strong></a>
+        <a href="#assembly" class="atag"><strong>Assembly</strong></a>
+        <a href="#copyrights" class="atag"><strong>Conclusion</strong></a>
+      </div>
+      <div class="first-container p-top">
+        <div class="col3">
+          <h3 class="project-overview" id="project-over">
+            Project Introduction
+          </h3>
+          <div class="textWrap concText">
+            <p class="p-desc">
+              At the start of semester when list of projects were offered. Oxygen concentrator captured our attention because of shortage of mdeical oxygen was all over the news. Keeping COVID-19 and its impacts on the whole world, lack of pure oxygen and worsening of the situation everyday, it serves a great purpose in tackling the situation in a very clean and neat way. </p>
+            <p class="p-desc">
+              <!-- This whole paragraph was taken from: 
+                https://pharmeasy.in/blog/oxygen-concentrators-how-are-they-helping-the-covid-19-patients/ 
+              -->
+              As the whole world is grappling with the Coronavirus pandemic,
+              people are running from pillar to post to arrange hospitals, ICU
+              beds, life-saving medications, ventilators and most importantly
+              ‘oxygen’, to save their loved ones. Arranging these basic
+              necessities is so tough today because the availability of all
+              these things is way less than what the country requires to win
+              this battle. In these testing times, Oxygen Concentrators have
+              turned out to be a ‘saviour’ for the people who are mildly
+              affected with COVID-19 and are trying to recover in home
+              isolation, owing to the shortage of hospital beds.
+            </p>
+            <p class="p-desc">
+              Its importance can be taken into account from its portability and the fact that it can save of patients in critical care. Portable
+              pure oxygen was once considered to be almost impossible for many individuals before, but today, the reality is changing almost
+              every individual's life.
+            </p>
+            <p class="p-desc">
+              Since the project is education-based only, thus, we opted for major factors only and omitting the minor ones to make our
+              learning more useful.
+            </p>
+          </div>
+        </div>
+        <div class="col1">
+          <h3 class="project-overview">Project Overview</h3>
+          <div class="textWrap">
+            <p class="p-desc">
+              This project is typically based on medical usage. Hence, it's mostly used in hospials.
+            </p>
+            <p class="p-desc">
+              Its function is to produce highly concentrated oxygen at the
+              output.
+            </p>
+            <p class="p-desc">
+              At the start of the project did not have any priori knowledge about different types of concentrators. With the help of our teacher we started exploring the pressure swing absorption (PSA) technique. PSA technique  has several tanks filled with oxygen filtering material when air is pumped into such tanks oxygen passes through the filter material while nitrogen and other impurities are left behind. In this process multiple tanks are used while one tank is being pumped with air other tanks flusho out the impurities. 
+            </p>
+          </div>
+        </div>
+        <div class="col2">
+          <iframe
+            width="480"
+            height="400"
+            class="p-video"
+            src="https://www.youtube.com/embed/L4fVWMTRiMI?autoplay=1&muted=1&loop=1"
+          >
+            Your browser does not support the video tag.
+          </iframe>
+        </div>
+      </div>
+      <div class="table-container tasksNgantt" id="tasks">
+        <div class="tasks">
+          <h3 class="project-overview bom">
+            Delegation of Tasks
+          </h3>
+From the start of the project we distributed different tasks among ourselves to make sure that we can deliver this project on time.
+          <table>
+            <tr>
+              <th>Task</th>
+              <th>Assigned to</th>
+            </tr>
+            <tr>
+              <td>Research on the project</td>
+              <td>Abdul Mateen Khilji</td>
+            </tr>
+            <tr>
+              <td>Research on the valves & AC-DC converter</td>
+              <td>Hamza Ali Arain</td>
+            </tr>
+            <tr>
+              <td>Testing air compressor & 24VDC</td>
+              <td>Hamza Ali Arain</td>
+            </tr>
+            <tr>
+              <td>Controlling & connecting relay through code (Arduino)</td>
+              <td>Abdul Mateen Khilji</td>
+            </tr>
+            <tr>
+              <td>
+                Taking up the responsibility of outside work (Out of campus)
+              </td>
+              <td>Hamza Ali Arain</td>
+            </tr>
+            <tr>
+              <td>Workshop wood design (Solidworks)</td>
+              <td>Abdul Mateen Khilji</td>
+            </tr>
+            <tr>
+              <td>Assembly</td>
+              <td>Both</td>
+            </tr>
+          </table>
+        </div>
+        <div class="gantt" id="gantt">
+          <h3 class="project-overview" style="text-align: center">
+            Project Execution Plan
+          </h3>
+          <img
+            src="./pictures/gantt.png"
+            alt="gantt chart"
+            style="object-fit: contain; width: 90%"
+          />
+          <p class="p-desc"> 
+            Although we tried to stick to our time frames however due to closure of university in the middle of semester was a major setback and left us with very little time to deliver a fully functional prototype.
+          </p>
+          <p class="p-desc">
+            The above execution plan was made accordingly. Keeping in mind the fact that the major portion of the project was mechanical. We
+            had to many components from the local market .
+          </p>
+        </div>
+
+        <div class="requirement" id="requirements">
+          <h3 class="project-overview" style="text-align: center">
+            Project Requirements
+          </h3>
+          <p class="p-desc">
+            We chose the pipes with 6-inch diameter and 20-inch height and the
+            quality of the pipe was such that they could withstand the pressure
+            of almost 5 bars. The purity of the oxygen at the output will be
+            approximately 80-85 percent of the total oxygen (27 percent) due to
+            the fact that the air contains 80 percent of Nitrogen, the
+            compression of the air into our tanks and that the components were
+            educational and not commercial, thus, the purity will be not as much
+            as required for the usage.
+          </p>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="col1">
+          <img src="schematic.png" alt="Schematic diagram" class="sch-draw" />
+        </div>
+        <div class="col2">
+          <h3 class="project-overview" id="origin-over">
+            Project Original Schematic Diagram
+          </h3>
+          <div class="textWrap">
+            <p class="p-desc">
+              Our teacher provided us with this picture and asked us to thoroughly understand this diagram.
+            </p>
+            <p class="p-desc">
+              From this picture, we got to understand our project alot better
+              than we did by researching the internet thoroughly.
+            </p>
+            <p class="p-desc">
+              We tried our best to understand the schematic diagram as a whole,
+              however, as we went on understanding it, we were introduced to
+              some components which were totally new to us.
+            </p>
+            <p class="p-desc">
+              One of the things was solenoid valves. We took our time to
+              understand that particular component. It is one of the main
+              factors to control the flow of the fluid to the tanks
+              alternatively.
+            </p>
+            <p class="p-desc">
+              The valves can be controlled through a famous micro-controller
+              known as Arduino. The coding was simple and the valves were given
+              switching time of 5 seconds.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="col1">
+          <h3 class="project-overview" id="prac-over">
+            Simplified System Diagram
+          </h3>
+          <div class="textWrap">
+            <p class="p-desc">
+              Although a commercial PSA concentrator is a very complex device involving various air filters, flow and pressure sensors; we simplified the diagram considerably to reduce the complexity and cost of the project.  
+            </p>
+            <p class="p-desc">
+              Our main goal was to design and construct such a project that uses Zeolite material to filter out oxygen from other unnecessary gases
+              from the provided air.<br />Thus, we used two tanks, a portable air compressor, two way solenoid valves, arduino to make our implementation of PSA concentrator.
+            </p>
+            <p class="p-desc">
+              Zeolite is a very pourous material, which is mainly used to absorb moisture. Special type of zeolite can be used to separate Oxygen from air. This is a simple and cost-effective way to purify oxygen.
+            </p>
+          </div>
+        </div>
+        <div class="col2">
+          <img
+            src="practical.webp"
+            alt="Pratical Schematic Diagram"
+            class="sch-draw"
+          />
+        </div>
+      </div>
+      <div class="table-container" id="bom">
+        <h3 class="project-overview bom">Bill of Material</h3>
+        <table>
+          <tr>
+            <th>Component name</th>
+            <th>Quantity</th>
+          </tr>
+          <tr>
+            <td>PVC Pipe (Tank)</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>PVC Pipe Caps</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>2-way Solenoid valve</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>1-way Solenoid valve</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>High Ampere 24VDC Power Supply</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>220VAC-24VDC Converter</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>ATMEGA328P uController Arduino</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>4-channel Relay Module</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Air Compressor</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>I/O Wires (Male-Female)</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Jumper Wires</td>
+            <td>10</td>
+          </tr>
+        </table>
+      </div>
+      <div class="grid-container">
+        <div class="col1">
+          <img
+            src="modifiedHighLevel.png"
+            alt="High level design"
+            class="sch-draw"
+          />
+        </div>
+        <div class="col2">
+          <h3 class="project-overview" id="high-level">High Level Design</h3>
+          <div class="textWrap">
+            <p class="p-desc">
+              Compressed air is fed into each of the filter tanks one by one through switching of solenoid values. The switching of solenoid valve is controlled through micro-controller programming.
+            </p>
+            <p class="p-desc">
+              Since micro-controller works with 5VDC and very limited current, micro-controller on its own can not operate Solenoid Valves. The valves can be controlled via relay. Since our device contains 4 valves we will be needing a 4-channel relay to control all the valves individually.
+            </p>
+            <p class="p-desc">
+              The zeolite material inside the tanks would filter out the unnecessary gases and provide us with a pure oxygen at the output,
+              which would then be given to the patient, simultaneously, the pressure at the input would be extracted out through the valves
+              since the inner pressure would less than the atmospheric pressure.
+            </p>
+            <p class="p-desc">
+              Since the air compressor operates at 12 VDC, Solenoid valves operate at 24 VDC  and micro-controller board  operates 5VDC we had to incorporate 3 different power supplies to operate the system.
+            </p>
+          </div>
+        </div>
+        <div class="flowchart" id="flowchart">
+          <h3 class="project-overview" style="text-align: center">
+            Flowchart of our project
+          </h3>
+		  <center>
+          <img
+            src="./pictures/flowchart.png"
+            alt="flowchart"
+            style="height: 90vh; object-fit: contain"
+          />
+		  </center>
+          <p class="p-desc">
+            The control of simple solenoid valves is simple and can be implemented as followed by the above flow-chart.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="col1">
+          <h3 class="project-overview" id="testing">Testing</h3>
+          <div class="textWrap">
+            <p class="p-desc">
+              We had hard time testing the components that were new to us because we could not understand their principle of operation.<br />We could not understand the operation of 3-way solenoid valves and how to incorporate them in this projectt. After detailed review of literature, we could control the valve as desired.
+            </p>
+            <p class="p-desc">
+              This video shows how we tested the necessary components and the code wherever needed.
+            </p>
+            <p class="p-desc">
+              We had tested the components separately, however, this video only shows the joint testing of the necessary components.
+            </p>
+          </div>
+        </div>
+        <div class="col2">
+          <iframe
+            width="480"
+            height="400"
+            controls
+            autoplay
+            muted
+            class="p-video"
+            src="https://www.youtube.com/embed/phXz9SVx8ME"
+          >
+            Your browser does not support the video tag.
+          </iframe>
+        </div>
+      </div>
+
+      <div class="pics-container" id="solidworks">
+        <div class="a">
+          <h3 class="project-overview">SolidWorks Design</h3>
+          <div class="textWrap concText">
+            <p class="p-desc">
+              The idea of this design was originally of our supervisor. We just happened to put it into an illustration. The dimensions of cylinders was calculated to maximize the cylinder volume while taking into consideration portibility of the design.
+            </p>
+            <p class="p-desc">
+              As illustrated in the diagram, two tanks were fixed in the circles and the air compressor will be fixed in the rectangular slot and will
+              touch the bottom layer.
+            </p>
+            <p class="p-desc">
+              Design was carried out in SolidWorks software. Several illustrations of our design are presented below:
+            </p>
+          </div>
+        </div>
+		<center>
+        <div class="b w3-content w3-section" style="max-width: 750px">
+          <img
+            src="solidworks/1.png"
+            alt="top"
+            class="sch-draw mySlides"
+            style="width: 100%"
+          />
+          <img
+            src="solidworks/2.png"
+            alt="mid"
+            class="sch-draw mySlides"
+            style="width: 100%"
+          />
+          <img
+            src="solidworks/3.png"
+            alt="bottom"
+            class="sch-draw mySlides"
+            style="width: 100%"
+          />
+          <img
+            src="pictures/1.jpeg"
+            style="height: 30vw"
+            alt="Prototype"
+            class="sch-draw mySlides"
+          />
+          <img
+            src="pictures/6.png"
+            style="height: 30vw"
+            alt="ATMEGA328P uController"
+            class="sch-draw mySlides"
+          />
+          <img
+            src="pictures/1.jpeg"
+            style="height: 30vw"
+            alt="Complete Project"
+            class="sch-draw mySlides"
+          />
+        </div>
+      </div>
+	  </center>
+      <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          myIndex++;
+          if (myIndex > x.length) {
+            myIndex = 1;
+          }
+          x[myIndex - 1].style.display = "block";
+          setTimeout(carousel, 5000); // Change image every 2 seconds
+        }
+      </script>
+      <div class="pics-container" id="pics">
+        <div class="b">
+          <iframe
+            width="100%"
+            height="400"
+            class="p-video"
+            src="https://www.youtube.com/embed/D23NJKF-Vqw"
+          >
+            Your browser does not support the video tag.
+          </iframe>
+        </div>
+        <div class="a">
+          <h3 class="project-overview">Pictures and Videos</h3>
+          <div class="textWrap concText">
+            <p class="p-desc">
+              Check out some of our videos and pictures. They best illustrate our work and our design and what we went through to obtain our
+              "project".
+            </p>
+          </div>
+        </div>
+        <div class="c">
+          <iframe
+            width="100%"
+            height="400"
+            class="p-video"
+            src="https://www.youtube.com/embed/lwP7r3F4ZmE"
+          >
+            Your browser does not support the video tag.
+          </iframe>
+        </div>
+      </div>
+      <div class="final-container p-bottom" id="assembly">
+        <div class="x">
+          <h3 class="project-overview">Assembly</h3>
+          <div class="textWrap concText">
+            <p class="p-desc">
+              After we got our design printed and everything sorted, we started assembling the parts one by one.
+            </p>
+            <p class="p-desc">
+              If the final prototype is once run, the air compressor will produce an impure air and the tanks will take that air as input
+              alternatively through T-shape. For 5 seconds, one of the tanks  will take the whole air and produce pure oxygen at the output and
+              for other 5 seconds, the other tank shall be getting filled while from the first one, input pressure shall be extrated out
+              automatically through the input valve.
+			  
+			  After assembly of parts, fitting of pipe and wiring we were finally ready to turn on the switch. Quite a few problems came to light. First and fore most the throughput of air compressor was not enough to fill up the tank rapidly. We also felt that our make shift tank was not air tight thus pressure was not building up as quickly as we would have wanted. 
+            </p>
+          </div>
+        </div>
+        <div class="y">
+          <!-- Uncomment the following video if necessary -->
+          <!-- <iframe
+            width="100%"
+            height="400"
+            class="p-video"
+            src="https://www.youtube.com/embed/L4fVWMTRiMI?autoplay=1&muted=1&loop=1"
+          >
+            Your browser does not support the video tag.
+          </iframe> -->
+          <img
+            src="./pictures/7.jpeg"
+            alt="Complete Project"
+            style="
+              width: 90%;
+              height: 90vh;
+              padding-top: 20px;
+              justify-content: center;
+              object-fit: contain;
+            "
+          />
+        </div>
+        <div class="z">
+          <h3 class="project-overview" id="copyrights">
+            Conclusion & Copy Rights
+          </h3>
+          <div class="concText textWrap">
+            <p class="p-desc">
+              This project helped us learn a lot about micro-controllers, electronic valves as well as relay. Through relay, we learned how
+              to switch things based on our necessacities. Furthermore, we learned C & Assembly languages which were totally new to us.
+            </p>
+            <p class="p-desc">
+              Most of the time, when we got obstacles, we surfed the internet thoroughly and we roughly got to know about that particular
+              obstacle. Thus, we had to manage things on our own.
+			  Execution of this semeser project was a quite different experience for us. Right from the start of the project we had to review review the literature to fully understand the PSA Concentrators. Once we got underway we had to refer to many  online toturials to understand the operation of various components such as solenoid value, relays and how to control them through a micro-controller
+            </p>
+            <p class="p-desc">
+              Although there is abundant set of resources available on the internet. We found  <a href="https://helpfulengineering.org/projects-news/project-spotlight-apollo-oxygen-concentrator/" target="_blank">Project Apollo</a>
+              particularly useful as a starting point. This project also has a repository at 
+              <a href="https://github.com/oxycon/ProjectApollo" target="_blank"> Github </a>   and from there, we came to know how our project would actually work and its design.
+            </p>
+            <p class="p-desc">
+              The websites that we visited were many, however, the ones that helped us the most and for the reference are as follows:<br />
+              <a
+                href="https://www.projectoxy.org/2021/07/28/our-journey-of-creating-a-diy-oxygen-concentrator-part-1/"
+                target="_blank"
+                >ProjectOxy</a><br >
+              <a href="https://nevonprojects.com/diy-oxygen-concentrator-generator-using-psa-with-leakage-detection-for-covid-19/"
+                target="_blank"
+                >Nevon Projects</a
+              ><br />
+              <a href="https://github.com/oxycon/ProjectApollo" target="_blank"
+                >GitHub</a
+              ><br />
+              <a
+                href="https://helpfulengineering.org/projects-news/project-spotlight-apollo-oxygen-concentrator/"
+                target="_blank"
+                >Project Apollo</a
+              >
+            </p>
+            <p class="p-desc">
+              &copy;
+              <a href="https://iba-suk.edu.pk" target="_blank"
+                >Sukkur IBA University</a
+              >
+              - 2021<br />
+              All rights reserved.
+            </p>
+            <div class="drive">
+              <a href="#header" class="gototop">Go to top</a>
+              <a href="https://drive.google.com/drive/folders/1f4-9jR8hz2TRYS4NEkLWDmaAltsJu48G?usp=sharing"
+                target="_blank"
+                >Arduino code for valves control and the SolidWorks design (3 layers)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+  Google drive link containing the necessary files of solidworks design and arduino code
+  https://drive.google.com/drive/folders/1f4-9jR8hz2TRYS4NEkLWDmaAltsJu48G?usp=sharing
+-->

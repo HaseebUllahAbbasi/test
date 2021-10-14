@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/Abid/Desktop/Project1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Project Report </title>
+</head><body style="background-color:Ivory;">
+<br>
+<br>
+
+<h38 style= "color:blue;font-size:30px;"> “ REMEMBER:<br/>If you think that the internet has changed your life, think again. The Internet of Things is about to change it all over again!” — Brendan O’Brien :</h38>
+<br>
+<br>
+
+<br><br>
+<br>
+<p align="left"><img src="./Project Report_files/capture.png" height="500" width="1500">
+<br>
+<br>
+<br>
+</p>
+<p align="left"><img src="./Project Report_files/capture2.png" height="400" width="1500">
+
+<br>
+<br>
+<br>
+<br>
+</p><h1 style=" color:Green;font-size:30px;"> Introduction(Digital Home) </h1>
+<p>   
+  
+    In our project “GSM (Global System Mobile Communication) based home automation system” we are going to design a Digital Home. For this we use GSM module, with the help of smart phone we can easily control our home appliances from anywhere in the world just by sending an SMS through mobile phone and cloud with help of internet. In addition to this, these devices can also be controlled through an app “Remote-XY” using the internet. For this we are going to use Node MCU-ESP32 which has a built-in Wi-Fi facility. This Node MCU_ESP32 module will also help us in interfacing with cloud. 
+<br/>
+    Furthermore, we will use the temperature sensor (DHT_11) to measure the current temperature of a room and update this information on the cloud. To interface ESP32 with the server we will use the MQTT (Message Queuing Telemetry Transport) protocol. Through MQTT protocol we can easily connect our devices to the cloud and can update their status.
+    The end use of this project on a large scale may be things like power plants, power grid and many more.
+
+  </p>
+
+
+<h2 style=" color:green;font-size:30px;"> User Interface </h2>
+
+
+<p>  We will design a simple rectangular box in which we encapsulate all the things which we are going to use. This box can be printed by using a 3D printer. It contains of an LCD in the front side of BOX to display the run time temperature and humidity.
+    The design is based on GSM module for the purpose of GSM network, ESP32 module for the purpose of Wi-Fi connection, Relay module for the purpose of controlling appliances and a DHT11 sensor for getting the data of temperature and humidity.
+ </p>
+
+
+
+
+<h3 style=" color:green;font-size:30px;"> Final Design with Mechanical Drawing</h3>
+
+<p>   This is how the final design of the box will look like. We will put all the components inside the box according to their suitable position. The mechanical drawing of the sample design is also given below.
+</p>
+<p align="left"><img src="./Project Report_files/capture3.png" left="1000" width="1500">
+
+
+</p><h4 style=" color:green;font-size:30px;">  Project Start up Plan</h4>
+
+<p>     In order to make this project, first we will work on interfacing of Arduino Uno with and LEDs to check whether it works properly.
+</p>
+<p>
+Ã¢â‚¬Â¢	similarly, we will try to interface Arduino Uno with Node MCU-ESP32 including DHT11 temperature and humidity sensor and Relay module.
+</p>
+<p>
+Ã¢â‚¬Â¢	Then as per the project Requirement we Remove the Arduino Uno and then interface Node MCU-ESP32 with same temperature sensor and Relay module.
+</p>
+<p>
+
+Ã¢â‚¬Â¢	After that we will assemble all the components on the PCB and connect loads to the outputs of relay module and operate the circuit by applying voltage.
+</p>
+<p>
+Ã¢â‚¬Â¢	Finally, we will design a box on CAD software and print it with the help of 3D printer. All the components get fixed in this box and we will have a complete product of project, GSM based home automation for the purpose of demonstration and as a business model.
+ </p>
+
+
+
+<h5 style=" color:green;font-size:30px;"> Project time line   </h5>
+
+
+
+<p align="left"><img src="./Project Report_files/capture4.png" height="400" width="1500">
+
+</p><h6 style=" color:green;font-size:30px;"> Distribution of tasks</h6>
+<p>
+    	Distribution of tasks play a very important role while starting any project. We, as a team members, also distributed the tasks so that we can complete our project at the proper time. We divide the tasks on the basis of understanding that who will be best for the particular task. This thing makes our project informative and successful. The distribution of task is as.
+
+</p>
+<p align="left"><img src="./Project Report_files/capture5.png" height="400" width="1500">
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h7 style=" color:green;font-size:30px;"> Higher level system diagram</h7>
+<br>
+
+</p><p>  This one is the diagram of the project which contains all the major components. The flow diagram is given with the help of arrows which indicates the operating procedure of the circuit and how the components will interact with one another.
+ </p>
+<p align="left"><img src="./Project Report_files/capture6.png" height="400" width="1500">
+<br>
+<br>
+<br>
+<br>
+
+<h8 style=" color:green;font-size:30px;">Description of high level circuit </h8>
+
+</p><p>  Principle of Operation is about how the project will work and the components used, will operate. This project Consist of Node MCU-esp32, GSM module and Relay module. As in this project we are going to control home appliances through two different ways which is shown in the above diagram.
+    One way of controlling home appliances is through GSM module, the command we send through mobile will be received by GSM module and this information will send to the relay with the help of Node MCU-ESP32 module. The relay module will act by making loads ON or OFF after getting the command.
+    Similarly, another way of controlling home appliances is by mobile App, as the app is consisting of different switches for different load. If any switch from the mobile will high, the command will send to relay module with the help of Node MCU-ESP32 module. The relay module will respond by operate that particular load.
+
+ 
+
+ </p>
+
+<h8 style=" color:SlateBlue;font-size:30px;">Components Required </h8>
+
+<p align="left"><img src="./Project Report_files/capture8.png" height="400" width="1500">
+
+<br>
+<br>
+
+<h9 style=" color:SlateBlue;font-size:30px;"> Choice of Components and their specifications<h9>
+<br>
+
+</h9></h9></p><p> 
+ We will use the components which are very easy to use and do not dissipate too much energy. We will operate the components by knowing their current and voltage ratings. If we talk about the voltage and current ratting of the all the components used in this project, as the GSM sim900 Module will properly work on 6V and the Node MCU-esp32 will turned ON at 3.3V and finally the Relay module need 5V for proper operation.
+
+</p>
+<br>
+<br>
+<p align="left"><img src="./Project Report_files/capture7.png" height="400" width="1500">
+<br>
+<br>
+<h10 style=" color:Chocolate;font-size:30px;">Brief description of major components<h10>
+<br>
+</h10></h10></p><p>Following are the major components which we use in our project.<br>
+   <br>1. Node MCU-ESP32
+   <br>2. GSM Sim900
+   <br>3. DHT11 Sensor
+   <br>4. Relay Module
+   <br>5. 0.91-inch Olde LCD
+
+<br>
+</p><p>
+<h11 style=" color:SandyBrown;font-size:30px;"> 1.Node MCU-ESP32<h11>
+<br>
+</h11></h11></p><p> Node MCU-esp32 is an open source IoT platform. It includes firmware which run on the esp-32/8266 Wi-Fi SoC from espressif system, and hardware which is based on ESP-12 Module. This module has a lot of new features than the other like ESP8266 module. One of its key features includes a built-in Wi-Fi.
+    It uses 32-bit microcontroller. The clock frequency can go up to 240MHz and it has a 512 kB RAM. The ESP32 board has 30 or 36 pins but the module which we are using for our project has 30 pins, 15 on each row. It also has wide variety of peripherals available, like capacitive touch, ADCs, DACs, UART, SPI, I2C and much more. It comes with built-in hall effect sensor and built-in temperature sensor.
+
+</p><p>
+<br>
+</p><p align="left"><img src="./Project Report_files/capture9.png" height="400" width="1500">
+<br>
+<br>
+<a href="https://randomnerdtutorials.com/getting-started-with-esp32/"> Link of:ESP-32 module tutorial</a>
+
+<br>
+<br>
+<br>
+<br>
+<h12 style=" color:SandyBrown;font-size:30px;"> 2. GSM Sim900<h12>
+<br>
+
+</h12></h12></p><p> SIM900 GSM/GPRS shield is GSM modem, which can be integrated into great number of IoT projects. This shield can use to accomplish almost anything as a normal cell phone can like, SMS text messages, make or receive phone calls, connecting to the internet through GPRS system. GSM sim900 need 6V for the proper operation and draw a maximum current around 2A during transmission burst. The shield supports quad-band GSM/GPRS network that means it works properly anywhere in the world.
+   This shield uses UART protocol to communicate. The chip supports baud rate from 1200bps to 115200bps with Auto-Baud detection. An antenna is required to use the SIM900 for any kind of voice or data communications as well as some SIM commands. Thereâ€™s a SIM socket on the back. Any activated, 2G full-size SIM card would work perfectly.
+ 
+</p><p>
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture10.png" height="500" width="1500">
+<br>
+<br>
+<br>
+<br>
+<h13 style=" color:DodgerBlue;font-size:30px;"> Basic commands to operate sim900 module<h13>
+
+</h13></h13></p><p>Sim900 module is operate same as the sim800l module like on AT commands. There are many AT commands which are used for different things to do. The different things like for sending SMS, receiving SMS, dialling call, receiving call, registration, and many more. In this project we are using some basic commands. When we send AT command to module it will respond with OK and when we send AT+CREG, it will tell that we are connected with network or not, by responding with numbers like (0,1), (0,2) etc. (0,1) means that your inserted sim is connected with network similarly, (0,2) means sim card is trying to connected with network but denied.
+    Apart from this the commends which we use for sending is AT+CMGS""(the number will required in inverted commas to whom you are sending SMS) and AT+CMGR for receiving SMS. To check that sim module it running properly the commend used is AT+CFGS.
+</p><p>
+
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture11.png" height="300" width="1500">
+<br>
+<br>
+<br>
+<h14 style=" color:DodgerBlue;font-size:30px;"> LED Status<h14>
+<br>
+</h14></h14></p><p>   The built-in LED on the sim900 module is respond by blink within unique number of seconds to inform its status. When LED is blink after every one second it means that sim900 module is running properly but has not connected with GSM or GPRS network.
+    Similarly, when LED is blink after every two second it means it is connected with only GSM network. When LED is blink after every three seconds it means your module is connected with network and you can work with AT commands
+</p><p>
+<br>
+<br>
+<a href="https://lastminuteengineers.com/sim900-gsm-shield-arduino-tutorial/"> Link of:GSM-SIM900 tutorial</a>
+<br>
+<br>
+
+<h13 style=" color:SandyBrown;font-size:30px;"> 3. DHT11 Sensor<h13>
+
+<br>
+</h13></h13></p><p> 
+   The DHT11 humidity and temperature sensor makes really easy to add humidity and temperature data to any project. Itâ€™s perfect for remote weather stations, home environmental control systems, and farm or garden monitoring systems. In this project we are going to use this sensor because it is basic ultra-low-cost digital temperature and humidity sensor.
+    It uses a capacitive humidity sensor and a thermistor to measure the surrounding air and temperature and spilt out a digital signal on the data pins (No analogue input pin is needed). Itâ€™s fairly very simple to use but requires careful timing to grab data.
+</p><p>
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture12.png" height="400" width="1500">
+<br>
+
+<a href="https://www.instructables.com/How-to-use-the-DHT-11-sensor-Arduino-Tutorial/"> Link of:DHT11 Sensor tutorial</a>
+<br>
+<br>
+<br>
+<h14 style=" color:SandyBrown;font-size:30px;"> 4.Relay Module<h14>
+<br>
+</h14></h14></p><p>
+   Relay is an Electrical component, or we can say, an electromagnetic switch operated by a relatively small current, through which much larger currents can be controlled. Electromagnet is activated by a separate low power signal from a microcontroller. They are designed to be controlled with low voltage like 3.3V same is like Node MCU-ESP32. In this project we are going to use four channel relay modules. There are other modules connected with one.
+   This module is designed for switching two high powered devices from an Arduino. It has two relays with current rating up to 10A per channel and voltages between 250VAC or 30VDC. There are four LEDs on the relay module indicating the position of the relay. Whenever a relay is activated, the respective LED will light up. One of the best things about these modules is that they come with four Optocoupler ICs which provide good isolation.
+</p><p>
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture13.png" height="400" width="1500">
+<br>
+<br>
+<br>
+<a href="https://lastminuteengineers.com/one-channel-relay-module-arduino-tutorial/"> Link of:4.Relay Module tutorial</a>
+<br>
+<br>
+<h15 style=" color:SandyBrown;font-size:30px;"> 5-0.091-inch OLED LED<h15>
+<br>
+</h15></h15></p><p> OLED 0.91 inch is a monochrome graphic display module with a built-in 0.91 inch, 128X32 high-resolution display. OLED 0.91inch is able to work despite the absence of backlight. In a dark environment, contrast of OLED display is higher than LCD display. This device is I^2C or SPI compatible. Due to its capability in displaying, it is often used in various application for instances, smart watch, MP3, function cellphone, portable health device and many others.</p><p>
+<br>
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture14.png" height="400" width="1500">
+<br>
+<a href="https://startingelectronics.org/tutorials/arduino/modules/OLED-128x32-I2C-display/"> Link of:0.91inch OLED Display tutorial</a>
+<br>
+<br>
+<br>
+<h16 style=" color:Lime;font-size:30px;"> Pins configurations <h16>
+
+
+</h16></h16></p><p> 
+   For the proper communication we will connect RX2 and TX2 pins of the Node MCU-ESP32 module with the 7 and 8 pins of GSM sim900 module for sending and receiving SMS. The 4 pins (14,21,18,19) of ESP module will be connected with relay module and pin number 4 of ESP module with DHT11 sensor for getting the values of temperature and humidity. After apply the proper supply and ground to the components used in circuit, we can operate it properly. The table of the above information is given below.
+    As we must display the value of the temperature and humidity on the led and connect the pins according to given table.
+</p><p>
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture16.png" height="400" width="1500">
+<br>
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture17.png" height="400" width="1500">
+<br>
+<a href="file:///C:/Users/Abid/Desktop/https%3A%2F%2Fhow2electronics.com%2Fiot-home-automation"> Link of:IOT home Automation tutorial</a>
+
+<br>
+<br>
+<br>
+<h17 style=" color:Green;font-size:50px;"> PCB Designing <h17>
+<br>
+<h18 style=" color:blue;font-size:30px;"> Electrical Schematic <h18>
+<br>
+
+</h18></h18></h17></h17></p><p>The below mentioned figure shows the schematic of the project GSM based home automation. In this schematic there are different numbers of connectors used for the devices such as Node MCU-ESP32, GSM module, DHT11 sensor and relay module. One ams1117 voltage regulator is used which converts the supply voltage into the required voltage of 5V. A DHT11 sensor is used to sense the temperature and humidity, which is directly connected with one of the digital pins of the ESP32 module. The resistors and capacitors are used in this schematic for the proper operation of the circuit.</p><p>
+
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture18.png" height="400" width="1500">
+<br>
+
+<br>
+<h19 style=" color:blue;font-size:30px;"> PCB LAYOUT <h19>
+<br>
+</h19></h19></p><p> After completing the wiring of the electrical schematic, we moved for PCB routing. It is too difficult to rout the PCB in proper way. After spending half of an our we finalize PCB, there was some problem to set the connected wires but we use zero resistor method and get solved that problem. The picture of the PCB layout is given below.
+
+</p><p>
+<br>
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture19.png" height="600" width="1500">
+
+<br>
+<br>
+<h20 style=" color:blue;font-size:30px;"> Challenges While Routing <h20>
+<br>
+
+</h20></h20></p><p> 
+The process of routing is very challenging and hard for every student while making any project. Routing require a lot of practice, skills and experience. In our project i.e., â€œGMS based home automationâ€ we face many problems specially in setting the distances between connectors of the devices we are using like NODE MCU-ESP32, GSM sim900 and relay module.
+    Furthermore, there was a problem in wiring that we didnâ€™t found any proper path for one wire. At last, we set that problem by zero resistor method but the overall circuit was simple, uncomplicated and straightforward so we done with routing without spending too much time.
+</p><p>
+<br>
+<h21 style=" color:blue;font-size:30px;"> Bill of Materials <h21>
+<br>
+</h21></h21></p><p>The picture of the components which are used in this circuit is given below
+</p><p>
+<br>
+
+</p><p align="left"><img src="./Project Report_files/capture20.png" height="600" width="1500">
+
+<br>
+<br>
+<h22 style=" color:blue;font-size:30px;"> Papulated Circuit Board <h22>
+<br>
+<br>
+
+</h22></h22></p><p> 
+It may take around one hour to solder all the components on the milled PCB. After successfully soldering of the components on the PCB board, we get the populated circuit board. The picture of the populated circuit board is given below.
+</p><p>
+</p><p align="left"><img src="./Project Report_files/capture21.png" height="600" width="1500">
+<br>
+<br>
+<h23 style=" color:blue;font-size:30px;"> Harware Verifications <h23>
+
+<br>
+</h23></h23></p><p> 
+	For the verification we check every component of the PCB with the help of multimeter. For this purpose, we keep the multimeter on beep mode. If the connection between the components will appropriate there will be beep from the multimeter. If there is any problem with connection, we will resolder the components of the PCB. After going to this process, we get our PCB with proper operation.
+</p><p>
+<br>
+<h24 style=" color:blue;font-size:30px;"> Operating Assembled System <h24>
+
+<br>
+</h24></h24></p><p> 
+  	After getting the proper connection of the PCB we connect all the components such as ESP module, sim900 module and relay module on the connectors of PCB. Now we will supply the required voltages to the assembled PCB and follow the same process which we did before PCB. As all the components relate to each other so we connect loads to the outputs of the relay module to control them with SMS and mobile app. The picture and the video of this fully assembled and operated system is given below.
+</p><p>
+<br>
+</p><p align="left"><img src="./Project Report_files/capture22.png" height="400" width="1500">
+<br>
+<br>
+
+<h25 style=" color:blue;font-size:30px;"> Commands used to control relays<h25>
+<br>
+</h25></h25></p><p> 
+   The commands which we used in our project to control the devices connected with module are given below.
+</p><p>
+<br>
+</p><p align="left"><img src="./Project Report_files/capture23.png" height="400" width="1500">
+<br>
+<br>
+
+<h25 style="color:Fuchsia;font-size:30px;"> Demonstration of Operational Circuit<h25>
+<br>
+
+</h25></h25></p><p> All the appliances connected with the Relay module can be controlled by two ways.</p><p>
+
+<h25 style="color:DarkMagenta;font-size:30px;"> 1)     Sending SMS to the GSM module <h25>
+<br>
+</h25></h25></p><p> 
+    For this we have to type a text like (Relay1on) and send this text to the sim number which is inserted in sim900 module. As a result, the LED connected to the Relay module one will be turned ON. In order to turned OFF this LED we have to type a text like (Relay1off) and send the text to the sim number which is inserted in GSM module. As a result, the LED connected to the Relay module one will be turned OFF.
+    From the given video it is clear that when user type text like Relay1on and send it to sim900 module, the LED connected with that relay module get turned on and a SMS from sim900 module received by user for the sake of confirmation. Similarly, when user will type text like RelayÂ¬1off and will send it to sim900 module, the LED connected with that relay module will turned off and a SMS from sim900 module received by user for the sake of confirmation. The temperature and humidity are also displayed on the server and updated after every two seconds.
+</p><p>
+<h26 style="color:DarkMagenta;font-size:30px;">2)     Using Remote XY App <h26>
+<br>
+</h26></h26></p><p>     This method is quiet easy compare to the first one. This method provides a very good user interface in order to control all the appliances connected with the relay module. As the app is consist of different switches for different loads. When any of the switch get ON or OFF the load connected to that particular switch will turned ON or OFF.
+    From the video it is clear that when user turned on switch one the LED connected with that switch get ON. Similarly, when user turned off switch one the LED connected with that switch get OFF. The temperature and humidity are also displayed on the server and updated after every two seconds.
+</p><p>
+<h27 style="color:Fuchsia;font-size:30px;"> 
+ 
+Software Designing
+<h27>
+
+<br>
+<h28 style="color:DarkMagenta;font-size:30px;">Remote XY
+<h28>
+<br>
+</h28></h28></h27></h27></p><p>     For this project we need to design an app to control the appliances, for this we visit many websites like Thing speak, Blynk and many more but the principle of operation provided by these websites is too complicated and difficult to understand. After all we get a simple and easy way to design an app on a website Remote XY. It is very easy to use like we can design an app by drag and drop of things we need for app. There are some required things like the microcontroller we are using, the module on which you will control the devices like Bluetooth, Wi-Fi etc.
+    The libraries and the code for app is provided by the website on the basis of app we design. After uploading that code in Arduino IDE and connect to Wi-Fi we can control the devices which are connected with circuit. The link and image of Remote XY and app is given below.
+</p><p>
+<br>
+<br>
+</p><p align="left"><img src="./Project Report_files/capture24.png" height="600" width="1500">
+<br>
+<br>
+<br>
+<br>
+<a href="https://remotexy.com/en/editor/"> Link of: Remot XY tutorial</a>
+
+<br>
+<a href="https://thingspeak.com/"> Link of:Things Speak.com tutorial</a>
+
+<br>
+<a href="https://docs.blynk.cc/"> Link of:Blynk .com tutorial</a>
+<br>
+<br>
+<br>
+<br>
+<h29 style="color:Fuchsia;font-size:30px;">MQTT Protocol
+<h29>
+</h29></h29></p><p> MQTT (Message Queuing Telemetry Transport) is a lightweight application-layer messaging protocol is used to interface any hardware device to server. The hardware connected on the protocol is termed as client and the server is termed as broker for the interfacing. There are other things like subscriber, publisher on every MQTT protocol. These things, subscriber and publisher are related to people who are interesting in your project like the subscriber can show the data which you are uploading on server by subscribing the channel on which you upload the data.
+    For uploading the data of temperature and humidity on the server we visit different MQTT protocols like Mosquitto, MQTT Box, HiveMQ etc but cannot get any idea from these protocols that how they will work and how we can interface the server with hardware. After continuously work on this thing finally we find Things board protocol which was quite easy to use and understand. This protocol has so many features like you can upload data on server and you can also control the devices of your hardware through sever and many more.
+    We work on this and finally get result. The updated data of temperature and humidity was displayed on the server and we can also get the graph of temperature and humidity with respect to time.
+   To upload the run time data of temperature and humidity we have to make account on ThingsBoard Demo website and login. When we logged in, we have to add devices by select the Devices option, devices like temperature humidity or others. When devices are added we get token of each device and that token is used in coding to upload the run time data from sensor. The run time data is shown in the device elementary beside the token number of devices on ThingsBoard server.
+   This data can be displayed in different formats like charts, digital gauges, analogue gauges etc. In this project we use simple chart to display the data of temperature and humidity. Image and link of ThingsBoard is given below.
+</p><p>
+<br>
+</p><p align="left"><img src="./Project Report_files/capture25.png" height="600" width="1500">
+<br>
+<br>
+<a href="https://demo.thingsboard.io/"> Link of:ThingsBoard tutorial</a>
+<br <br="">
+<a href="https://mosquitto.org/"> Link of:Mosquitto.org tutorial</a>
+<br <br="">
+<a href="https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf"> Link of:MQTTBOX tutorial</a>
+<br <br="">
+<a href="https://www.hivemq.com/"> Link of:Hivemq.com tutorial</a>
+<br>
+<br>
+<br>
+<h30 style="color:Fuchsia;font-size:30px;">Flow chart of Software Design
+<h30>
+<br>
+</h30></h30></p><p> This is how the software diagram flow of the project.</p><p>
+
+<br>
+</p><p align="left"><img src="./Project Report_files/capture26.png" height="800" width="900">
+<br>
+<br>
+<h31 style="color:Fuchsia;font-size:30px;">Sotware Implementation
+<h31>
+<br>
+</h31></h31></p><p> 
+    In this project we are using different things like MQTT protocol ThingsBoard, Remote XY, and Node-MCU. For the successful operation of coding, we have to interface all these things together. First, we have to initialize all the variables which we are using for components like temperature and humidity, relay module pins etc. Then we have to connect with Wi-Fi and ThingsBoard network by providing their libraries to do this, we have to add the token number of the device which we get from the ThingsBorad server to upload the data of temperature and humidity.
+    For the connection of Wi-Fi and ThingsBoard server we have to define function in which we will provide the Wi-Fi ssid number and password for the sake of getting connection. In this function we will use while loop, the loop will run till the connection of network. As the network will connected the run time data from the sensor will displayed on the server.
+    The code of the Remote XY which we get from its website will implement in the code of our project by using Remote XY library. For the implementation of relays, we use if else statements in which we define different pins of Node-MCU connected with different devices through relay module.
+    As we can control the devices with only one thing at a time it will either by app or SMS. For this contradiction we use one Boolean expression. It is a variable running relay when devices will be controlled through app the running relay will be false and when the device will be controlled through SMS the running relay will be true.
+</p><p>
+
+<br>
+<h32 style="color:Fuchsia;font-size:30px;">Challenges Faced In Coding:
+<h32>
+<br>
+</h32></h32></p><p> Coding is one of the challenging parts of any project. It requires a lot of skills, understanding of logics and proper attention. In this project we also faced a lot of problems while operating the circuit of the project. Also, we learn a lot when we get solved those problems with the help of websites, YouTube and respected teachers. The problems which we face in coding are listed below.
+    Firstly, we get fatal error continuously while uploading the code on Node MCU-ESP32 module. It was too difficult to understand that there is problem with the module or error in coding. We spend couple of hours on this and finally got the solution of this. We connect a 10uF capacitor between the pins (enable and ground) of the Node MCU-ESP32 module.
+    As there are two different things to control the devices when it is come to coding there is issue of control the device separately by two gadgets. After uploading the code, we can control the devices with only one thing sometime with app or sometime with SMS. This one was a logical mistake and we solved it by using some Boolean expression in the code like running relay is false for app and true for SMS.
+    In last it was somehow undesirable issue of connecting with server. All the things were running properly like Wi-Fi, code, hardware system but we got no connection with Wi-Fi and Things board server. Though there was some login issue with the server that we already logged in with server. We logged out from server and upload code on module and it works. Our hardware get connected with server and we visualize the data of temperature and humidity by log in again to the Things Board.
+</p><p>
+<br>
+<h32 style="color:Fuchsia;font-size:30px;">CAD Design:
+<h32>
+<br>
+</h32></h32></p><p> 
+All the things were finalized and it was time to design of enclosure for the project. This cannot made possible because there was announcement of closure of education institutes due to the third phase of covid-19. As it was the order from the government so we have to leave the university and change the way of study from physical to online so we cannot complete the CAD design of this project.
+</p><p>
+<br>
+<h33 style="color:BlueViolet;font-size:50px;"> Conclusion:
+<h33>
+<br>
+<h34 style="color:DarkMagenta;font-size:20px;">1.Business Model Of Our Project:
+<h34>
+<br>
+</h34></h34></h33></h33></p><p> The main objective of this project is to develop a home automation system using Node MCU-ESP32 with GSM sim900 controlled by smart phone. As technology is advancing, so homes are also getting smarter. Presently Conventional walls switches located in different parts of the home makes it difficult for the users to go near them to operate thatâ€™s why the people of modern era prefer this automated system. Which provides a good user interface and to controlled all the home appliances with Smart phones. Keeping all these advantages of home automated system in mind this system is not too much expensive and high-priced. As it was earlier discussed that this model can be used in power plants, power grids and anywhere in the world. This model will make free the people from the changing of walls switches located in different parts because this thing they can do by their sell phone from anywhere in the world. On this behalf this model can used for sell for the business purpose because of low cost as compare to the models available in the market. As this model is too simple in design and same functionality and less expensive than the products of market.
+    Furthermore, this project can also embed with other project to make a perfect model which may be for better than this single GSM based home automation model. We can connect this model with GPS or inverter, the inverter will amplify the input of 12 to 15 volt of DC voltage and provide us AC supply of more than 220 volts. These 220 volts can be used to operate the home appliances connected in the home. Similarly, these appliances can also be controlled through SMS or app which can be through home automation model. This combined model will be proved as a perfect business model.
+</p><p>
+<br>
+<h34 style="color:DarkMagenta;font-size:20px;">2.Over All learning and Understanding:
+<h34>
+<br>
+</h34></h34></p><p>
+Intellectual property (IP) is ideas, information and knowledge. In the university context it can be viewed as the result, outcome and the research of individual. It is commonly referred to, consists of all the pieces of our business that you have thought of. Itâ€™s the things that differentiate us from the competition that we came up with using our brain. The invention or the things coming from our research, by using our intellect brain.<br>
+
+    As in this project we are using a lot of things from different sides. So, the references which we used in this project are given above. We collect information from different websites and the parts of code used for this project is taken from the different websites. The link of the website is provided with the description of the device used in this project.<br>
+    In this project we refer different websites to implement the project. These websites about sim900 module, relay module Node-MCU help us a lot. As these websites provide different things if we talk about ThingsBoard server it will provide you the interfacing of devices by ESP8266 module but here we are using ESP32 module. Additionally, the sim900 module website is providing interfacing with Arduino but here we are using Node-MCU module. We refer these websites to implement our project differently and we get success in this. The website which we refer are given below.
+</p><p>
+<br>
+<br>
+<h34 style="color:DarkMagenta;font-size:20px;">3.IOT Based Project in Future:
+<h34>
+<br>
+</h34></h34></p><p>
+   GSM Based Home Automation is very informative project, we can extend the above simple project in a final year project for undergraduate students like to make the smart or digital home. From this project we learn so many things from our respected teachers, from the internet and from the mistakes which we did while going through this project.
+    <br>
+
+In the start when we chose this project, we thought that this project will be so simple and interesting from the others. We thought that we will complete this project within one month but as we go through this project, we faced so many difficulties. Earlier we said that this project is very simple and interesting but now we say that no matter this project is interesting but quite difficult.
+<br>
+
+    We have done with the hardware design of this project but due to current pandemic situation and unexpected closure of university as precautionary measure, we were unable to design the box to place the hardware. But we are very ecstatic that this project has helped us a lot to know about number of incredible technologies available in the current era. Also, though this project, we get a hand-on experience that how we can also make such fascinating projects with focus, handwork, consistency and patience.
+<br>
+    This project could not complete but we are very much encouraged and want to complete this. We will make a perfect model of this project by working on the CAD designing and on other things which are important for this project. When we get some free time, we will try to complete this and will make a perfect model of GSM based home automation with IOT.
+</p><p>
+<br>
+<br>
+<h35 style="color:FireBrick;font-size:50px;">Cost of the Project:
+<h35>
+
+</h35></h35></p><p align="left"><img src="./Project Report_files/capture27.png" height="300" width="1200">
+<br>
+<br>
+<br>
+<br>
+<h35 style="color:DarkRed;font-size:50px;">Project's Important links:
+<h35>
+</h35></h35></p><p>some important links are given bellow, by following the given links you can access the Complete Vedio, complete arduino uno coding as well as the Eagle files of PCB design</p><p>
+<br>
+<h36 style="color:DarkRed;font-size:30px;"> Vedios link:
+<h36>
+<br>
+</h36></h36></p><p> Please follow the given links to watch the complete and operational demo of digital home.</p><p>
+<br>
+<a href="https://youtu.be/hONDdZ6Laks"> Link of:First Vedio </a>
+<br>
+<br>
+<a href="https://youtu.be/qGQMT7EGDY0"> Link of:Second Vedio </a>
+<br>
+<br>
+<h37 style="color:DarkRed;font-size:30px;"> Arduino Uno Coding :
+<h37>
+</h37></h37></p><p>You can download the complete coding of digital home by clicking the given link below</p><p>
+<br>
+<br>
+<a href="https://docs.google.com/document/d/1nHOzr9tiNb47PwLk9e_ItjtcD8zhFeEOfXic51BWvQo/edit?usp=sharing"> Link of:Complete Coding of Arduino Uno  </a>
+<br>
+<br>
+<h37 style="color:DarkRed;font-size:30px;"> Eagel Files of PCB Design :
+<h37>
+<br>
+</h37></h37></p><p> Please click on the link to access eagle file of project PCB.</p><p>
+<br>
+<a href="https://drive.google.com/drive/folders/1MsFG8Tg3gpUJ2PsYuKLR44Qi__ROl07V?usp=sharing"> Link of:Eagel Files of PCB Design </a>
+<br>
+<br>
+<br>
+<h39 style="color:BLUE;font-size:120px;"> THANK YOU VERY MUCH :
+<h39>
+<br>
+
+
+</p></body></html>
