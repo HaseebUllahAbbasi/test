@@ -1,0 +1,504 @@
+<html>
+	<head>
+		<link href="styles/style.css" type="text/css" rel="stylesheet">
+		<link href="https://www.w3schools.com/w3css/3/w3.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+			<style>footer {background: #aaa;color:white; height:30px; z-index:10000; position:relative;}
+	table, th, td {      border: 1px solid black;     border-collapse: collapse; }
+	th, td {  padding: 10px;}
+       th { text-align: left;}
+    </style>
+		<title>
+						Introduction to Embedded Systems Project Report - (Izat Ali!)
+		</title>
+	</head>
+	
+	<body>
+	<div id="main-wrapper">
+		<div id="left-ajrak">
+			
+		</div>
+		<div id="main">
+			<div id="header">
+				<div id="header-title">
+				
+					Izat Ali Sahito
+				</div>
+			</div>
+			<hr>
+			<div id="nav-bar">
+				<div id="nav-bar-area">
+					<div class="link"><a href="#C0">Objective</a></div><div class="separator"></div>
+					<div class="link"><a href="#C1">Introduction</a></div><div class="separator"></div>
+					<div class="link"><a href="#C2">High Level Diagram</a></div><div class="separator"></div>
+					<div class="link"><a href="#C3">Design Requirement</a></div><div class="separator"></div>
+					<div class="link"><a href="#C4">Results</a></div><div class="separator"></div>
+					<div class="link"><a href="#C5">Business Model</a></div><div class="separator"></div>
+					<div class="link"><a href="#C6">Conclusion</a></div><div class="separator"></div>
+					<div class="link"><a href="#C7">Appendix</a></div><div class="separator"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<hr>
+			<div id="main-container">
+				<div id="page-title">Vortex Mixer</div>
+				<div id="assignments">
+<hr>
+<h2 id="C0"><center>Objective</center></h2>
+<p style="text-align:justify">
+The objective of this proejct is to:</p>
+<ul>
+<li>Design a prototype using the basic understand of the embedded system at the basic level.</li>
+<li>Develop hardware-software complex with the use of the descrete components.</li>
+</ul>
+</p>
+<hr>
+<h2 id="C1"><center>Introduction</center></h2>  	
+<p style="text-align:justify"> A vortex mixer, or vortexer, is a simple device used commonly in laboratories to mix small vials of liquid. 
+It consists of an electric motor with the drive shaft oriented vertically and attached to a cupped rubber piece mounted slightly off-center. 
+As the motor runs the rubber piece oscillates rapidly in a circular motion.</p>
+<center><img src="VM.jpg" height="400" width="400"/></center>
+<p style="text-align:justify">When a test tube or other appropriate container is pressed into the rubber cup (or touched to its edge) the motion 
+is transmitted to the liquid inside and a vortex is created. Most vortex mixers are designed with 2 or 4-plate formats, have variable speed settings 
+ranging from 100 to 3,200 rpm, and can be set to run continuously, or to run only when downward pressure is applied to the rubber piece.
+This section should also include the sketch (image) of what product you have in mind.</p>
+<hr>
+<h2 id="C2"><center>High Level Diagram</center></h2>
+<p style="text-align:justify">Following picture shows the flow of the algorithm.</p>
+<center><img src="Flow_Diagram.PNG" height="250" ></center>
+<h4><center>2D Model Drawing</center></h4>
+<p style="text-align:justify">The 2D drawing help me to use less material for design 3D Model of my project. Therefore, I have draw following 2D sketch of my system.
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 6</div>
+    <img src="top.PNG" style="width:100%"> 
+    <div class="text">Top View</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 6</div>
+    <img src="bottom.PNG" style="width:100%">
+    <div class="text">Bottom View</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 6</div>
+    <center><img src="right.PNG" style="width:50%"></center>
+    <div class="text">Right Side</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 6</div>
+    <center><img src="left.PNG" style="width:50%"></center>
+    <div class="text">Left Side</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 6</div>
+    <center><img src="front.PNG" style="width:50%"></center>
+    <div class="text">Front Side</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 6</div>
+    <center><img src="back.PNG" style="width:50%"></center>
+    <div class="text">Back Side</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+</div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</p>
+<h4><center>Electrical Diagram</center></h4>
+<p style="text-align:justify">Following picture shows the electrical diagram of project. 
+</p>
+<center><img src="PCB_Design.PNG" height="480"></center>
+<h4><center>PCB Layout</center></h4>
+<p style="text-align:justify">This shows the layout of the electical circuit of our project. This circuit design is done on Eagle software.
+</p>
+<center><img src="PCB-Back.jpeg" height="480"><img src="PCB-Front.jpeg" height="480"></center>
+<h4><center>Bill of Material</center></h4>
+<p style="text-align:justify">For designing the PCB I have to need following descrete components:
+<table style="width:100%">
+  <tr>
+    <th>Part</th>
+    <th>Value</th> 
+    <th>Device</th>
+	<th>Description</th>
+  </tr>
+  <tr>
+    <td>C1</td>
+    <td>10 uF</td>
+    <td>CC0805</td>
+	<td>Capacitor</td>
+  </tr>
+  <tr>
+    <td>C2</td>
+    <td>10 uF</td>
+    <td>CC0805</td>
+	<td>Capacitor</td>
+  </tr>
+  <tr>
+    <td>C3</td>
+    <td>10 uF</td>
+    <td>CC0805</td>
+	<td>Capacitor</td>
+  </tr>
+  <tr>
+    <td>C4</td>
+    <td>22 uF</td>
+    <td>CC0805</td>
+	<td>Capacitor</td>
+  </tr>
+  <tr>
+    <td>C5</td>
+    <td>22 uF</td>
+    <td>CC0805</td>
+	<td>Capacitor</td>
+  </tr>
+  <tr>
+    <td>C6</td>
+    <td>0.1 uF</td>
+    <td>CC0805</td>
+	<td>Capacitor</td>
+  </tr>
+  <tr>
+    <td>R1</td>
+    <td>499</td>
+    <td>RESISTORR0805</td>
+	<td>Resistor</td>
+  </tr>
+  <tr>
+    <td>R2</td>
+    <td>10 k</td>
+    <td>RESISTORR0805</td>
+	<td>Resistor</td>
+  </tr>
+  <tr>
+    <td>R3</td>
+    <td>499</td>
+    <td>RESISTORR0805</td>
+	<td>Resistor</td>
+  </tr>
+  <tr>
+    <td>R4</td>
+    <td>1 k</td>
+    <td>TRIMMER-3314G</td>
+	<td>Potentiometer</td>
+  </tr>
+  <tr>
+    <td>R5</td>
+    <td>1 k</td>
+    <td>TRIMMER-3314G</td>
+	<td>Potentiometer</td>
+  </tr>
+  <tr>
+    <td>Q1</td>
+    <td>IPB136N08N3</td>
+    <td>IPB136N08N3-GT0263</td>
+	<td>Oscilator</td>
+  </tr>
+  <tr>
+    <td>D1</td>
+    <td>L293d</td>
+    <td>L293d</td>
+	<td>Motor Driver</td>
+  </tr>
+  <tr>
+    <td>M1</td>
+    <td>Motor</td>
+    <td>Motor</td>
+	<td>Motor</td>
+  </tr>
+  <tr>
+    <td>LCD</td>
+    <td>HD4478LCD</td>
+    <td>HD4478LCD-1602</td>
+	<td>16x2 LCD</td>
+  </tr>
+  <tr>
+    <td>X1</td>
+    <td>Battery</td>
+    <td>22-23-2021200MIL</td>
+	<td>.100" (2.54mm) Center Header - 2 Pin</td>
+  </tr>
+  <tr>
+    <td>X2</td>
+    <td>Supply</td>
+    <td>22-23-2021200MIL</td>
+	<td>.100" (2.54mm) Center Header - 2 Pin</td>
+  </tr>
+</table>
+</p>
+<hr>
+<h2 id="C3"><center>Design Requirement</center></h2>    
+<p style="text-align:justify">
+The vortex mixer is a vital piece of equipment commonly found in research laboratories to mix small samples of liquids rapidly.
+In general, the vortex mixer is a relatively straightforward gadget, utilized in various fields of bioscience, microbiology, and biochemical research settings. 
+It is also used in analytical research centers to blend small vials of fluids using a rapidly oscillating circular movement. 
+At the point when the movement of the rubber cup holder on the mixer is transmitted to the fluid sample, a vortex is produced. 
+With the device accessible in changeable speeds and the choice of constant and on-demand function, the vortex mixer becomes an unquestionable appliance for any research facility.
+<br>
+Vortex mixers are frequently utilized as a part of scientific laboratories to mix small volumes of liquid for cell disruption or homogenization. 
+These machines whether analog or digital are capable of regulating the speed at which they operate along with the time taken to achieve reproducible outcomes. 
+The device is also equipped to test single or multiple liquid samples simultaneously. The vortex mixers can process test tubes, vials, cylinders, or at times even microplates. 
+The instrument is capable of enduring heavy regular use as it is produced from strong, corrosion-free materials.
+
+</p>
+<hr>
+<h2 id="C4">Results</h2>
+The result the shows the working of project. As I increase the resistance using potentiometer the speed of the motor decreases and the mixing of liquid
+will be slow. Whereas I decrease the resistance the mixing of liquid increases. This all process is shown on the LCD.
+<center><img src="Result.PNG" height="400" width="400"></center>
+<center><video width="400" controls>
+  <source src="Vortex Mixer by Izat Ali.mp4" type="Vortex Mixer by Izat Ali/mp4">
+  <source src="Vortex Mixer by Izat Ali.ogg" type="Vortex Mixer by Izat Ali/ogg">
+  Your browser does not support HTML video.
+</video></center>
+<hr>
+<h2 id="C5">Business Model</h2>
+<p style="text-align:justify">
+This vortex mixer is ideal for micro filter cell separations, molecular biology applications and HPLC samples. 
+With most spins lasting around 20 seconds, the ergonomically designed lid is specifically designed to fit in the palm of the hand for easy repeat opening and use. 
+Load samples and for repeated spins, simply close the lid to reactivate. 
+<h4>Features</h4>
+<ul>
+  <li>Various speed controls to the maximum of 1500 rpm, provided gentle or vigorous votexing for your mixing needs.</li>
+  <li>2 interchangeable mixing head, i.e. Snap on the 26mm diameter rubber cup head for conventional single tube mixing, or a 3” diameter platform pad for multiple tubes and one flask mixing.</li>
+  <li>Single-mode operation feature “POT” activated operation at the rotation of a potientometer for continuous mixing.</li>
+  <li>User-friendly design capable of sustaining to prevent mixer form slipping and creeping due to the vibration.</li>
+</ul>
+<h4>Specification</h4>
+<table style="width:100%">
+  <tr>
+    <th>Model</th>
+    <td>VM-100</td>
+  </tr>
+  <tr>
+    <td>Dimension</td>
+    <td>76.2 x 50.8 x 76.2 mm</td>
+  </tr>
+  <tr>
+    <td>Eccentric Ø</td>
+    <td>5.6 mm</td>
+  </tr>
+  <tr>
+    <td>Modes</td>
+    <td>Potentiometer(POT)</td>
+  </tr>
+  <tr>
+    <td>Speed (single tube)</td>
+    <td>1500 rpm</td>
+  </tr>
+  <tr>
+    <td>Speed (3" pad)</td>
+    <td>1000 rpm</td>
+  </tr>
+  <tr>
+    <td>Standard accessory</td>
+    <td>Single tube head</td>
+  </tr>
+  <tr>
+    <td>Optional accessory</td>
+    <td>3" multi-tube head</td>
+  </tr>
+  <tr>
+    <td>Net weight</td>
+    <td>1 kg</td>
+  </tr>
+  <tr>
+    <td>Net Price</td>
+    <td>Rs. 15000</td>
+  </tr>
+</table>
+</p>
+<hr>
+<h2 id="C6">Conclusions</h2> 
+At the end of the this project I get the basic understanding and determine the optimal composition and characterstics of an embedded system.
+I have learn to design PCB and 3D modeling using the reseourses of FAB Lab. 
+<hr>
+<h2 id="C7">Appendix</h2>
+<a href="https://conductscience.com/vortex-mixers/" target="_blank">Vortex Mixers</a>
+<a href="https://create.arduino.cc/projecthub/federico-vivaldi/open-vortexer-1f8dd5" target="_blank">Open Vortexer</a>
+<center>
+<table style="width:50%">
+ 
+<tr>
+    <td>Report Submitted on Time</td>
+    <td> .......................  </td> 
+  </tr>
+  <tr>
+    <td>Matlab Profeciency</td>
+    <td> .......................</td> 
+  </tr>
+</table>
+</center>
+<br><br>
+<!--		
+					Double Image Example Below
+					<div id="doubleimg">
+						<div class="imgbox"><img src="graphics/img_avatar.png" /><div class="doubleimgtitle">text here</div></div>
+						<div class="imgbox"><img src="graphics/img_avatar.png" /><div class="doubleimgtitle">text here</div></div>
+					</div>
+-->				
+					<!-- This is comment -->
+
+
+				</div>
+			
+			</div>
+		</div>
+		<div id="right-ajrak">
+			
+		</div>
+	</div>
+	
+
+	</body>
+</html>

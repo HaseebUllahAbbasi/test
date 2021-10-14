@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Energy Meter</title>
+</head>
+<body>
+
+<h1>Introduction</h1>
+<p>this project is about measuring the energy using HLW8012 IC. This current measuring IC invented by chinese developers it gives square wave form of power on output as load increases the frequency of output wave is slao increases we just need to count the frequency and its time to measure energy.</p>
+
+<h1>Requirements</h1>
+<p> for this we are needed to make a relaible circuit which has conncters where they are needed and it must has a 5V supply and a DC Ground.</p>
+<p style="color:red">Beta your design requirement was to have an  cheap, accurate and portable meter which is interfaced with internet.</p> <br><br>
+<h1>Project execution plan</h1>
+<p>First of all we are needed to make the breakout board for the HLW8012 IC. Second Step is testing it and Final step is coading and designing inclousre for it.</p>
+<p style="color:red">Please provide the ghent chart here outlining the different stages of the project for example literature review study of the components circuit design troubleshooting and report writing.</p> <br><br>
+<h1>Distribution of Task</h1>
+<h3>Abdul Hadi</h3>
+<p>Designing breakout board and inclousre</p>
+<h3>Usmanullah</h3>
+<p>Coding and app controlling</p>
+<br>
+
+<h1>Literature Review</h1>
+<p style="color:red">You should describe which websites did you study, which ones were useful. or may be you can say that we found this low cost ic but the datasheet was in chinese, you went on with the idea becuase of your supervisor. You should hyperlink the references so that ppl can refer them for details.</p>
+
+<h1>Description of Principle of Operation</h1>
+<p>As we used HLW8012 IC which will give the square waveform. The frequency of waveforms changes as a function of current flowing through the shunt resistor.The consumption of energy is calculated from the frequency of this waveform. As we know that Energy is KWH so we need to count power and devide with the difference of time.</p> <p style="color:red">please improve this paragraph.</p>
+
+<h1>Brief Description of Major Components</h1>
+<h3>HLW8012</h3>
+<p>The HLW8012 is single phase energy monitor chip by the Chinese manufacturer HLW Technology. It features RMS current, RMS voltage sampling and RMS active power with an internal clock and a PWM interface in an SOP-8 package.</p><br><br>
+<p style="color:red">you should plug in the pin diagram of the IC. Also hyperlink the datasheet</p>
+
+<h3>WeMOS ESP8266</h3>
+<p>The WeMos D1 Mini is an inexpensive ESP8266-based WiFi board that is low-profile but just as powerful as any NodeMCU or ESP8266-based microcontroller. The D1 Mini is incredibly versatile because it is inexpensive, WiFi-enabled, and fully compatible with the Arduino platform. In this tutorial, the ESP8266 library and board manager will be introduced in order to get the D1 Mini acting as an Arduino board. Then, a simple web page will be introduced with the intention of harnessing the WiFi capabilities of the module. The D1 Mini will act as a web server, allowing any WiFi-connected device to interact with the board and control its pins wirelessly.</p> <br><br>
+<p style="color:red">Insert the pictures of the module and Pin diagram refer website for further detail.</p>
+<h3>OLED Display</h3>
+<p>An organic light-emitting diode (OLED or organic LED), also known as organic electroluminescent (organic EL) diode,[1][2] is a light-emitting diode (LED) in which the emissive electroluminescent layer is a film of organic compound that emits light in response to an electric current. This organic layer is situated between two electrodes; typically, at least one of these electrodes is transparent. OLEDs are used to create digital displays in devices such as television screens, computer monitors, and portable systems such as smartphones and handheld game consoles. A major area of research is the development of white OLED devices for use in solid-state lighting applications.</p>
+
+<h1>Electric Schematic</h1>
+<center> <img src="schEM.png" alt="Schematic" width="500" height="300"></img></center>
+<p>This Schematic is very simple we just need to make sure that connections should be right. We have left spaces for connectors so we are supposed to keep in mind that which pin of connector will be connect where.</p> <br><br>
+<p style="color:red">Please explain what connections are made forexample the shunt resistor connections, how micro-controller is connected with the IC and OLED explain the ground and 5VDC network.</p>
+<h1>PCB Layout</h1>
+<center> <img src="brdEM.png" alt="PCB Layout" width="500" height="300"></img></center>
+<p>This circuit looks so simple but as we were already told to make a single layer PCB so it was almost a challange to make it on a single layer without overlaping any wires. After trying hard andd so many possiblities we almost find a way to make it possible.</p>
+
+<h1>Bill of Material</h1>
+<center><img src="bill.png" alt="bill of materils" width="500" height="800"></img></center>
+<h1>PCB</h1>
+<center> <img src="PCB.jpg" alt="PCB" width="500" height="500"></img></center>
+<p style="color:red">Explain your PCB design and milling process through fabmodules.</p>
+<br>
+<center> <embed style="width:720px; height:450px;" src="https://www.youtube.com/embed/qY9zYdZfThE"></embed></center>
+
+<h1>Flow Chart</h1>
+<center> <img src="flowchart.png" alt="flow chart" width="300" height="500"></img> </center>
+
+<h1>CAD Design</h1>
+<center><img src="inclousre.png" alt="cad design" width="300" height="500"></img></center>
+
+<h1>Intellectual Property Considerations</h1>
+<p style="color:red">Please discuss the references from where you have taken code / libraries for operating Wemos OLED and HLW8012. You should say that you are making this code freely available for others to work</p>
+
+<h1>Business Model</h1>
+<p style="color:red">Describe what applications can be made this idea, energy meters, domestic load management, smart devices.</p>
+
+<h1>Our Understanding</h1>
+<p>From this Project we have learned that how energy can be measured from using power consumption. As we know that energy is kilo watt hour so we just need to calculte power and time difference , if we devide the power consumed with the time difference then we can easily find the energy. From this project we also learned how to interface different microcontrollers with Arduino IDEs. We aslso worked on how to design mobile app and worked on suppla online website for coing and hardware.</p> <br><br>
+<p style="color:red">There is no problem in admitting the failure because not alot of help was available and due to pandemic our stay at campus was cut short.</p>
+
+<table border="1">
+<tr>
+<th>component </th><th>Cost</th>
+</tr>
+<tr>
+<td>HLW8012 </td><td>600</td>
+</tr>
+</tr>
+<tr>
+<td>OLED Display</td><td>430</td>
+</tr>
+</tr>
+<tr>
+<td>WeMOS</td><td>580</td>
+</tr>
+</tr>
+<tr>
+<td>powersupply</td><td>150</td>
+</tr>
+<tr>
+<td>total</td><td>1230</td>
+</tr>
+</table>
+
+<a href="https://drive.google.com/file/d/1wu5v5FXF8Te33S8lx8-rN2AYWM7SOeGx/view?usp=sharing">Board file for circuit</a><br>
+<a href="https://drive.google.com/file/d/1I4kiuoZyK5ROT7BXOr7purpxa6dbUeSY/view?usp=sharing">Schematic file for circuit</a><br>
+<a href="https://drive.google.com/file/d/1l4F-hcTM5-7OLeDghUZl9Qe-2j_wSQsy/view?usp=sharing">Cad file of Energy meter</a>
+
+</body>
+</html>
