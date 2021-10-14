@@ -50,8 +50,8 @@
 <h5 align="center"><strong><u> <font color="grey">Participants</font></strong></u></h5>
 <table align="center" width="288" height="160">
 <tr>
-<td><img src="me.JPG"" width="140" height="120"></td>
-<td><img src="abghafoor.JPG" width="140" height="120"></td>
+<td><img src="me.jpg"" width="140" height="120"></td>
+<td><img src="abghafoor.jpg" width="140" height="120"></td>
 </tr>
 </table>
 <table align="center" border="1" bordercolor="red" width="324.5" height="3">
@@ -79,7 +79,7 @@ The objectives of this assignment are:
 <br>
 <!--<p> In assignment 4 the PCB was available </p>--><br>
 	
-<center><img src="ngsm.JPG" width="400" hight"400"/><br></center><br><br>
+<center><img src="ngsm.jpg" width="400" hight"400"/><br></center><br><br>
 Such devices are commercially available in the market, and come with a variety interfaces like GSM, WiFi and Ethernet. These devices are central component of fully automated "smart homes". 
 
 </p><br><br>
@@ -87,7 +87,7 @@ Such devices are commercially available in the market, and come with a variety i
 <h2 id="C2">How we Start ?</h2>
 When our mentor assigned us to this project we were confused how start and as we started reviewing literature things became very clear.<br><br>
 <h4>Deligation of Tasks</h4>
-<center><img src="gnt.PNG" width="500" height="500" /><br></center>
+<center><img src="gnt.png" width="500" height="500" /><br></center>
 <br> </br>
 
 <br> </br>
@@ -97,7 +97,7 @@ The module recieves the SMS and passes it to Microcontroller and microcontroller
 <br>
     
 
-<center><img src="sftimp.PNG" width="850" height="600" /><br></center>
+<center><img src="sftimp.png" width="850" height="600" /><br></center>
 <br><br>
 
 <h2 id="C2">Brief Description of Major Component</h2>
@@ -114,7 +114,7 @@ These all features add up to selection of ATMEGA328P for our project.
 <p><a href=https://www.theengineeringprojects.com/2017/08/introduction-to-atmega328.html"><font color="blue">For Further info</font></a></p>
 
 
-<center><img src="atm.JPG" width="650" height="500"><br></center><br><br>
+<center><img src="atm.jpg" width="650" height="500"><br></center><br><br>
 <ul> 
 <li>It has EEPROM memory of 1KB<br>
 </li>
@@ -133,9 +133,9 @@ Mobile phone is a revolutionary invention of the 20th century. It was primarily 
 
  <br><br>
 <h4> Shield 900 Front</h4>
-<center><img src="gsm900f.JPG" width="500" height="500"/><br></center><br><br>
+<center><img src="gsm900f.jpg" width="500" height="500"/><br></center><br><br>
 <h4> Shield 900 Back</h4>
-<center><img src="gsm900b.JPG" width="500" height="500"/><br></center><br><br><br><br>
+<center><img src="gsm900b.jpg" width="500" height="500"/><br></center><br><br><br><br>
    IMPORTANT NOTE<br>
                 We are using GSM 900 shield. We want to use GSM module but we can't due to unavailablity of it and registration of GSM device with PTA. To check GSM there are two LEDs one is power led showing power in GSM and other is status led showing SIM status. If status led is blinking with the pause of three seconds then GSM is working correctly. From our experience working on this project we realized that there is a power issue in the GSM shield. It takes almost 1.5A for first five seconds then 150mA is needed continously. Power can be given through the adapter as well as power supply. But one thing which is very important is the you are not supposed to take power from the GSM shield for microcontrolar not  for any other usage. It will heatup your Shield and it can be damaged. An other point is you are not supposed to use Rx Tx pins for GSM because it cause issue while loading any programe so use any Digital pins for this purpose we are using 7 and 8 pins for GSM . <br> <br><br>
 
@@ -173,7 +173,7 @@ Mobile phone is a revolutionary invention of the 20th century. It was primarily 
     </li>
 
 </ul>
- <center><img src="lcd.PNG" width="500" height="500"/><br></center><br><br>
+ <center><img src="lcd.png" width="500" height="500"/><br></center><br><br>
 <br><br>
 <h4>DHT22 Sensor </h4>
 <ul>
@@ -182,27 +182,27 @@ Mobile phone is a revolutionary invention of the 20th century. It was primarily 
     </li>
    
 </ul><br>
- <center><img src="sensor.PNG" width="500" height="500"/><br></center><br><br>
+ <center><img src="sensor.png" width="500" height="500"/><br></center><br><br>
 <br>
 <h4>4 Channel Relay </h4>
 <ul>
     
 This is a 5V 4-channel relay interface board, and each channel needs a 15-20mA driver current. It can be used to control various appliances and equipment with large current. It is equipped with high-current relays that work under AC250V 10A or DC30V 10A. It has a standard interface that can be controlled directly by microcontroller.
 A relay is an electromagnetic switch used to turn on/off a circuit through a low power control signal, or where several circuits must be controlled by one signal.
-  <center><img src="relay.PNG" width="650" height="500"/><br></center><br><br>
+  <center><img src="relay.png" width="650" height="500"/><br></center><br><br>
 <ul>
 <h4>Implementation Process</h4>
 <li>Firstly we interfaced GSM module with Arduino just to send and recieve SMS through GSM.</li><br><br>
 Here is diagram where we confirmed that GSM is functioning and which pins we have to use.
 
-<center><img src="iga.PNG" width="500" hight"500"/><br></center><br><br>
+<center><img src="iga.png" width="500" hight"500"/><br></center><br><br>
 <li>We started off our work through basic interfacing of LCD and DHT22 sensor with Arduino Board</li><br><br>
  
-<center><img src="lsa.JPG" width="500" hight"500"/><br></center><br><br>
+<center><img src="lsa.jpg" width="500" hight"500"/><br></center><br><br>
 <li>We also interface GSM with Relay For the Purpose how we have to work in project</li><br><br>
-<center><img src="gra.JPG" width="500" hight"500"/><br></center><br><br>
+<center><img src="gra.jpg" width="500" hight"500"/><br></center><br><br>
 <li>Then we make a breadboard circuit where we use leds for the purpose of load. Through this basic implementation we achieved 100% output from this prototype.</li><br><br>
-<center><img src="breadboard.JPG" width="600" hight"600"/><br></center><br><br>
+<center><img src="breadboard.jpg" width="600" hight"600"/><br></center><br><br>
 </ul>
 
 
@@ -217,29 +217,29 @@ After Prototype we move forward for PCBs we make two PCBs. 1st PCB for Micro-con
 
 <h4>Electrical Circuit</h4>
 Here is PCB layout of microcontroller board. Alot of time and thought was invested in the process to squeeze all the components together in the minimal space.
-<center><img src="schm.JPG"  width="650" height="500"/><br></center><br><br>
+<center><img src="schm.jpg"  width="650" height="500"/><br></center><br><br>
 <h4>Milled PCB </h4>
-<center><img src="pcb1.JPG" width="650" height="500"/><br></center><br><br>
+<center><img src="pcb1.jpg" width="650" height="500"/><br></center><br><br>
 1)
 First PCB for microcontroller we just insert 14 pin connector therefore our required component setting like sensor, LCD , Relay<br><br>
 <h4>Functional PCB </h4>
 
 when we come up with a fully soldered microcontrolar board then next task is to burn the boatloader program on the micro-controller. For burning programme we first did bootloader through SPI protocol. Then we upload test programme to test 13 pin LED. And to our surprise we succeed to bootload the micro-controller at the very first attempt.<br><br><br><br><br>
-<center><img src="fpcb1.JPG" width="650" height="500"><br></center><br><br>
+<center><img src="fpcb1.jpg" width="650" height="500"><br></center><br><br>
 <h5>Milled PCB 2 </h4>
 In second PCB there is network for GSM , Relay and Sensor.
-<center><img src="pcb2.JPG" width="650" height="500"/><br></center><br><br>
+<center><img src="pcb2.jpg" width="650" height="500"/><br></center><br><br>
 
 2)
 2nd PCB in order to design sandwich shape just put GSM on that Board . There are three Pin using therefore Rx,Tx and Ground after making two boards, we realize that there will be irregular shape of our project. From our experience, we come to conclude that where possible design of product with mutliple boards should be avoided.<br><br>
 
 <h2 id="C2">PCB Milling Machine</h2> 
 We milled our PCB using the milling machine available inp our lab.
-<center><img src="ronald.JPG" width="500" height="500"><br></center><br><br>
+<center><img src="ronald.jpg" width="500" height="500"><br></center><br><br>
 <br><br>
 <h2 id="C2">Bill of Material</h2> 
 Here is the bill of material of our micro-controller based device.
-<center><img src="bom1.JPG" width="500" height="700"><br></center><br><br>
+<center><img src="bom1.jpg" width="500" height="700"><br></center><br><br>
 <h2 id="C2">Bill of Material for Second Board</h2>
 <ul>
 <li>GSM Shield 900</li><br><br>
@@ -260,18 +260,18 @@ Here is the bill of material of our micro-controller based device.
 
 <h4>Software Development</h4>
 In a pictorial format you may describe the flow of your algorithm and how you have used the functions to implement the code in an efficient way.
-<center><img src="block3.PNG" width="650" height="800"><br></center><br><br>
+<center><img src="block3.png" width="650" height="800"><br></center><br><br>
 <br><br>
 <h4>Design of Finished Product</h4>
 
 Here is printed enclosure of our module. The enclosure has width of 2.5" while the hieght is 3" 
 <h4>Front View</h4>
-<center><img src="crop1.JPG" width="500" height="500"/><br></center><br><br>
+<center><img src="crop1.jpg" width="500" height="500"/><br></center><br><br>
 <h4>Top View</h4>
-<center><img src="cropf.JPG" width="500" height="500"/><br></center><br><br>
+<center><img src="cropf.jpg" width="500" height="500"/><br></center><br><br>
 <br><br>
 <h2 id="C4">Our 3D Printer</h2>
-<center><img src="ulti.JPG" width="500" height="500"/><br></center><br><br>
+<center><img src="ulti.jpg" width="500" height="500"/><br></center><br><br>
 <br><br>
 <h2 id="C4">Results</h2> 
 At last we came up with functional product and here is the video link  of functional product.<br>
@@ -322,7 +322,7 @@ Total expenditure of our project is given below component wise.<br><br>
 <br>
 <br><br>
 <center>
-<center><img src="rs.PNG" width="500" height="500"/><br></center><br><br>
+<center><img src="rs.png" width="500" height="500"/><br></center><br><br>
 <table style="width:50%">
  
 <tr>
