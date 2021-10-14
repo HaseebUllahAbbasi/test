@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="styles/style.css" type="text/css" rel="stylesheet">
+		<link href="https://www.w3schools.com/w3css/3/w3.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+		<title> BPM Measurement Using Max30102 IC</title><style>
+						
+				</style>
+
+
+	</head>
+	
+	<body>
+	   
+<center><font color="white"> <h1>Introduction to Embedded Systems (Project Report)</h1></title></font>	</center>
+	<font color="white">
+	<div id="main-wrapper">		<div id="main">
+			<div id="header">
+				<div id="header-title">
+					<font color="White"><b><h3>Majid Hussain (033-17-0026)<br> Muhammad Ameen (033-17-0040)</h3> </b></font>
+				</div>
+			</div>
+		
+			<br><br>
+			<div id="main-container">
+				<font color="White"><div id="page-title"> BMP measurement Using max30102 IC	</div></font>
+				
+<br>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+</style>
+</head>
+
+
+<div class="w3-content w3-section" style="max-width:750px "  >
+  <img class="mySlides" src="New/Dr_Asim.jpg" style="width:100% " >
+  <img class="mySlides" src="ameen.jpg" style="width:100%">
+  <center><img class="mySlides" src="majid.jpg" style="width:574px"></center>
+  <center><img class="mySlides" src="New/p1+2.jpg" style="width:540px"></center>
+  <img class="mySlides" src="PCB.jpg" style="width:100%">
+  <img class="mySlides" src="working.png" style="width:100%">
+  <img class="mySlides" src="working.png" style="width:100%">
+  <img class="mySlides" src="working.png" style="width:100%">
+  
+  
+</div>
+<p><center><b><font size="15">Project Overview</font></b></center></p>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+
+ 
+<center> <h3 id="C1"><b>Introduction to The Project </b> </h3> </center>
+
+ 
+ <p align="justify" class="serif" > Heart rate sensor measures pulse waves, which are changes in the volume of a blood vessel that occur when the heart pumps blood. Pulse waves are detected by measuring the change in volume using an pulse sensors.
+It has been always a priority to monitor one's heart rate to know about and be informed about their heart health So, here in this project we are going to interface MAX30102 pulse oximetry and heart rate monitor module with Arduino UNO board, and then make a project for measuring BPM using this module + OLED display.
+The main features of our projet design are: first of all it is a simple design and cost effective along with appromimately accurate results of heart rate.
+This same project can be used to monitor oxygen concentration in the blood, just use SpO2 built libraries and see result on serial monitor.
+</p><br>
+ <br></p>
+ 
+ <center> <h2 ><b> Design Requirements</b> <h2></center> 
+ <p align="justify" class="serif" > The enclosure used is somehow similiar to smartwatch, however because of the max30102 sensor its size and placement is different than the typical sensor used in available devices. 
+We have facility of PCB machine and laser cutting machine for enclosure so using these the enclosure design is made in a way that the OLED display is on top side to see BPM on oled and the sensor is placed on the bottom side for sensing blood vessels.
+ </p>
+ 
+ <center> <h2><b>Sample image of final design </b><h2></center> 
+ <p align="justify" class="serif">For our product, initially, we thought of a simpler design keeping in mind our Display of the input and out entities as well as sockets for input, output and supply voltages.
+</p>
+ 
+    <center><img src="mydesign.png" width='600' height='500'  class="center" /><br></center>
+ 
+ 
+ <center><h2 id="C1"><b>Project Execution Plan </b><h2></center>
+ <p align="justify" class="serif"> The execution plan was planned on the basis of understanding and availablity of components and project. Once, we had developed understanding and got components we started the making project. 
+ The components used in the circuit are are available in pakistan at hallroad and other online stores so anyone can order and get components in short time.
+we had following project execution plan depending upon the above fact.<br>
+ <center><img src="Project_pics/GanttChart.png" width='700' height='650'  class="center" /><br></center>
+
+
+1- Literature Review<br>
+2- Understanding the working principle of components involved<br>
+3- deveolping a PCB<br>
+4- Fabrication of PCB <br>
+5- First soldering the componets required by the microcontroller to burn the bootloader and test the microcontroller's working<br>
+6- After succesfully testing the microcontroller, soldering the rest of the components<br>
+7- Energizing the circuit and troubleshooting all the errors<br>
+8- After getting desireable results, Designing the case for the PCB<br>
+9- Preparing the product for the final go<br>
+ </p>
+
+
+
+
+
+<center><h2 id="C1"><b>Deligation of Task </b><h2></center>
+ <p> 
+<center><img src="role.PNG" width="600" height="400" class="center"/></center><br>
+ </p>
+ 
+<center><h2 id="C1"><b>Higher Level System Diagram</b><h2></center>
+ <p> Following diagram shows how the Project works on a macro level:
+
+<center><img src="HLpic.png" width='600' height='500' /> </center>
+ 
+ 
+ </p>
+ 
+ <center><h2 id="C1"><b>Description of Principle of Operations </b><h2></center>
+ <p align="justify" class="serif"> Beats per minutes are measured using a sensor. In our project we have max30102 sensor. basicall this sensor is interfaced with arduino uno module. it has eight pins but we need to use only
+ four pins to make the connection the vcc is provided with 5V, SDA with data pin A4 and clock pin of sensor with A5 of arduino and last ground pin. Then connect oled in similiar way with arduino, all four pins \
+ but give it 3.3V VCC, its display works better. Then connect arduino with your computer and upload the code to arduino. select arduino port with which it is connected with computer. After successfully loading program
+ to arduino board the results will be shown on oled. Here the code is modified place your finger on it and you will see the BPM on OLED.</p>
+ 
+<center><h2 id="C1"><b>Bill of materials</b><h2></center>
+ <p> 
+
+ <center><img src="bill.png" width="650" height="600" class="center"/></center><br>
+
+ </p>
+ 
+ <center><h2 id="C1"><b>Brief Description of Major Components</b> <h2></center>
+ 1. <b>Microcontroller description:</b><br>
+	<p align="justify" class="serif">		The low-power Microchip 8-bit AVR RISC-based microcontroller featuring 32KB self-programming flash program memory,
+2.5KB SRAM, 1KB EEPROM, USB 2.0 full-speed/low speed device, 12-channel 10-bit A/D-converter, and JTAG interface 
+for on-chip-debug. The device achieves up to 16 MIPS throughput at 16 MHz. 2.7 - 5.5 Volt operation.</p>
+<p align="justify" class="serif">		We have used this microcontroller because of its lower consemption and usb support. its features helped us to replace arduino 
+with this microcintroller in project.</p>
+
+
+<br> <center><img src="uC32p.jpg" alt="Paris" width="600" height="500"  /></center><br>
+
+<a href="http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" target="blank">
+<center><font color="Yellow">ATMEGA32u4 Data Sheet<br></font></a><br></center>
+
+	<br>		
+2. <b>Max30102 IC: </b><br>
+	 <p align="justify" class="serif"> 
+The MAX30102 is an integrated pulse oximetry and heart-rate monitor biosensor module. It includes internal LEDs, photodetectors, optical elements, and low-noise electronics with ambient light rejection.
+ The MAX30102 provides a complete system solution to ease the design-in process for mobile and wearable devices</p>
+ <br> <center><img src="maxic.jpg" width="250" height="250"  /></center><br>
+	<br>	
+<a href="https://pdf1.alldatasheet.com/datasheet-pdf/view/859400/MAXIM/MAX30102.html" target="blank">
+<center><font color="Yellow">MAX30102 Data Sheet<br></font></a><br></center>
+
+
+5. <b>OLED diplay: </b><br>
+<p align="justify" class="serif"> An organic light-emitting diode, also known as organic electroluminescent diode, is a light-emitting diode in which the emissive
+ electroluminescent layer is a film of organic compound that emits light in response to an electric current.
+ Its efficient than lcd and it gives best display and animations.</p>
+ <br> <center><img src="oled.png" width="250" height="250"  /></center><br>
+	<br>	
+	<a href="https://www.mcielectronics.cl/website_MCI/static/documents/0.91inch_OLED_Module_User_Manual_EN.pdf" target="blank">
+<center><font color="Yellow">0.91" OLED Data Sheet<br></font></a><br></center>
+			
+ </p>
+ <center><h2 id="C1"><b>Connectivity to components (Protocol)</b> <h2></center>
+ <p align="justify" class="serif"> We have used microcontroller atmaega32p IC, which has the support to connect a USB, so we are using Universal serial bus for the connectivity of our board with PC 
+to burn the code into it. </p>
+ 
+ <center><h2 id="C1"><b>Electrical Schematic</b> <h2></center>
+ <p align="justify" class="serif"> The schematic diagram is taken from the Eagle file we have developed for our final PCB design:
+  <center><img src="schpic.png" width="600" height="600"/> </center>
+ </p>
+ 
+ <center><h2 id="C1"><b>Brief Description of Schematic </b><h2></center>
+ <br>
+  <br> <center><img src="schpicPart.png" width="600" height="600"/> </center>
+  <br>
+
+ <p align="justify" class="serif">
+In above figure we have written name of different portion of the schematic, it is explained below:<br><br>
+<b>1- Microcontroller and its required components:</b><br>
+	The microcontroller is the key component of this whole circuit as it is making decissions on the basis of values it is receiving.
+the components attached with microcontroller are chosen according to the Arduino Uno which uses the same i-e Microcontroller atmega32p.
+<br><br>
+
+<b>2- Voltage Regulator:</b><br>
+	This circuit divides the input voltage to such a level in which microcontroller can sense it because if we attach the microcontroller directly, it cannot
+bear the voltage and will burnout intantly. So we have to use voltage regulation to give it constant and safe voltage. It is at input side which acts as supply for the 
+atmega32p microcontroller we have used.
+<br><br>
+<b>3- Leds:</b><br>
+We have used power leds with limiting resistor to see when the circuit is on and off. we can check it buy seeing the leds. 
+This portion is didicated for said purpose only.
+<br><br>
+<b>4- Connectors:</b><br>
+These are the connector pins where will place our max30102 senor and oled. for both oled and sensor we are using four pins on;y so we have seperate connectors for them. 
+These connectors are choosen based on the pins you need for connenction. 
+<br><br>
+	</p>
+ 
+ <center><h2 id="C1"><b>PCB Layout </b><h2></center>
+ <p align="justify" class="serif"> We used Eagle Auto Desk software to develop the PCB for our project and we created the layouts in .PNG formats as the Milling Machine available in Fablab needs picture format for its processing. Following is the final PCB layout: 
+
+<br><br>
+<center><img src="layout.png" width="600"  class="center"/></center><br>
+
+
+
+<br>
+ </p>
+ 
+ <center><h2 id="C1"><b>Challenges While Routing</b> <h2></center>
+ <p align="justify" class="serif"> 	whille routing the PCB it consumed a lot of out time because the circuit we were following used a separate board for microcontroller
+but our aim was to embed both the circuit on a single layer, making it more compact. While we were making the routing we had take care of the length of each routing wire like for input it had to be bigger in size due to more current.
+Also routing for our connectors and their position in the PCB board is of very importance. I will say that before routing design your PCB on the page then you will have idea about position of components so you could make it easily. </p>
+ 
+
+ </p>
+ 
+ <center><h2 id="C1"><b>Picture of Clean Printed Circuit Board </b><h2></center>
+ <br>
+  <p align="justify" class="serif"> For fabrication of our PCB, we used SRM-20(Rolland's mills) machine. It needs a monochrome picture for its processing. the monochrome picture we took from
+  Eagle software were then uploaded to the "Fab-Modules.org" and then we generated the ".rml" files needed for SRM-20 to process the milling.
+
+  
+ </p>
+ <center> <img src="Project_pics/Fabrication%20in%20Roland.jpg" width="800" height="600" class="center"/></center><br><br>
+  <center><img src="PCB.jpg" width="600" height="600"  class="center" /></center><br>
+ <br>
+  
+ <center><h2 id="C1"><b>Procedure adopted to burn Bootloader </b><h2></center>
+ <p align="justify" class="serif">	To burn the boot loader on to the microcontroller, we used I2C header and arduino IDE. 
+ we burnt the bootloader of Arduino Uno onto the ATmega32p. For this we followed the following steps:<br>
+1-  connetcing th board with PC through I2C header and a USB mini cable for further burning the test code.<br>
+2-  selecting the board through "Tools" menu.<br>
+3-  in tools, further going to submenu "Select Board".<br>
+4-  selecting "Arduino Uno".<br>
+5-  again going to "tools" menu and then selecting the submenu "Port" and then select the port on which I2C is connected.<br>
+6-  again going to another submenu "Programmer" and selecting "AVRISP mkll" .<br>
+7-  last step is to select the last most option of "burn the bootloader".<br>
+8-  wait for few minutes till it shows the message on status bar as "Done burning Bootloader.".<br>
+
+ </p>
+ 
+ 
+ <center><h2 id="C1"><b>Picture of successfully operating circuit</b><h2></center>
+ <p align="justify" class="serif"> Following is the picture when we succesfully got the output: 
+ <br> <center><img src="working.png" width="600" height="800"  class="center" /></center><br>
+
+ </p>
+ 
+  
+ 
+  <center><h2 id="C1"><b>Demonstration of operational circuit </b><h2></center>
+ <center><iframe height="600" width="600"
+ src="https://www.youtube.com/embed/6MPWuEnjfBQ"> 
+</iframe></center>
+  
+ </p>
+ 
+ 
+  <center><h2 id="C1"><b>Challenges faced while coding</b><h2></center>
+ <p align="justify" class="serif">The major problem we faced during the coding for this project was configuring the timer for generatng PWM signal. We tried to configure different available timers using different PWM pins on the board. First we configured timer1 using PWM pin 9, but this timer was a 16 bit timer which 
+brought a lot of problems because our major calculations were based on the 8 bit timer. so after struggling a lot we obtained a maximum volatge of 7.44V at the output. Furthermore we connected
+our Half bridge driver with PWM pin 11 and using timer0 we obtained the exact output.
+ </p>
+ 
+ 	  
+  <center><h2 id="C1"><b>Business model </b><h2></center>
+ <p align="justify" class="serif"> Every product which needs to be in the market requires a good business plan. for our product, we considered few major point regarding its cost and its users.
+As our project is user friendly in terms of its size, the size increases the durability. One can carry it anywhere to be used. Furthermore, heart measuring device are expensive.
+we used such components which are commonly available and are cheap. With these two major advantages, we hope to cover a good number of users of our products when released in the market.
+ </p>
+ 
+ <h2 id="C1"><b>References </b> </h2>
+
+<a href="https://create.arduino.cc/projecthub/SurtrTech/measure-heart-rate-and-spo2-with-max30102-c2b4d8" target="blank">
+<font color="YELLOW">1. https://create.arduino.cc/projecthub/SurtrTech/measure-heart-rate-and-spo2-with-max30102-c2b4d8<br></font></a><br>
+
+<a href="https://youtu.be/cEtyMkubXj4" target="blank">
+<font color="YELLOW">2- https://youtu.be/cEtyMkubXj4<br></font></a><br>
+
+
+
+ 
+  <center><h2 id="C1"><b>Credits Acknowledged </b><h2></center>
+ <p align="justify" class="serif"> The project we have implemented was first designed by a project hub website, He has made some changes in the program that is offered by the built in library of max3010x module.
+We were following his lead majorly in this project. Our FabLab Assitants also were a source of great help when we had difficulty relating hardware. Our lab instructor Sir Aizaz Ali helped us dealeing with the code as well as routing of the PCB. Sir Nadir was a great source of help when we needed help in 
+milling the PCB. Sir Azmat assited us while were designing the enclosure for our project. Without all of these, our succes in this project was difficult. </p>
+ 
+ 
+ 
+ 
+  <center><h2 id="C1"><b>Zip file containing source code</h2></b></center>
+ 
+  <a href="Multimedia/arduino_code.rar" download>
+<font color="YELLOW"><center>click here to download Arduino code</center></font></a>
+
+ 
+
+  <center><h2 id="C1"><b>Zip file containing sch and brd files</b> <h2></center>
+<a href="Multimedia/eagle_files.rar" download>
+<font color="YELLOW"><center>click here to download Eagles files</center></font></a>
+ 
+
+ 
+  <center><h2 id="C1"><b>Conclusion</b><h2></center>
+ <p align="justify" class="serif" > 
+In this course, We learnt to design, run and debug an arduino source code and modify it to our requirements.
+We also learnt to make proper PCB desing and routing which we had not ever used previously so it was an opportunity to learn these skills. The whole course duration was full of leaning we were
+designing a device by our self along with the directions of sir nadir which helped a lot in making the PCB. We faced  difficuties and challeges but eventually we became able to
+rectify them and make things work. So, there was a lot learning environment in the course. </p>
+
+
+<b><p style=" text-align:center">Copyrights:2021,Majid Hussain and M ameen,All Rights Reserved | Terms and conditions | Privacy policy</p><b><br>
+ </div>   </div>		</div>
+	</body>
+</html>
